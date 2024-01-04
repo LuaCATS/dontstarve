@@ -26,18 +26,40 @@ end
         body)
 end
 
+local function isInvaildLine(context)
+    return context:find("\n*%s*%-%-") ~= nil
+end
+
+local space_b1 = string.byte('\t')
+local space_b2 = string.byte(' ')
+local space_b3 = string.byte('\n')
+local space_b4 = string.byte(')')
+
+local function isSpace(b)
+    return b == space_b1 or b == space_b2 or b == space_b3
+end
+
+---@param context string
 local function handle_single_class(context)
     local base_regex = ("^%%s*(%s)%%s*,%%s*()"):format(var_regx)
     local base, pos = context:match(base_regex)
     if base then
         context = context:sub(pos)
     end
-    local function_regx = "^%s*function%s*(%b())(.*)%s+end()[%s,]+"
+    local function_regx = "^%s*function%s*(%b())(.*)end()"
     local param, body, pos = context:match(function_regx)
     if not param then
         return
     end
+    local endbyte = string.byte(context, pos - 4)
+    local endbyte1 = string.byte(context, pos)
+    if not (isSpace(endbyte) or endbyte == space_b4 and endbyte1 == nil or isSpace(endbyte1)) then
+        return
+    end
     context = context:sub(pos)
+    if isInvaildLine(context:sub(-100)) then
+        return
+    end
     -- remove self,
     param = param:gsub("self%s*,*", "", 1)
 
@@ -48,11 +70,11 @@ local function handle_single_class(context)
 end
 --无法处理在注释里的不匹配
 local blacklists = {
-    ["="]=true,
-    [")"]=true,
-    ["("]=true,
-    ["{"]=true,
-    ["}"]=true,
+    ["="] = true,
+    [")"] = true,
+    ["("] = true,
+    ["{"] = true,
+    ["}"] = true,
 }
 local function create_class(text)
     local pos = text:find(keyword, 0, true)
@@ -102,7 +124,8 @@ local function create_function_param_inst(diffs, text)
     if not string.find(text, "inst", 1, true) then
         return diffs
     end
-    for fn_def, endpos in text:gmatch("function%s*(%b())()") do
+    for startpos, fn_def, endpos in text:gmatch("()function%s*(%b())()") do
+        startpos = tonumber(startpos)
         endpos = tonumber(endpos)
         local skip = false
         if diffs then
@@ -112,6 +135,9 @@ local function create_function_param_inst(diffs, text)
                     break
                 end
             end
+        end
+        if isInvaildLine(text:sub(math.max(0,startpos-100),startpos)) then
+            return diffs
         end
 
         if not skip and fn_def:find("[%s,%()]inst[%s,%)]") then
@@ -147,4 +173,5 @@ return {
     create_class_define = create_class_define,
     create_class = create_class,
     create_function_param_inst = create_function_param_inst,
+    isInvaildLine = isInvaildLine
 }

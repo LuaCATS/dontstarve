@@ -88,7 +88,6 @@ local self = {
 
 
 
-return self
 end
 ]]
 
@@ -116,7 +115,6 @@ local self = {
 
 
 
-return self
 end
 ]]
 
@@ -140,7 +138,6 @@ local self = {}
 
 return self
 
-
 end
 ]]
 
@@ -163,7 +160,6 @@ local self = {}
 
 
 
-return self
 end
 ]]
 
@@ -190,7 +186,6 @@ local self = {}
 
         self.a=1
 
-return self
 end
 ]]
 
@@ -210,7 +205,6 @@ hh=function()
 local self = {}
 
 
-return self
 end
 ---@return boolean
 function hh:is_a(klass) return true end
@@ -230,7 +224,6 @@ local hh=function()
 local self = {}
 
 
-return self
 end
 ---@return boolean
 function hh:is_a(klass) return true end
@@ -251,3 +244,10 @@ end
 
 TEST_create_function_param_inst [[a=function(inst)end]]([[a=function(inst) ---@param inst EntityScript
 end]])
+
+
+assert(dt.isInvaildLine("--end"))
+
+assert(dt.isInvaildLine("--afkasjfasd;osak;dk end"))
+assert(dt.isInvaildLine([[
+    --afkasjfasd;osak;dk end]]))
