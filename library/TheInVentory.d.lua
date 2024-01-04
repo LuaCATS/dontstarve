@@ -1,198 +1,198 @@
 ---@meta
 
----@class TheInVentory
-TheInVentory = {}
+---@class TheInventory
+TheInventory = {}
 
-function TheInVentory:StartGetAllItems() end
+function TheInventory:StartGetAllItems() end
 
-function TheInVentory:CancelGetAllItems() end
+function TheInventory:CancelGetAllItems() end
 
-function TheInVentory:GetClientGiftCount() end
+function TheInventory:GetClientGiftCount() end
 
-function TheInVentory:CheckClientOwnership() end
+function TheInventory:CheckClientOwnership() end
 
-function TheInVentory:CheckOwnership() end
+function TheInventory:CheckOwnership() end
 
-function TheInVentory:CheckOwnershipGetLatest() end
+function TheInventory:CheckOwnershipGetLatest() end
 
-function TheInVentory:IsDownloadingInventory() end
+function TheInventory:IsDownloadingInventory() end
 
-function TheInVentory:HasDownloadedInventory() end
+function TheInventory:HasDownloadedInventory() end
 
-function TheInVentory:HasSupportForOfflineSkins() end
+function TheInventory:HasSupportForOfflineSkins() end
 
-function TheInVentory:ForceLoadOfflineCache() end
+function TheInventory:ForceLoadOfflineCache() end
 
-function TheInVentory:SetItemOpened() end
+function TheInventory:SetItemOpened() end
 
-function TheInVentory:GetAutoBoxItem() end
+function TheInventory:GetAutoBoxItem() end
 
-function TheInVentory:GetUnopenedEntitlementItems() end
+function TheInventory:GetUnopenedEntitlementItems() end
 
-function TheInVentory:GetUnopenedItems() end
+function TheInventory:GetUnopenedItems() end
 
-function TheInVentory:GetOwnedItemCount() end
+function TheInventory:GetOwnedItemCount() end
 
-function TheInVentory:GetOwnedItemCountForCommerce() end
+function TheInventory:GetOwnedItemCountForCommerce() end
 
-function TheInVentory:GetFullInventory() end
+function TheInventory:GetFullInventory() end
 
-function TheInVentory:SetLocalVanityItems() end
+function TheInventory:SetLocalVanityItems() end
 
-function TheInVentory:GetCurrencyAmount() end
+function TheInventory:GetCurrencyAmount() end
 
-function TheInVentory:GetVirtualIAPCurrencyAmount() end
+function TheInventory:GetVirtualIAPCurrencyAmount() end
 
-function TheInVentory:GetKleiPointsAmount() end
+function TheInventory:GetKleiPointsAmount() end
 
-function TheInVentory:GetWXP() end
+function TheInventory:GetWXP() end
 
-function TheInVentory:GetWXPLevel() end
+function TheInventory:GetWXPLevel() end
 
-function TheInVentory:IsAchievementUnlocked() end
+function TheInventory:IsAchievementUnlocked() end
 
-function TheInVentory:SetAchievementTempUnlocked() end
+function TheInventory:SetAchievementTempUnlocked() end
 
-function TheInVentory:GetAllUnlockedAchievements() end
+function TheInventory:GetAllUnlockedAchievements() end
 
-function TheInVentory:SetStorageValueMulti() end
+function TheInventory:SetStorageValueMulti() end
 
-function TheInVentory:AddCookBookKey() end
+function TheInventory:AddCookBookKey() end
 
-function TheInVentory:GetLocalCookBook() end
+function TheInventory:GetLocalCookBook() end
 
-function TheInVentory:SetCookBookValue() end
+function TheInventory:SetCookBookValue() end
 
-function TheInVentory:AddPlantRegistryKey() end
+function TheInventory:AddPlantRegistryKey() end
 
-function TheInVentory:GetLocalPlantRegistry() end
+function TheInventory:GetLocalPlantRegistry() end
 
-function TheInVentory:SetPlantRegistryValue() end
+function TheInventory:SetPlantRegistryValue() end
 
-function TheInVentory:AddGenericKVKey() end
+function TheInventory:AddGenericKVKey() end
 
-function TheInVentory:GetLocalGenericKV() end
+function TheInventory:GetLocalGenericKV() end
 
-function TheInVentory:SetGenericKVValue() end
+function TheInventory:SetGenericKVValue() end
 
-function TheInVentory:AddSkillTreeKey() end
+function TheInventory:AddSkillTreeKey() end
 
-function TheInVentory:GetLocalSkillTree() end
+function TheInventory:GetLocalSkillTree() end
 
-function TheInVentory:SetSkillTreeValue() end
+function TheInventory:SetSkillTreeValue() end
 
-function TheInVentory:AddScrapbook0Key() end
+function TheInventory:AddScrapbook0Key() end
 
-function TheInVentory:GetLocalScrapbook0() end
+function TheInventory:GetLocalScrapbook0() end
 
-function TheInVentory:SetScrapbook0Value() end
+function TheInventory:SetScrapbook0Value() end
 
-function TheInVentory:AddScrapbook1Key() end
+function TheInventory:AddScrapbook1Key() end
 
-function TheInVentory:GetLocalScrapbook1() end
+function TheInventory:GetLocalScrapbook1() end
 
-function TheInVentory:SetScrapbook1Value() end
+function TheInventory:SetScrapbook1Value() end
 
-function TheInVentory:AddScrapbook2Key() end
+function TheInventory:AddScrapbook2Key() end
 
-function TheInVentory:GetLocalScrapbook2() end
+function TheInventory:GetLocalScrapbook2() end
 
-function TheInVentory:SetScrapbook2Value() end
+function TheInventory:SetScrapbook2Value() end
 
-function TheInVentory:AddScrapbook3Key() end
+function TheInventory:AddScrapbook3Key() end
 
-function TheInVentory:GetLocalScrapbook3() end
+function TheInventory:GetLocalScrapbook3() end
 
-function TheInVentory:SetScrapbook3Value() end
+function TheInventory:SetScrapbook3Value() end
 
-function TheInVentory:AddScrapbook4Key() end
+function TheInventory:AddScrapbook4Key() end
 
-function TheInVentory:GetLocalScrapbook4() end
+function TheInventory:GetLocalScrapbook4() end
 
-function TheInVentory:SetScrapbook4Value() end
+function TheInventory:SetScrapbook4Value() end
 
-function TheInVentory:AddScrapbook5Key() end
+function TheInventory:AddScrapbook5Key() end
 
-function TheInVentory:GetLocalScrapbook5() end
+function TheInventory:GetLocalScrapbook5() end
 
-function TheInVentory:SetScrapbook5Value() end
+function TheInventory:SetScrapbook5Value() end
 
-function TheInVentory:AddScrapbook6Key() end
+function TheInventory:AddScrapbook6Key() end
 
-function TheInVentory:GetLocalScrapbook6() end
+function TheInventory:GetLocalScrapbook6() end
 
-function TheInVentory:SetScrapbook6Value() end
+function TheInventory:SetScrapbook6Value() end
 
-function TheInVentory:AddScrapbook7Key() end
+function TheInventory:AddScrapbook7Key() end
 
-function TheInVentory:GetLocalScrapbook7() end
+function TheInventory:GetLocalScrapbook7() end
 
-function TheInVentory:SetScrapbook7Value() end
+function TheInventory:SetScrapbook7Value() end
 
-function TheInVentory:AddScrapbook8Key() end
+function TheInventory:AddScrapbook8Key() end
 
-function TheInVentory:GetLocalScrapbook8() end
+function TheInventory:GetLocalScrapbook8() end
 
-function TheInVentory:SetScrapbook8Value() end
+function TheInventory:SetScrapbook8Value() end
 
-function TheInVentory:AddScrapbook9Key() end
+function TheInventory:AddScrapbook9Key() end
 
-function TheInVentory:GetLocalScrapbook9() end
+function TheInventory:GetLocalScrapbook9() end
 
-function TheInVentory:SetScrapbook9Value() end
+function TheInventory:SetScrapbook9Value() end
 
-function TheInVentory:AddScrapbook10Key() end
+function TheInventory:AddScrapbook10Key() end
 
-function TheInVentory:GetLocalScrapbook10() end
+function TheInventory:GetLocalScrapbook10() end
 
-function TheInVentory:SetScrapbook10Value() end
+function TheInventory:SetScrapbook10Value() end
 
-function TheInVentory:AddScrapbook11Key() end
+function TheInventory:AddScrapbook11Key() end
 
-function TheInVentory:GetLocalScrapbook11() end
+function TheInventory:GetLocalScrapbook11() end
 
-function TheInVentory:SetScrapbook11Value() end
+function TheInventory:SetScrapbook11Value() end
 
-function TheInVentory:AddScrapbook12Key() end
+function TheInventory:AddScrapbook12Key() end
 
-function TheInVentory:GetLocalScrapbook12() end
+function TheInventory:GetLocalScrapbook12() end
 
-function TheInVentory:SetScrapbook12Value() end
+function TheInventory:SetScrapbook12Value() end
 
-function TheInVentory:AddScrapbook13Key() end
+function TheInventory:AddScrapbook13Key() end
 
-function TheInVentory:GetLocalScrapbook13() end
+function TheInventory:GetLocalScrapbook13() end
 
-function TheInVentory:SetScrapbook13Value() end
+function TheInventory:SetScrapbook13Value() end
 
-function TheInVentory:AddScrapbook14Key() end
+function TheInventory:AddScrapbook14Key() end
 
-function TheInVentory:GetLocalScrapbook14() end
+function TheInventory:GetLocalScrapbook14() end
 
-function TheInVentory:SetScrapbook14Value() end
+function TheInventory:SetScrapbook14Value() end
 
-function TheInVentory:AddScrapbook15Key() end
+function TheInventory:AddScrapbook15Key() end
 
-function TheInVentory:GetLocalScrapbook15() end
+function TheInventory:GetLocalScrapbook15() end
 
-function TheInVentory:SetScrapbook15Value() end
+function TheInventory:SetScrapbook15Value() end
 
-function TheInVentory:LookupSkinname() end
+function TheInventory:LookupSkinname() end
 
-function TheInVentory:ClearSkinsDataset() end
+function TheInventory:ClearSkinsDataset() end
 
-function TheInVentory:AddRestrictedBuildFromLua() end
+function TheInventory:AddRestrictedBuildFromLua() end
 
-function TheInVentory:AddSkinSetInput() end
+function TheInventory:AddSkinSetInput() end
 
-function TheInVentory:AddSkinLinkInput() end
+function TheInventory:AddSkinLinkInput() end
 
-function TheInVentory:AddEmoji() end
+function TheInventory:AddEmoji() end
 
-function TheInVentory:AddSkinDLCInput() end
+function TheInventory:AddSkinDLCInput() end
 
-function TheInVentory:AddItemIDPairing() end
+function TheInventory:AddItemIDPairing() end
 
-function TheInVentory:AddFreeItemForEveryone() end
+function TheInventory:AddFreeItemForEveryone() end
 
-function TheInVentory:ValidateWithSignature() end
+function TheInventory:ValidateWithSignature() end
