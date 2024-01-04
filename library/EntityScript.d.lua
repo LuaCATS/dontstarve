@@ -78,3 +78,6 @@ EntityScript.VFXEffect = {}
 EntityScript.VideoWidget = {}
 ---@type WaveComponent
 EntityScript.WaveComponent = {}
+
+---@type Entity
+EntityScript.entity = {}

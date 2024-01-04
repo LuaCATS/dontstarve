@@ -1,3 +1,4 @@
+---@meta
 local dt = require 'dontstave'
 
 local function cmp(v1, v2, key)

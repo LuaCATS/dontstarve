@@ -18,14 +18,12 @@ local function create_class_define(islocal, class, base, param, body, props)
 %s
 %s
 %s
-%s
 end
 ]]):format(header, base and (":%s"):format(base) or "",
         islocal and ("local %s"):format(class) or class, param,
         header,
         props ~= nil and ("local self = %s\n"):format(props) or "local self = {}\n",
-        body,
-        body:find("%s+return%s+self%s+") and "" or "return self")
+        body)
 end
 
 local function handle_single_class(context)
@@ -34,7 +32,7 @@ local function handle_single_class(context)
     if base then
         context = context:sub(pos)
     end
-    local function_regx = "^%s*function%s*(%b())(.*)end()"
+    local function_regx = "^%s*function%s*(%b())(.*)%s+end()[%s,]+"
     local param, body, pos = context:match(function_regx)
     if not param then
         return
@@ -43,12 +41,19 @@ local function handle_single_class(context)
     -- remove self,
     param = param:gsub("self%s*,*", "", 1)
 
-    local props_regx = "^%s*,%s*(%b{})%s*$"
+    local props_regx = "%s*,%s*(%b{})%s*$"
     local props = context:match(props_regx)
 
     return base, param, body, props
 end
-
+--无法处理在注释里的不匹配
+local blacklists = {
+    ["="]=true,
+    [")"]=true,
+    ["("]=true,
+    ["{"]=true,
+    ["}"]=true,
+}
 local function create_class(text)
     local pos = text:find(keyword, 0, true)
     if not pos then
@@ -58,6 +63,9 @@ local function create_class(text)
     local diffs = {}
     for startpos, classname, context, endpos in text:gmatch(class_context_regx) do
         context = context:sub(2, #context - 1)
+        if blacklists[context:sub(#context)] then
+            goto continue
+        end
         local base, param, body, props = handle_single_class(context)
         if param then
             local localpos = text:find(("local%%s*%s"):format(classname))
@@ -81,6 +89,7 @@ function %s.is_instance(obj) return true end
                 ):format(classname, classname, classname, classname, classname)
             }
         end
+        ::continue::
     end
     if #diffs == 0 then
         return
@@ -94,7 +103,18 @@ local function create_function_param_inst(diffs, text)
         return diffs
     end
     for fn_def, endpos in text:gmatch("function%s*(%b())()") do
-        if fn_def:find("[%s,]*inst[%s,]*") then
+        endpos = tonumber(endpos)
+        local skip = false
+        if diffs then
+            for i, v in ipairs(diffs) do
+                if v.start <= endpos and v.finish >= endpos then
+                    skip = true
+                    break
+                end
+            end
+        end
+
+        if not skip and fn_def:find("[%s,%()]inst[%s,%)]") then
             diffs = diffs or {}
             diffs[#diffs + 1] = {
                 start = endpos,
@@ -114,6 +134,9 @@ end
 ---@param  text string # The content of file
 ---@return nil|diff[]
 function OnSetText(uri, text)
+    if text:find("---@meta", 1, true) then
+        return
+    end
     local diffs = create_class(text)
 
     return create_function_param_inst(diffs, text)
