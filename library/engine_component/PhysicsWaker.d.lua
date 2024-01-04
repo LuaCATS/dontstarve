@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class PhysicsWaker
-local PhysicsWaker = {}
+PhysicsWaker = {}
 
 
 

@@ -2,6 +2,9 @@
     "name": "dontstave",
     "settings": {
         "Lua.runtime.plugin": "${3rd}/dontstave/plugin/dontstave.lua",
-        "Lua.runtime.version": "Lua 5.1"
+        "Lua.runtime.version": "Lua 5.1",
+        "Lua.runtime.builtin": {
+            "bit": "enable"
+        }
     }
 }

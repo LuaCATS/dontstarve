@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class SoundEmitter
-local SoundEmitter = {}
+SoundEmitter = {}
 
 function SoundEmitter:PlayingSound() end
 

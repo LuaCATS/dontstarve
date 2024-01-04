@@ -1,7 +1,7 @@
 ---@meta
 
 ---@class Map
-local Map = {}
+Map = {}
 
 function Map:SetNavSize() end
 
