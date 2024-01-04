@@ -1,0 +1,4 @@
+---@meta
+
+---@type EntityScript
+TheWorld = {}
