@@ -1,6 +1,6 @@
 ---@meta
 ---@class Entity
-local Entity = {}
+Entity = {}
 
 ---@return lightuserdata
 function Entity:GetGUID() end

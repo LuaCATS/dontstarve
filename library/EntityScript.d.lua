@@ -81,3 +81,12 @@ EntityScript.WaveComponent = {}
 
 ---@type Entity
 EntityScript.entity = {}
+
+---@type EntityScriptComponents
+EntityScript.components = {}
+
+---@generic T
+---@param name `T`
+---@return T
+function EntityScript:AddComponent(name)
+end
