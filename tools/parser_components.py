@@ -8,7 +8,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-r", "--root", default=(pathlib.Path(
     os.getcwd()) / "data" / "scripts"), help="game root dir")
 parser.add_argument("-o", "--output", default="t.lua", help="outputpath")
-parser.add_argument("-m", "--meta", default=False, action='store_true', help="output meta file")
+parser.add_argument("-m", "--meta", default=False,
+                    action='store_true', help="output meta file")
 args = parser.parse_args()
 
 root = pathlib.Path(args.root)
@@ -19,50 +20,72 @@ components_dir = root / "components"
 
 match_return = re.compile("^\s*return\s+([a-zA-z_]\w*)\s*")
 
-classNames: list[str] = []
-
+classNames: set[str] = set()
+classReplicas: set[str] = set()
 
 match_return_func = re.compile("^\s*return\s+Class\s*\(\s*function\(\s*")
+
+
 def isReturnClass(lines):
     for line in lines:
         if match_return_func.match(line):
             return True
     return False
 
+
 def getClassName(filename):
     luapath = pathlib.Path(dirpath).joinpath(filename)
+    name = os.path.splitext(pathlib.Path(filename).name)[0]
+    _replica = "_replica"
+    isReplica = name.lower().find(_replica) != -1
     with open(luapath) as f:
         lines = f.readlines()
         for line in reversed(lines):
             matched = match_return.match(line)
             if matched:
-                print(filename, ":", matched[1])
-                return matched[1]
+                ret = matched[1]
+                if isReplica:
+                    ret += _replica
+                print(filename, ":", ret)
+                return ret, isReplica
             elif line.strip() != "":
                 if isReturnClass(lines):
-                    name = os.path.splitext(pathlib.Path(filename).name)[0]
-                    print(filename, "[return Class]: ", name)
-                    return name
+                    ret = name
+                    if isReplica:
+                        ret += _replica
+                    print(filename, "[return Class]: ", ret)
+                    return ret, isReplica
                 else:
-                    print(filename,": invaild file")
-                    return None
+                    print(filename, ": invaild file")
+                    return None, None
+    return None, None
 
 
 for dirpath, dirnames, filenames in os.walk(components_dir):
     for filename in filenames:
-        className = getClassName(filename)
+        className, isReplica = getClassName(filename)
         if className:
-            classNames.append(className)
+            if isReplica:
+                classReplicas.add(className)
+            else:
+                classNames.add(className)
 
 head = f"""{args.meta and "---@meta" or ""}
 
 ---@class EntityScriptComponents
 local m = {{}}
+---@class EntityScriptComponentReplicas
+local r = {{}}
 """
 body = head
 for className in classNames:
-    body = body + f"---@type {className}\nm.{ className.lower()}={{}}\n"
-
+    if className == 'SpDamageUtil':
+        continue
+    className = className.lower()
+    body = body + f"---@type {className}\nm.{ className }={{}}\n"
+for className in classReplicas:
+    className = className.lower()
+    body = body + f"---@type {className}\nr.{ className }={{}}\n"
 body += "\n"
 
 with open(args.output, "w+") as f:

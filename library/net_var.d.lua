@@ -8,7 +8,7 @@ function NetVar:set(value) end
 
 function NetVar:value() end
 
----@param guid userdata
+---@param guid lightuserdata
 ---@param member_var_name string
 ---@param changed_event_name string
 ---@return NetVar

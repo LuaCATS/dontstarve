@@ -1,5 +1,5 @@
 ---@meta
----@class EntityScript
+---@class entityscript
 local EntityScript = {}
 
 ---@type AnimState
@@ -84,6 +84,9 @@ EntityScript.entity = {}
 
 ---@type EntityScriptComponents
 EntityScript.components = {}
+
+---@type EntityScriptComponentReplicas
+EntityScript.replica = {}
 
 ---@generic T
 ---@param name `T`

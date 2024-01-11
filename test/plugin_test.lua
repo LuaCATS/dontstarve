@@ -1,253 +1,129 @@
----@meta
-local dt = require 'dontstave'
+local parser = require 'parser'
+local guide  = require 'parser.guide'
+local helper = require 'plugins.astHelper'
+local files  = require 'files'
+local scope  = require 'workspace.scope'
 
-local function cmp(v1, v2, key)
-    if v1 == v2 then
-        return
-    end
-    if key then
-        print("error:", key, "\n")
-    else
-        print("error:\n")
-    end
-    print("v1:\n", v1, "\n")
-    print("v2:\n", v2, "\n")
-    assert(false)
-    return false
+---@diagnostic disable: await-in-sync
+local function TestPlugin(script, plugin, checker)
+    files.open(TESTURI)
+    files.setText(TESTURI, script, true)
+    scope.getScope(TESTURI):set('pluginInterface', {OnTransformAst = plugin})
+    local state = files.getState(TESTURI)
+    checker(state)
+    files.remove(TESTURI)
 end
 
-local function table_cmp(t1, t2)
-    for key, value in pairs(t1) do
-        if not cmp(t2[key], value, key) then
-            return false
-        end
-    end
-    return true
+local myplugin = require 'plugin.dontstave'
+
+local function AssertDocClass(doc, name)
+    name = name or 'm'
+    assert(doc.class[1] == name)
+    assert(doc.type == 'doc.class')
 end
-
-local function Test(input)
-    local b1 = { dt.handle_single_class(input) }
-    return function(output)
-        table_cmp(b1, output)
-        return function(output1)
-            cmp(dt.create_class_define(false, "a", b1[1], b1[2], b1[3], b1[4]), output1, "class_define")
-        end
-    end
+local function AssertDocClassExtend(doc, extend)
+    assert(doc.extends[1][1] == extend)
+    assert(doc.extends[1].type == 'doc.extends.name')
 end
-
-Test [[
-    function()
+local function AssertParamType(doc, t)
+    local extends = doc.extends
+    assert(extends.type == 'doc.type')
+    assert(extends.types[1][1] == t)
 end
-]] {
-    nil,
-    "()",
-    "\n",
-    nil
-}
-
-Test [[
-    jjsaid_1,function()
+local function AssertParamTypeEntityScript(doc)
+    AssertParamType(doc, 'EntityScript')
 end
-]] {
-    "jjsaid_1",
-    "()",
-    "\n",
-    nil
-}
-
-Test [[
-    function()
-end,{hh=1}
-]] {
-    nil,
-    "()",
-    "\n",
-    "{hh=1}"
-}
-
-Test [[
-    b,function(self)
-end,{
-        jj=1
-    }
-]] {
-    "b",
-    "()",
-    "\n",
-    [[{
-        jj=1
-    }]]
-} [[
-
----@class a:b
-a=function()
----@class a
-local self = {
-        jj=1
-    }
-
-
-
+local function AssertParamTypeM(doc)
+    AssertParamType(doc, 'm')
 end
-]]
+TestPlugin([[
+return Class(function(self, inst)
+    self.a = 1
+end)
+]], myplugin, function (state)
+    AssertDocClass(state.ast[1][1].args[1].locals[1].bindDocs[1], 'unittest')
+    AssertParamTypeEntityScript(state.ast[1][1].args[1].args[1].bindDocs[1])
+end)
+
+TestPlugin([[
+local function f(self)end
+]], myplugin, function (state)
+    assert(not state.ast[1].value.args[1].bindDocs)
+end)
+
+TestPlugin([[
+    ---@param inst string
+    ---@param a string
+local function f(inst,a)end
+]], function ()
+end, function (state)
+
+end)
+
+TestPlugin([[
+local function f(inst)end
+]], myplugin, function (state)
+    AssertParamTypeEntityScript(state.ast[1].value.args[1].bindDocs)
+end)
+
+TestPlugin([[
+local m = Class(function()end)
+]], myplugin, function (state)
+    AssertDocClass(state.ast[1].bindDocs[1])
+end)
+
+TestPlugin([[
+m = Class(function()end)
+]], myplugin, function (state)
+    AssertDocClass(state.ast[1].bindDocs[1])
+end)
 
 
-Test [[
-    function(self)
-end,{
-        jj=1
-    }
-]] {
-    nil,
-    "()",
-    "\n",
-    [[{
-        jj=1
-    }]]
-} [[
-
----@class a
-a=function()
----@class a
-local self = {
-        jj=1
-    }
+TestPlugin([[
+m = Class(Base,function()end)
+]], myplugin, function (state)
+    AssertDocClass(state.ast[1].bindDocs[1])
+    AssertDocClassExtend(state.ast[1].bindDocs[1], 'Base')
+end)
 
 
-
-end
-]]
-
-
-Test [[
-    function(self)
-return self
-end
-]] {
-    nil,
-    "()",
-    "return self",
-    nil
-} [[
-
----@class a
-a=function()
----@class a
-local self = {}
+TestPlugin([[
+m = Class(Base,function(self)end, {a = 1})
+]], myplugin, function (state)
+    AssertDocClass(state.ast[1].bindDocs[1])
+    AssertDocClassExtend(state.ast[1].bindDocs[1], 'Base')
+    local doc = state.ast[1].value.vararg.args[2].locals[1]
+    AssertDocClass(doc.bindDocs[1])
+    assert(doc.value)
+    assert(doc.value.type == 'table')
+end)
 
 
-return self
+TestPlugin([[
+local m = Class(function()end)
+local function f(self,inst)end
+]], myplugin, function (state)
+    AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
+    AssertParamTypeEntityScript(state.ast[2].value.args[2].bindDocs[1])
+end)
 
-end
-]]
+TestPlugin([[
+local m = Class(function()end)
+function m.f(self)end
+]], myplugin, function (state)
+    AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
+end)
 
-Test [[
-    function(self)
-end
-]] {
-    nil,
-    "()",
-    "\n",
-    [[{
-        jj=1
-    }]]
-} [[
+TestPlugin([[
+local m = Class(function()end)
+function m:f()end
+]], myplugin, function (state)
+    assert(not state.ast[2].value.args[1].bindDocs)
+end)
 
----@class a
-a=function()
----@class a
-local self = {}
-
-
-
-end
-]]
-
-
-
-Test [[
-    function(self)
-        self.a=1
-end
-]] {
-    nil,
-    "()",
-    "\n",
-    [[{
-        jj=1
-    }]]
-} [[
-
----@class a
-a=function()
----@class a
-local self = {}
-
-
-        self.a=1
-
-end
-]]
-
-function TEST_create_class(input)
-    local diffs = dt.create_class(input)
-    assert(diffs)
-    return function(output)
-        cmp(diffs[1].text, output)
-    end
-end
-
-TEST_create_class [[hh=Class(function(self)end)]]([[
-
----@class hh
-hh=function()
----@class hh
-local self = {}
-
-
-end
----@return boolean
-function hh:is_a(klass) return true end
----@return boolean
-function hh:is_class() return true end
----@return boolean
-function hh.is_instance(obj) return true end
-hh._ctor = hh
-]])
-
-
-TEST_create_class [[local hh=Class(function(self)end)]]([[
-
----@class hh
-local hh=function()
----@class hh
-local self = {}
-
-
-end
----@return boolean
-function hh:is_a(klass) return true end
----@return boolean
-function hh:is_class() return true end
----@return boolean
-function hh.is_instance(obj) return true end
-hh._ctor = hh
-]])
-
-function TEST_create_function_param_inst(input)
-    local diffs = dt.create_function_param_inst(nil, input)
-    assert(diffs)
-    return function(output)
-        cmp(input:sub(1, diffs[1].start - 1) .. diffs[1].text .. input:sub(diffs[1].finish+1), output)
-    end
-end
-
-TEST_create_function_param_inst [[a=function(inst)end]]([[a=function(inst) ---@param inst EntityScript
-end]])
-
-
-assert(dt.isInvaildLine("--end"))
-
-assert(dt.isInvaildLine("--afkasjfasd;osak;dk end"))
-assert(dt.isInvaildLine([[
-    --afkasjfasd;osak;dk end]]))
+TestPlugin([[
+local m = Class(function()end)
+local function f(self)end
+]], myplugin, function (state)
+    AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
+end)

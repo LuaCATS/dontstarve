@@ -1,1325 +1,1323 @@
-
+---@meta
 
 ---@class EntityScriptComponents
 local m = {}
----@type AreaAware
-m.areaaware={}
----@type TeleportedOverride
-m.teleportedoverride={}
----@type Activatable
-m.activatable={}
----@type HudIndicatorWatcher
-m.hudindicatorwatcher={}
----@type GiftReceiver
-m.giftreceiver={}
----@type Workable
-m.workable={}
----@type Fan
-m.fan={}
----@type FocalPoint
-m.focalpoint={}
----@type Hatchable
-m.hatchable={}
----@type Fueler
-m.fueler={}
----@type FoodMemory
-m.foodmemory={}
----@type WalkablePlatformPlayer
-m.walkableplatformplayer={}
----@type shadowcreaturespawner
-m.shadowcreaturespawner={}
----@type FireFX
-m.firefx={}
----@type Sleeper
-m.sleeper={}
----@type Unsaddler
-m.unsaddler={}
----@type MermCandidate
-m.mermcandidate={}
----@type Npc_talker
-m.npc_talker={}
----@type SingingInspiration
-m.singinginspiration={}
----@type ReloadItem
-m.reloaditem={}
----@type piratespawner
-m.piratespawner={}
----@type ChannelCaster
-m.channelcaster={}
----@type OceanTrawler
-m.oceantrawler={}
----@type ScenarioRunner
-m.scenariorunner={}
----@type Rideable
+---@class EntityScriptComponentReplicas
+local r = {}
+---@type rideable
 m.rideable={}
----@type Talkable
-m.talkable={}
----@type PlanarDamage
-m.planardamage={}
----@type groundcreep
-m.groundcreep={}
----@type shadowthrallmanager
-m.shadowthrallmanager={}
----@type LightTweener
-m.lighttweener={}
----@type WaveManager
-m.wavemanager={}
----@type Fueled
-m.fueled={}
----@type Tool
-m.tool={}
----@type PointOfInterest
-m.pointofinterest={}
----@type LootDropper
-m.lootdropper={}
----@type GhostlyElixirable
-m.ghostlyelixirable={}
----@type RevivableCorpse
-m.revivablecorpse={}
----@type TransparentOnSanity
-m.transparentonsanity={}
----@type Container
-m.container={}
----@type LocoMotor
-m.locomotor={}
----@type ChannelCastable
-m.channelcastable={}
----@type WalkablePlatformManager
-m.walkableplatformmanager={}
----@type townportalregistry
-m.townportalregistry={}
----@type Machine
-m.machine={}
----@type Scaler
-m.scaler={}
----@type HoundedTarget
-m.houndedtarget={}
----@type WateryProtection
-m.wateryprotection={}
----@type SpiderMutator
-m.spidermutator={}
----@type MadScienceLab
-m.madsciencelab={}
----@type ToggleableItem
-m.toggleableitem={}
----@type Teacher
-m.teacher={}
----@type Battery
-m.battery={}
----@type Domesticatable
-m.domesticatable={}
----@type archivemanager
-m.archivemanager={}
----@type WereEater
-m.wereeater={}
----@type CarnivalDecorRanker
-m.carnivaldecorranker={}
----@type Amorphous
-m.amorphous={}
----@type PlayerMetrics
-m.playermetrics={}
----@type Stackable
-m.stackable={}
----@type InventoryItem
-m.inventoryitem={}
----@type Floater
-m.floater={}
----@type Book
-m.book={}
----@type OldAger
-m.oldager={}
----@type colourcube
-m.colourcube={}
----@type MeteorShower
-m.meteorshower={}
----@type Stewer
-m.stewer={}
----@type seasons
-m.seasons={}
----@type Heater
-m.heater={}
----@type Oasis
-m.oasis={}
----@type Hauntable
-m.hauntable={}
----@type Harvestable
-m.harvestable={}
----@type Cooldown
-m.cooldown={}
----@type FuelMaster
-m.fuelmaster={}
----@type Hitchable
-m.hitchable={}
----@type Soul
-m.soul={}
----@type Skinner_Beefalo
-m.skinner_beefalo={}
----@type OceanColor
-m.oceancolor={}
----@type Sheltered
-m.sheltered={}
----@type Skinner
-m.skinner={}
----@type BoatAI
-m.boatai={}
----@type HealthTrigger
-m.healthtrigger={}
----@type Mast
-m.mast={}
----@type TouchStoneTracker
-m.touchstonetracker={}
----@type ShadowSubmissive
-m.shadowsubmissive={}
----@type MoonstormWatcher
-m.moonstormwatcher={}
----@type Explosive
-m.explosive={}
----@type deerherdspawner
-m.deerherdspawner={}
----@type BoatMagnet
-m.boatmagnet={}
----@type Pinnable
+---@type pinnable
 m.pinnable={}
----@type lureplantspawner
-m.lureplantspawner={}
----@type caveweather
-m.caveweather={}
----@type DeployHelper
-m.deployhelper={}
----@type BirdAttractor
-m.birdattractor={}
----@type FireDetector
-m.firedetector={}
----@type SentientAxe
-m.sentientaxe={}
----@type AOESpell
-m.aoespell={}
----@type worldtemperature
-m.worldtemperature={}
----@type brightmarespawner
-m.brightmarespawner={}
----@type MiasmaWatcher
-m.miasmawatcher={}
----@type FlotationDevice
-m.flotationdevice={}
----@type Lunarthrall_plantspawner
-m.lunarthrall_plantspawner={}
----@type CarefulWalker
-m.carefulwalker={}
----@type WinchTarget
-m.winchtarget={}
----@type specialeventsetup
-m.specialeventsetup={}
----@type FrostyBreather
-m.frostybreather={}
----@type Trap
-m.trap={}
----@type Edible
-m.edible={}
----@type Discoverable
-m.discoverable={}
----@type Smotherer
-m.smotherer={}
----@type SteeringWheel
-m.steeringwheel={}
----@type Bedazzlement
-m.bedazzlement={}
----@type sharkboimanagerhelper
-m.sharkboimanagerhelper={}
----@type FenceRotator
-m.fencerotator={}
----@type YOTB_SkinUnlocker
-m.yotb_skinunlocker={}
----@type Fishable
-m.fishable={}
----@type Cursable
-m.cursable={}
----@type Brush
-m.brush={}
----@type ConstructionBuilderUIData
-m.constructionbuilderuidata={}
----@type StuckDetection
-m.stuckdetection={}
----@type SavedScale
-m.savedscale={}
----@type Eater
-m.eater={}
----@type AmphibiousCreature
-m.amphibiouscreature={}
----@type StormWatcher
-m.stormwatcher={}
----@type BundleMaker
-m.bundlemaker={}
----@type frograin
-m.frograin={}
----@type MoonstormLightningManager
-m.moonstormlightningmanager={}
----@type PlantRegrowth
-m.plantregrowth={}
----@type Fertilizer
-m.fertilizer={}
----@type SimpleMagicGrower
-m.simplemagicgrower={}
----@type Key
-m.key={}
----@type PlantResearchable
-m.plantresearchable={}
----@type DayWalkerSpawner
-m.daywalkerspawner={}
----@type BoatDrifter
-m.boatdrifter={}
----@type Spell
-m.spell={}
----@type Petrifiable
-m.petrifiable={}
----@type WalkingPlank
-m.walkingplank={}
----@type QuestOwner
-m.questowner={}
----@type Inventory
-m.inventory={}
----@type Shaver
-m.shaver={}
----@type Playbill_Lecturn
-m.playbill_lecturn={}
----@type feasts
-m.feasts={}
----@type LightningBlocker
-m.lightningblocker={}
----@type RuinsShadelingSpawner
-m.ruinsshadelingspawner={}
----@type singingshellmanager
-m.singingshellmanager={}
----@type Thief
-m.thief={}
----@type Upgradeable
-m.upgradeable={}
----@type SoulEater
-m.souleater={}
----@type TreasureMarked
-m.treasuremarked={}
----@type Winch
-m.winch={}
+---@type forestresourcespawner
+m.forestresourcespawner={}
+---@type staffsanity
+m.staffsanity={}
+---@type shadowdominance
+m.shadowdominance={}
+---@type prophider
+m.prophider={}
+---@type occupiable
+m.occupiable={}
+---@type circler
+m.circler={}
+---@type boatcannon
+m.boatcannon={}
+---@type health
+m.health={}
 ---@type beargerspawner
 m.beargerspawner={}
----@type Health
-m.health={}
----@type SimpleBook
-m.simplebook={}
----@type BoatRingData
-m.boatringdata={}
----@type AOEWeapon_Leap
-m.aoeweapon_leap={}
----@type PlayerVoter
-m.playervoter={}
----@type ConstructionSite
-m.constructionsite={}
----@type Lock
-m.lock={}
----@type DrawingTool
-m.drawingtool={}
----@type moosespawner
-m.moosespawner={}
----@type BathBomb
-m.bathbomb={}
----@type PlayerAvatarData
-m.playeravatardata={}
----@type ambientsound
-m.ambientsound={}
----@type YOTB_Stager
-m.yotb_stager={}
----@type FurnitureDecor
-m.furnituredecor={}
----@type Markable
-m.markable={}
----@type Witherable
-m.witherable={}
----@type Magician
-m.magician={}
----@type Mine
-m.mine={}
----@type Poppable
-m.poppable={}
----@type PlantRegistryUpdater
-m.plantregistryupdater={}
----@type Catcher
-m.catcher={}
----@type Mightiness
-m.mightiness={}
----@type PlanarDefense
-m.planardefense={}
----@type BlowInWind
-m.blowinwind={}
----@type regrowthmanager
-m.regrowthmanager={}
----@type Pollinator
-m.pollinator={}
----@type Stretcher
-m.stretcher={}
----@type Leader
-m.leader={}
----@type Cooker
-m.cooker={}
----@type FormationFollower
-m.formationfollower={}
----@type worldmeteorshower
-m.worldmeteorshower={}
----@type Stackable
-m.stackable={}
----@type HeavyObstacleUseTarget
-m.heavyobstacleusetarget={}
----@type CarnivalGameFeedable
-m.carnivalgamefeedable={}
----@type SetBonus
-m.setbonus={}
----@type Wisecracker
-m.wisecracker={}
----@type PocketWatch
-m.pocketwatch={}
----@type ShadowDominance
-m.shadowdominance={}
----@type Appraisable
-m.appraisable={}
----@type hunter
-m.hunter={}
----@type Grogginess
-m.grogginess={}
----@type Groomer
-m.groomer={}
----@type MoonAltarLinkTarget
-m.moonaltarlinktarget={}
----@type CharlieCutscene
-m.charliecutscene={}
----@type deerclopsspawner
-m.deerclopsspawner={}
----@type Murderable
-m.murderable={}
----@type ItemAffinity
-m.itemaffinity={}
----@type UpgradeModule
-m.upgrademodule={}
----@type Fuel
-m.fuel={}
----@type ColourAdder
-m.colouradder={}
----@type AOEWeapon_Base
-m.aoeweapon_base={}
----@type Guardian
-m.guardian={}
----@type PlayerProx
-m.playerprox={}
+---@type talker
+m.talker={}
 ---@type shard_worldvoter
 m.shard_worldvoter={}
----@type HealthSyncer
-m.healthsyncer={}
----@type LunarPlant_Tentacle_Weapon
-m.lunarplant_tentacle_weapon={}
----@type BoatTrailMover
-m.boattrailmover={}
----@type BoatMagnetBeacon
-m.boatmagnetbeacon={}
----@type Oar
-m.oar={}
+---@type feasts
+m.feasts={}
 ---@type farming_manager
 m.farming_manager={}
----@type Battleborn
-m.battleborn={}
----@type squidspawner
-m.squidspawner={}
----@type sandstorms
-m.sandstorms={}
----@type Named
-m.named={}
----@type Crop
-m.crop={}
----@type HideAndSeeker
-m.hideandseeker={}
----@type DumbbellLifter
-m.dumbbelllifter={}
----@type worldreset
-m.worldreset={}
----@type Friendlevels
-m.friendlevels={}
----@type OceanFishingHook
-m.oceanfishinghook={}
----@type worldcharacterselectlobby
-m.worldcharacterselectlobby={}
----@type moonstorms
-m.moonstorms={}
----@type FoodAffinity
-m.foodaffinity={}
----@type Mood
-m.mood={}
----@type Healer
-m.healer={}
----@type CritterTraits
-m.crittertraits={}
----@type caveins
-m.caveins={}
----@type yotc_raceprizemanager
-m.yotc_raceprizemanager={}
----@type Combat
-m.combat={}
----@type StoryTellingProp
-m.storytellingprop={}
----@type SinkholeSpawner
-m.sinkholespawner={}
----@type SpellBookCooldowns
-m.spellbookcooldowns={}
----@type PlayerActionPicker
-m.playeractionpicker={}
----@type BoatRing
-m.boatring={}
----@type InventoryItemMoisture
-m.inventoryitemmoisture={}
----@type Builder
-m.builder={}
----@type shard_clock
-m.shard_clock={}
----@type Writeable
-m.writeable={}
----@type DeciduousTreeUpdater
-m.deciduoustreeupdater={}
----@type PlanarEntity
-m.planarentity={}
----@type shadowhandspawner
-m.shadowhandspawner={}
----@type Shop
-m.shop={}
----@type Lighter
+---@type touchstonetracker
+m.touchstonetracker={}
+---@type age
+m.age={}
+---@type oasis
+m.oasis={}
+---@type healthtrigger
+m.healthtrigger={}
+---@type hatchable
+m.hatchable={}
+---@type souleater
+m.souleater={}
+---@type firedetector
+m.firedetector={}
+---@type groundpounder
+m.groundpounder={}
+---@type groundshadowhandler
+m.groundshadowhandler={}
+---@type klaussackkey
+m.klaussackkey={}
+---@type skilltreeupdater
+m.skilltreeupdater={}
+---@type firebug
+m.firebug={}
+---@type boatrotator
+m.boatrotator={}
+---@type emitter
+m.emitter={}
+---@type mapspotrevealer
+m.mapspotrevealer={}
+---@type oceanfishingrod
+m.oceanfishingrod={}
+---@type shard_autosaver
+m.shard_autosaver={}
+---@type oar
+m.oar={}
+---@type ambientsound
+m.ambientsound={}
+---@type uniqueid
+m.uniqueid={}
+---@type areaunlock
+m.areaunlock={}
+---@type attuner
+m.attuner={}
+---@type minionspawner
+m.minionspawner={}
+---@type lighter
 m.lighter={}
----@type Dryer
-m.dryer={}
----@type nutrients_visual_manager
-m.nutrients_visual_manager={}
----@type Embarker
-m.embarker={}
----@type Bait
-m.bait={}
----@type Beaverness
-m.beaverness={}
----@type Inventory
-m.inventory={}
----@type FertilizerResearchable
-m.fertilizerresearchable={}
----@type CircuitNode
-m.circuitnode={}
----@type Gym
-m.gym={}
----@type Fertilizable
-m.fertilizable={}
----@type TackleSketch
-m.tacklesketch={}
----@type Transformer
-m.transformer={}
----@type ExperienceCollector
-m.experiencecollector={}
----@type Sheltered
-m.sheltered={}
----@type VaseDecoration
-m.vasedecoration={}
----@type crabkingspawner
-m.crabkingspawner={}
----@type BathBombable
-m.bathbombable={}
----@type KlausSackLock
-m.klaussacklock={}
----@type Health
-m.health={}
----@type Highlight
-m.highlight={}
----@type PetLeash
-m.petleash={}
----@type SpellBook
-m.spellbook={}
----@type Drownable
-m.drownable={}
----@type BoatCannonUser
-m.boatcannonuser={}
----@type Distancefade
-m.distancefade={}
----@type Propagator
-m.propagator={}
----@type Debugger
-m.debugger={}
----@type Upgrader
-m.upgrader={}
----@type YOTB_Sewer
-m.yotb_sewer={}
----@type Armor
+---@type uniqueprefabids
+m.uniqueprefabids={}
+---@type dsp
+m.dsp={}
+---@type aoeweapon_base
+m.aoeweapon_base={}
+---@type armor
 m.armor={}
----@type BoatPatch
-m.boatpatch={}
----@type CarnivalHostSummon
-m.carnivalhostsummon={}
----@type ForgeRepair
-m.forgerepair={}
----@type nightmareclock
-m.nightmareclock={}
----@type Wereness
-m.wereness={}
----@type Bundler
-m.bundler={}
----@type PocketWatch_Dismantler
-m.pocketwatch_dismantler={}
----@type Debuff
-m.debuff={}
----@type Follower
-m.follower={}
----@type CookbookUpdater
-m.cookbookupdater={}
----@type FarmSoilDrinker
-m.farmsoildrinker={}
----@type Circler
-m.circler={}
----@type WinterTreeGiftable
-m.wintertreegiftable={}
----@type FollowerHerder
-m.followerherder={}
----@type AttackDodger
-m.attackdodger={}
----@type SelfStacker
-m.selfstacker={}
----@type Debuffable
-m.debuffable={}
----@type YOTB_StageManager
-m.yotb_stagemanager={}
----@type HalloweenPotionMoon
-m.halloweenpotionmoon={}
----@type GroupTargeter
-m.grouptargeter={}
----@type Deployable
-m.deployable={}
----@type Minigame
-m.minigame={}
----@type Temperature
-m.temperature={}
----@type WalkingPlankUser
-m.walkingplankuser={}
----@type KitcoonDen
-m.kitcoonden={}
----@type SaltLicker
-m.saltlicker={}
----@type lavaarenamusic
-m.lavaarenamusic={}
----@type WaterSource
-m.watersource={}
----@type Trader
-m.trader={}
----@type ColourAdderSync
-m.colouraddersync={}
----@type carnivalevent
-m.carnivalevent={}
----@type Spawner
-m.spawner={}
----@type WagpunkManager
-m.wagpunkmanager={}
----@type Reader
-m.reader={}
----@type GhostlyBond
-m.ghostlybond={}
----@type birdspawner
-m.birdspawner={}
----@type HullHealth
-m.hullhealth={}
----@type hallucinations
-m.hallucinations={}
----@type Equippable
-m.equippable={}
+---@type deployhelper
+m.deployhelper={}
+---@type npc_talker
+m.npc_talker={}
+---@type resistance
+m.resistance={}
+---@type useableitem
+m.useableitem={}
+---@type seasons
+m.seasons={}
+---@type constructionsite
+m.constructionsite={}
+---@type curseditem
+m.curseditem={}
+---@type setbonus
+m.setbonus={}
+---@type playercontroller
+m.playercontroller={}
+---@type sisturnregistry
+m.sisturnregistry={}
+---@type waterphysics
+m.waterphysics={}
+---@type dryable
+m.dryable={}
+---@type hudindicatorwatcher
+m.hudindicatorwatcher={}
+---@type furnituredecor
+m.furnituredecor={}
+---@type unwrappable
+m.unwrappable={}
+---@type sanity
+m.sanity={}
+---@type playerspawner
+m.playerspawner={}
+---@type boatcannonuser
+m.boatcannonuser={}
+---@type upgrademoduleowner
+m.upgrademoduleowner={}
+---@type explosiveresist
+m.explosiveresist={}
+---@type winter_treeseed
+m.winter_treeseed={}
+---@type playermetrics
+m.playermetrics={}
+---@type penguinspawner
+m.penguinspawner={}
+---@type prototyper
+m.prototyper={}
+---@type objectspawner
+m.objectspawner={}
+---@type fishingnet
+m.fishingnet={}
+---@type moisture
+m.moisture={}
+---@type childspawner
+m.childspawner={}
+---@type fencerotator
+m.fencerotator={}
+---@type savedscale
+m.savedscale={}
+---@type playerprox
+m.playerprox={}
+---@type markable_proxy
+m.markable_proxy={}
 ---@type grottowaterfallsoundcontroller
 m.grottowaterfallsoundcontroller={}
----@type PaperEraser
+---@type spellcaster
+m.spellcaster={}
+---@type inspectable
+m.inspectable={}
+---@type lunarplant_tentacle_weapon
+m.lunarplant_tentacle_weapon={}
+---@type boatdrifter
+m.boatdrifter={}
+---@type scaler
+m.scaler={}
+---@type edible
+m.edible={}
+---@type foodmemory
+m.foodmemory={}
+---@type forgerepair
+m.forgerepair={}
+---@type walkableplatform
+m.walkableplatform={}
+---@type parryweapon
+m.parryweapon={}
+---@type decay
+m.decay={}
+---@type timer
+m.timer={}
+---@type forgerepairable
+m.forgerepairable={}
+---@type yotc_racecompetitor
+m.yotc_racecompetitor={}
+---@type moistureimmunity
+m.moistureimmunity={}
+---@type vasedecoration
+m.vasedecoration={}
+---@type finiteuses
+m.finiteuses={}
+---@type poppable
+m.poppable={}
+---@type followerherder
+m.followerherder={}
+---@type writeable
+m.writeable={}
+---@type kramped
+m.kramped={}
+---@type heavyobstacleusetarget
+m.heavyobstacleusetarget={}
+---@type townportalregistry
+m.townportalregistry={}
+---@type flotationdevice
+m.flotationdevice={}
+---@type itemweigher
+m.itemweigher={}
+---@type areaaware
+m.areaaware={}
+---@type lightningblocker
+m.lightningblocker={}
+---@type constructionbuilder
+m.constructionbuilder={}
+---@type farmsoildrinker
+m.farmsoildrinker={}
+---@type farmplantstress
+m.farmplantstress={}
+---@type focalpoint
+m.focalpoint={}
+---@type weapon
+m.weapon={}
+---@type grower
+m.grower={}
+---@type yotb_stagemanager
+m.yotb_stagemanager={}
+---@type efficientuser
+m.efficientuser={}
+---@type crewmember
+m.crewmember={}
+---@type walkableplatformplayer
+m.walkableplatformplayer={}
+---@type propagator
+m.propagator={}
+---@type shedder
+m.shedder={}
+---@type grogginess
+m.grogginess={}
+---@type deerclopsspawner
+m.deerclopsspawner={}
+---@type cookbookupdater
+m.cookbookupdater={}
+---@type halloweenmoonmutable
+m.halloweenmoonmutable={}
+---@type murderable
+m.murderable={}
+---@type formationleader
+m.formationleader={}
+---@type caveweather
+m.caveweather={}
+---@type worldstate
+m.worldstate={}
+---@type shatterfx
+m.shatterfx={}
+---@type ghostlyelixir
+m.ghostlyelixir={}
+---@type aura
+m.aura={}
+---@type selfstacker
+m.selfstacker={}
+---@type boatphysics
+m.boatphysics={}
+---@type spooked
+m.spooked={}
+---@type malbatrossspawner
+m.malbatrossspawner={}
+---@type transformer
+m.transformer={}
+---@type highlightchild
+m.highlightchild={}
+---@type dumbbelllifter
+m.dumbbelllifter={}
+---@type lunarhailmanager
+m.lunarhailmanager={}
+---@type yotc_racestats
+m.yotc_racestats={}
+---@type temperatureoverrider
+m.temperatureoverrider={}
+---@type gym
+m.gym={}
+---@type spell
+m.spell={}
+---@type crop
+m.crop={}
+---@type plantable
+m.plantable={}
+---@type mast
+m.mast={}
+---@type diseaseable
+m.diseaseable={}
+---@type workable
+m.workable={}
+---@type lunarriftmutationsmanager
+m.lunarriftmutationsmanager={}
+---@type worldcharacterselectlobby
+m.worldcharacterselectlobby={}
+---@type fueler
+m.fueler={}
+---@type maxhealer
+m.maxhealer={}
+---@type frostybreather
+m.frostybreather={}
+---@type inventoryitemmoisture
+m.inventoryitemmoisture={}
+---@type sinkholespawner
+m.sinkholespawner={}
+---@type oceanfishingtackle
+m.oceanfishingtackle={}
+---@type terraformer
+m.terraformer={}
+---@type epicscare
+m.epicscare={}
+---@type researchpointconverter
+m.researchpointconverter={}
+---@type transparentonsanity
+m.transparentonsanity={}
+---@type sharklistener
+m.sharklistener={}
+---@type beefalometrics
+m.beefalometrics={}
+---@type markable
+m.markable={}
+---@type ruinsshadelingspawner
+m.ruinsshadelingspawner={}
+---@type tackler
+m.tackler={}
+---@type colourcube
+m.colourcube={}
+---@type updatelooper
+m.updatelooper={}
+---@type floater
+m.floater={}
+---@type wateryprotection
+m.wateryprotection={}
+---@type domesticatable
+m.domesticatable={}
+---@type klaussackloot
+m.klaussackloot={}
+---@type itemaffinity
+m.itemaffinity={}
+---@type recipestockpile
+m.recipestockpile={}
+---@type damagetyperesist
+m.damagetyperesist={}
+---@type forestpetrification
+m.forestpetrification={}
+---@type inventory
+m.inventory={}
+---@type perishable
+m.perishable={}
+---@type attackdodger
+m.attackdodger={}
+---@type targettracker
+m.targettracker={}
+---@type channelcastable
+m.channelcastable={}
+---@type blowinwind
+m.blowinwind={}
+---@type positionalwarp
+m.positionalwarp={}
+---@type repairable
+m.repairable={}
+---@type quagmire_hangriness
+m.quagmire_hangriness={}
+---@type hudindicatable
+m.hudindicatable={}
+---@type spawnfader
+m.spawnfader={}
+---@type autoterraformer
+m.autoterraformer={}
+---@type worker
+m.worker={}
+---@type messagebottlemanager
+m.messagebottlemanager={}
+---@type playerinspectable
+m.playerinspectable={}
+---@type shard_clock
+m.shard_clock={}
+---@type playertargetindicator
+m.playertargetindicator={}
+---@type unevenground
+m.unevenground={}
+---@type savedrotation
+m.savedrotation={}
+---@type hounded
+m.hounded={}
+---@type trap
+m.trap={}
+---@type playervision
+m.playervision={}
+---@type deciduoustreeupdater
+m.deciduoustreeupdater={}
+---@type unsaddler
+m.unsaddler={}
+---@type steeringwheel
+m.steeringwheel={}
+---@type cookiecutterdrill
+m.cookiecutterdrill={}
+---@type oceanfishable
+m.oceanfishable={}
+---@type harvestable
+m.harvestable={}
+---@type balloonmaker
+m.balloonmaker={}
+---@type farmtiller
+m.farmtiller={}
+---@type heater
+m.heater={}
+---@type birdattractor
+m.birdattractor={}
+---@type useabletargeteditem
+m.useabletargeteditem={}
+---@type wintersfeasttable
+m.wintersfeasttable={}
+---@type chessunlocks
+m.chessunlocks={}
+---@type carnivalgameshooter
+m.carnivalgameshooter={}
+---@type damagereflect
+m.damagereflect={}
+---@type weighable
+m.weighable={}
+---@type petrifiable
+m.petrifiable={}
+---@type key
+m.key={}
+---@type shard_sinkholes
+m.shard_sinkholes={}
+---@type hauntable
+m.hauntable={}
+---@type stageactingprop
+m.stageactingprop={}
+---@type moonbeastspawner
+m.moonbeastspawner={}
+---@type drawable
+m.drawable={}
+---@type knownlocations
+m.knownlocations={}
+---@type tradable
+m.tradable={}
+---@type reloaditem
+m.reloaditem={}
+---@type watersource
+m.watersource={}
+---@type carnivalgameitem
+m.carnivalgameitem={}
+---@type storyteller
+m.storyteller={}
+---@type canopylightrays
+m.canopylightrays={}
+---@type fan
+m.fan={}
+---@type playeractionpicker
+m.playeractionpicker={}
+---@type maprecorder
+m.maprecorder={}
+---@type uianim
+m.uianim={}
+---@type shardstate
+m.shardstate={}
+---@type klaussackspawner
+m.klaussackspawner={}
+---@type sandstorms
+m.sandstorms={}
+---@type compostingbin
+m.compostingbin={}
+---@type singingshelltrigger
+m.singingshelltrigger={}
+---@type hideandseekhidingspot
+m.hideandseekhidingspot={}
+---@type fillable
+m.fillable={}
+---@type playervoter
+m.playervoter={}
+---@type moosespawner
+m.moosespawner={}
+---@type migrationpetowner
+m.migrationpetowner={}
+---@type erasablepaper
+m.erasablepaper={}
+---@type pickable
+m.pickable={}
+---@type follower
+m.follower={}
+---@type instrument
+m.instrument={}
+---@type coach
+m.coach={}
+---@type dataanalyzer
+m.dataanalyzer={}
+---@type named
+m.named={}
+---@type inventoryitemholder
+m.inventoryitemholder={}
+---@type shaveable
+m.shaveable={}
+---@type teleporter
+m.teleporter={}
+---@type groomer
+m.groomer={}
+---@type beaverness
+m.beaverness={}
+---@type storytellingprop
+m.storytellingprop={}
+---@type embarker
+m.embarker={}
+---@type debuffable
+m.debuffable={}
+---@type circuitnode
+m.circuitnode={}
+---@type ambientlighting
+m.ambientlighting={}
+---@type mermcandidate
+m.mermcandidate={}
+---@type sittable
+m.sittable={}
+---@type repairer
+m.repairer={}
+---@type grouptargeter
+m.grouptargeter={}
+---@type healer
+m.healer={}
+---@type minigame
+m.minigame={}
+---@type spellbook
+m.spellbook={}
+---@type brushable
+m.brushable={}
+---@type sheltered
+m.sheltered={}
+---@type mightiness
+m.mightiness={}
+---@type meteorshower
+m.meteorshower={}
+---@type moonstormwatcher
+m.moonstormwatcher={}
+---@type fuel
+m.fuel={}
+---@type projectile
+m.projectile={}
+---@type yotc_raceprizemanager
+m.yotc_raceprizemanager={}
+---@type growable
+m.growable={}
+---@type hullhealth
+m.hullhealth={}
+---@type pethealthbar
+m.pethealthbar={}
+---@type wardrobe
+m.wardrobe={}
+---@type dockmanager
+m.dockmanager={}
+---@type upgrademoduleremover
+m.upgrademoduleremover={}
+---@type frograin
+m.frograin={}
+---@type mermkingmanager
+m.mermkingmanager={}
+---@type saltlicker
+m.saltlicker={}
+---@type occupier
+m.occupier={}
+---@type sharkboimanagerhelper
+m.sharkboimanagerhelper={}
+---@type walkingplankuser
+m.walkingplankuser={}
+---@type oceancolor
+m.oceancolor={}
+---@type sleepingbag
+m.sleepingbag={}
+---@type carnivalevent
+m.carnivalevent={}
+---@type fishschool
+m.fishschool={}
+---@type incrementalproducer
+m.incrementalproducer={}
+---@type moonstorms
+m.moonstorms={}
+---@type entitytracker
+m.entitytracker={}
+---@type lunarthrall_plantspawner
+m.lunarthrall_plantspawner={}
+---@type firefx
+m.firefx={}
+---@type shaver
+m.shaver={}
+---@type sewing
+m.sewing={}
+---@type farmplanttendable
+m.farmplanttendable={}
+---@type maxlightspawner
+m.maxlightspawner={}
+---@type boatringdata
+m.boatringdata={}
+---@type stormwatcher
+m.stormwatcher={}
+---@type nightmareclock
+m.nightmareclock={}
+---@type replayproxy
+m.replayproxy={}
+---@type witherable
+m.witherable={}
+---@type rider
+m.rider={}
+---@type daywalkerspawner
+m.daywalkerspawner={}
+---@type thief
+m.thief={}
+---@type plantregistryupdater
+m.plantregistryupdater={}
+---@type bathbombable
+m.bathbombable={}
+---@type damagetypebonus
+m.damagetypebonus={}
+---@type miasmamanager
+m.miasmamanager={}
+---@type fishingnetvisualizer
+m.fishingnetvisualizer={}
+---@type riftspawner
+m.riftspawner={}
+---@type planardamage
+m.planardamage={}
+---@type steeringwheeluser
+m.steeringwheeluser={}
+---@type deployable
+m.deployable={}
+---@type beard
+m.beard={}
+---@type schoolspawner
+m.schoolspawner={}
+---@type hunger
+m.hunger={}
+---@type healthsyncer
+m.healthsyncer={}
+---@type workmultiplier
+m.workmultiplier={}
+---@type miasmawatcher
+m.miasmawatcher={}
+---@type playbill
+m.playbill={}
+---@type wereeater
+m.wereeater={}
+---@type worldmeteorshower
+m.worldmeteorshower={}
+---@type hull
+m.hull={}
+---@type amorphous
+m.amorphous={}
+---@type yotb_sewer
+m.yotb_sewer={}
+---@type homeseeker
+m.homeseeker={}
+---@type papereraser
 m.papereraser={}
----@type PeriodicSpawner
-m.periodicspawner={}
----@type Unwrappable
-m.unwrappable={}
----@type Markable_proxy
-m.markable_proxy={}
----@type weather
-m.weather={}
----@type RainDomeWatcher
-m.raindomewatcher={}
+---@type pocketwatch_dismantler
+m.pocketwatch_dismantler={}
+---@type mine
+m.mine={}
+---@type worldoverseer
+m.worldoverseer={}
+---@type colouraddersync
+m.colouraddersync={}
+---@type sharkboimanager
+m.sharkboimanager={}
+---@type clock
+m.clock={}
+---@type upgrader
+m.upgrader={}
+---@type formationfollower
+m.formationfollower={}
+---@type debuff
+m.debuff={}
+---@type minigameparticipator
+m.minigameparticipator={}
+---@type spellbookcooldowns
+m.spellbookcooldowns={}
+---@type retrofitforestmap_anr
+m.retrofitforestmap_anr={}
+---@type lootdropper
+m.lootdropper={}
+---@type singinginspiration
+m.singinginspiration={}
+---@type bathbomb
+m.bathbomb={}
+---@type freezable
+m.freezable={}
+---@type hideandseekgame
+m.hideandseekgame={}
+---@type cooldown
+m.cooldown={}
+---@type shadowlevel
+m.shadowlevel={}
+---@type wax
+m.wax={}
+---@type brush
+m.brush={}
+---@type oceantrawler
+m.oceantrawler={}
+---@type builder
+m.builder={}
+---@type mightydumbbell
+m.mightydumbbell={}
+---@type canopyshadows
+m.canopyshadows={}
+---@type sandstormwatcher
+m.sandstormwatcher={}
+---@type stretcher
+m.stretcher={}
+---@type maxwelltalker
+m.maxwelltalker={}
+---@type container
+m.container={}
+---@type bloomer
+m.bloomer={}
+---@type anchor
+m.anchor={}
+---@type spectatorcorpse
+m.spectatorcorpse={}
+---@type channelable
+m.channelable={}
+---@type cyclable
+m.cyclable={}
+---@type lavaarenaeventstate
+m.lavaarenaeventstate={}
+---@type carnivaldecorranker
+m.carnivaldecorranker={}
+---@type distancetracker
+m.distancetracker={}
+---@type dynamicmusic
+m.dynamicmusic={}
+---@type tool
+m.tool={}
+---@type lighttweener
+m.lighttweener={}
+---@type walkingplank
+m.walkingplank={}
+---@type rainimmunity
+m.rainimmunity={}
+---@type boatai
+m.boatai={}
+---@type portablestructure
+m.portablestructure={}
+---@type stunnable
+m.stunnable={}
+---@type attunable
+m.attunable={}
+---@type regrowthmanager
+m.regrowthmanager={}
+---@type friendlevels
+m.friendlevels={}
+---@type heavyobstaclephysics
+m.heavyobstaclephysics={}
+---@type lavaarenamobtracker
+m.lavaarenamobtracker={}
+---@type playeravatardata
+m.playeravatardata={}
+---@type cattoy
+m.cattoy={}
+---@type catcher
+m.catcher={}
+---@type cookable
+m.cookable={}
+---@type carnivalgamefeedable
+m.carnivalgamefeedable={}
+---@type klaussacklock
+m.klaussacklock={}
+---@type boatpatch
+m.boatpatch={}
+---@type autosaver
+m.autosaver={}
+---@type aoeweapon_lunge
+m.aoeweapon_lunge={}
+---@type boatmagnet
+m.boatmagnet={}
+---@type fishable
+m.fishable={}
+---@type inkable
+m.inkable={}
+---@type constructionbuilderuidata
+m.constructionbuilderuidata={}
+---@type nutrients_visual_manager
+m.nutrients_visual_manager={}
+---@type butterflyspawner
+m.butterflyspawner={}
+---@type shadowsubmissive
+m.shadowsubmissive={}
+---@type channelcaster
+m.channelcaster={}
+---@type craftingstation
+m.craftingstation={}
+---@type electricattacks
+m.electricattacks={}
+---@type shard_seasons
+m.shard_seasons={}
+---@type complexprojectile
+m.complexprojectile={}
+---@type specialeventsetup
+m.specialeventsetup={}
+---@type shadowhandspawner
+m.shadowhandspawner={}
+---@type planarentity
+m.planarentity={}
+---@type preservative
+m.preservative={}
+---@type amphibiouscreature
+m.amphibiouscreature={}
+---@type damagetracker
+m.damagetracker={}
+---@type maprevealer
+m.maprevealer={}
+---@type spawner
+m.spawner={}
+---@type hitchable
+m.hitchable={}
+---@type houndedtarget
+m.houndedtarget={}
+---@type fertilizable
+m.fertilizable={}
+---@type deerherding
+m.deerherding={}
+---@type scrapbookable
+m.scrapbookable={}
+---@type worldmigrator
+m.worldmigrator={}
+---@type foodaffinity
+m.foodaffinity={}
+---@type moonstormmanager
+m.moonstormmanager={}
+---@type magiciantool
+m.magiciantool={}
+---@type worlddeciduoustreeupdater
+m.worlddeciduoustreeupdater={}
+---@type moonaltarlinktarget
+m.moonaltarlinktarget={}
+---@type recallmark
+m.recallmark={}
+---@type wintertreegiftable
+m.wintertreegiftable={}
+---@type carnivaldecor
+m.carnivaldecor={}
+---@type cooker
+m.cooker={}
+---@type boatring
+m.boatring={}
+---@type pointofinterest
+m.pointofinterest={}
+---@type acidlevel
+m.acidlevel={}
+---@type werebeast
+m.werebeast={}
+---@type charliecutscene
+m.charliecutscene={}
+---@type winch
+m.winch={}
+---@type treegrowthsolution
+m.treegrowthsolution={}
+---@type machine
+m.machine={}
+---@type teamattacker
+m.teamattacker={}
+---@type questowner
+m.questowner={}
+---@type equippable
+m.equippable={}
+---@type activatable
+m.activatable={}
+---@type fuelmaster
+m.fuelmaster={}
+---@type seamlessplayerswapper
+m.seamlessplayerswapper={}
+---@type drawingtool
+m.drawingtool={}
+---@type worldreset
+m.worldreset={}
 ---@type quaker
 m.quaker={}
----@type WorldWind
+---@type smotherer
+m.smotherer={}
+---@type periodicspawner
+m.periodicspawner={}
+---@type raindomewatcher
+m.raindomewatcher={}
+---@type boatmagnetbeacon
+m.boatmagnetbeacon={}
+---@type herd
+m.herd={}
+---@type carefulwalker
+m.carefulwalker={}
+---@type shop
+m.shop={}
+---@type worldsettings
+m.worldsettings={}
+---@type lavaarenamusic
+m.lavaarenamusic={}
+---@type mightygym
+m.mightygym={}
+---@type crittertraits
+m.crittertraits={}
+---@type distancefade
+m.distancefade={}
+---@type ghostlyelixirable
+m.ghostlyelixirable={}
+---@type eater
+m.eater={}
+---@type trophyscale
+m.trophyscale={}
+---@type fertilizer
+m.fertilizer={}
+---@type groundcreep
+m.groundcreep={}
+---@type playerhearing
+m.playerhearing={}
+---@type yotb_skinunlocker
+m.yotb_skinunlocker={}
+---@type giftreceiver
+m.giftreceiver={}
+---@type colouradder
+m.colouradder={}
+---@type brightmarespawner
+m.brightmarespawner={}
+---@type constructionplans
+m.constructionplans={}
+---@type squidspawner
+m.squidspawner={}
+---@type hideandseeker
+m.hideandseeker={}
+---@type preserver
+m.preserver={}
+---@type treasuremarked
+m.treasuremarked={}
+---@type debugger
+m.debugger={}
+---@type winchtarget
+m.winchtarget={}
+---@type lureplantspawner
+m.lureplantspawner={}
+---@type hitcher
+m.hitcher={}
+---@type bundler
+m.bundler={}
+---@type minigamespectator
+m.minigamespectator={}
+---@type deerherdspawner
+m.deerherdspawner={}
+---@type boattrailmover
+m.boattrailmover={}
+---@type highlight
+m.highlight={}
+---@type toadstoolspawner
+m.toadstoolspawner={}
+---@type spidermutator
+m.spidermutator={}
+---@type moonstormlightningmanager
+m.moonstormlightningmanager={}
+---@type reticule
+m.reticule={}
+---@type petleash
+m.petleash={}
+---@type teacher
+m.teacher={}
+---@type moonaltarlink
+m.moonaltarlink={}
+---@type inventoryitem
+m.inventoryitem={}
+---@type symbolswapdata
+m.symbolswapdata={}
+---@type kitcoonden
+m.kitcoonden={}
+---@type forcecompostable
+m.forcecompostable={}
+---@type oldager
+m.oldager={}
+---@type commander
+m.commander={}
+---@type custombuildmanager
+m.custombuildmanager={}
+---@type oceanicemanager
+m.oceanicemanager={}
+---@type fertilizerresearchable
+m.fertilizerresearchable={}
+---@type quagmire_recipeprices
+m.quagmire_recipeprices={}
+---@type containerproxy
+m.containerproxy={}
+---@type aoespell
+m.aoespell={}
+---@type locomotor
+m.locomotor={}
+---@type sizetweener
+m.sizetweener={}
+---@type explosive
+m.explosive={}
+---@type worldtemperature
+m.worldtemperature={}
+---@type upgradeable
+m.upgradeable={}
+---@type insulator
+m.insulator={}
+---@type stackable
+m.stackable={}
+---@type worldvoter
+m.worldvoter={}
+---@type simplebook
+m.simplebook={}
+---@type boatleak
+m.boatleak={}
+---@type piratespawner
+m.piratespawner={}
+---@type lordfruitflytrigger
+m.lordfruitflytrigger={}
+---@type stuckdetection
+m.stuckdetection={}
+---@type desolationspawner
+m.desolationspawner={}
+---@type moonrelic
+m.moonrelic={}
+---@type bedazzlement
+m.bedazzlement={}
+---@type wisecracker
+m.wisecracker={}
+---@type worldwind
 m.worldwind={}
 ---@type wildfires
 m.wildfires={}
----@type BoatDrag
-m.boatdrag={}
----@type Plantable
-m.plantable={}
----@type ConstructionSite
-m.constructionsite={}
----@type MoonTrader
-m.moontrader={}
----@type WalkablePlatform
-m.walkableplatform={}
----@type SeamlessPlayerSwapper
-m.seamlessplayerswapper={}
----@type SandStormWatcher
-m.sandstormwatcher={}
----@type Weapon
-m.weapon={}
----@type Playbill
-m.playbill={}
----@type MiasmaManager
-m.miasmamanager={}
----@type EfficientUser
-m.efficientuser={}
----@type Reticule
-m.reticule={}
----@type grottowarmanager
-m.grottowarmanager={}
----@type MermKingManager
-m.mermkingmanager={}
----@type PropHider
-m.prophider={}
----@type Channelable
-m.channelable={}
----@type DamageReflect
-m.damagereflect={}
----@type malbatrossspawner
-m.malbatrossspawner={}
----@type Builder
-m.builder={}
----@type OceanFishingTackle
-m.oceanfishingtackle={}
----@type Hideout
-m.hideout={}
----@type BoatPhysics
-m.boatphysics={}
----@type Insulator
-m.insulator={}
----@type autosaver
-m.autosaver={}
----@type PlayerTargetIndicator
-m.playertargetindicator={}
----@type HeavyObstaclePhysics
-m.heavyobstaclephysics={}
----@type UnevenGround
-m.unevenground={}
----@type YOTC_RaceStart
-m.yotc_racestart={}
----@type Rooted
-m.rooted={}
----@type moonstormmanager
-m.moonstormmanager={}
----@type kramped
-m.kramped={}
----@type Timer
-m.timer={}
----@type shard_worldreset
-m.shard_worldreset={}
----@type MaxLightSpawner
-m.maxlightspawner={}
----@type BeefaloMetrics
-m.beefalometrics={}
----@type MightyDumbbell
-m.mightydumbbell={}
----@type Moisture
-m.moisture={}
----@type Hunger
-m.hunger={}
----@type toadstoolspawner
-m.toadstoolspawner={}
----@type PlayerLightningTarget
-m.playerlightningtarget={}
----@type Hunger
-m.hunger={}
----@type Sewing
-m.sewing={}
----@type GingerbreadHunter
-m.gingerbreadhunter={}
----@type UniqueID
-m.uniqueid={}
----@type HerdMember
-m.herdmember={}
----@type quagmire_recipeprices
-m.quagmire_recipeprices={}
----@type StageActingProp
-m.stageactingprop={}
----@type RainImmunity
-m.rainimmunity={}
----@type MightyGym
-m.mightygym={}
----@type Submersible
-m.submersible={}
----@type WorldSettings
-m.worldsettings={}
----@type Scrapbookable
-m.scrapbookable={}
----@type TeamAttacker
-m.teamattacker={}
----@type HealthBar
-m.healthbar={}
----@type penguinspawner
-m.penguinspawner={}
----@type worldvoter
-m.worldvoter={}
----@type CookieCutterDrill
-m.cookiecutterdrill={}
----@type Curseditem
-m.curseditem={}
----@type SavedRotation
-m.savedrotation={}
----@type PlayerVision
-m.playervision={}
----@type Growable
-m.growable={}
----@type ConstructionBuilder
-m.constructionbuilder={}
----@type SleepingBagUser
-m.sleepingbaguser={}
----@type Follower
-m.follower={}
----@type WorldMigrator
-m.worldmigrator={}
----@type Resistance
-m.resistance={}
----@type DamageTracker
-m.damagetracker={}
----@type Worker
-m.worker={}
----@type Bloomer
-m.bloomer={}
----@type MigrationPetOwner
-m.migrationpetowner={}
----@type HideAndSeekGame
-m.hideandseekgame={}
----@type PetHealthBar
-m.pethealthbar={}
----@type ErasablePaper
-m.erasablepaper={}
----@type MagicianTool
-m.magiciantool={}
----@type RainDome
-m.raindome={}
----@type NIS
-m.nis={}
----@type Equippable
-m.equippable={}
----@type Preservative
-m.preservative={}
----@type Firebug
-m.firebug={}
----@type MinigameParticipator
-m.minigameparticipator={}
----@type hudindicatablemanager
-m.hudindicatablemanager={}
----@type desolationspawner
-m.desolationspawner={}
----@type UniquePrefabIDs
-m.uniqueprefabids={}
----@type Commander
-m.commander={}
----@type sisturnregistry
-m.sisturnregistry={}
----@type Spooked
-m.spooked={}
----@type Sittable
-m.sittable={}
----@type ResearchPointConverter
-m.researchpointconverter={}
----@type StoryTeller
-m.storyteller={}
----@type Projectile
-m.projectile={}
----@type ExpertSailor
-m.expertsailor={}
----@type FishSchool
-m.fishschool={}
----@type Vase
-m.vase={}
----@type DespawnFader
-m.despawnfader={}
----@type DamageTypeResist
-m.damagetyperesist={}
----@type PossessedAxe
-m.possessedaxe={}
----@type ChildSpawner
-m.childspawner={}
----@type Repellent
-m.repellent={}
----@type Container
-m.container={}
----@type Preserver
-m.preserver={}
----@type Combat
-m.combat={}
----@type AcidLevel
-m.acidlevel={}
----@type Named
-m.named={}
----@type Burnable
-m.burnable={}
----@type Pickable
-m.pickable={}
----@type Vanish_on_sleep
-m.vanish_on_sleep={}
----@type AreaUnlock
-m.areaunlock={}
----@type MinionSpawner
-m.minionspawner={}
----@type Saddler
-m.saddler={}
----@type MoonBeastSpawner
-m.moonbeastspawner={}
----@type Freezable
-m.freezable={}
----@type Strongman
-m.strongman={}
----@type HighlightChild
-m.highlightchild={}
----@type dynamicmusic
-m.dynamicmusic={}
----@type BoatCannon
-m.boatcannon={}
----@type EntityTracker
-m.entitytracker={}
----@type BlinkStaff
-m.blinkstaff={}
----@type ForceCompostable
-m.forcecompostable={}
----@type RiftSpawner
-m.riftspawner={}
----@type HideAndSeekHidingSpot
-m.hideandseekhidingspot={}
----@type OceanFishingRod
-m.oceanfishingrod={}
----@type shardstate
-m.shardstate={}
----@type quagmire_recipebook
-m.quagmire_recipebook={}
----@type Writeable
-m.writeable={}
----@type Placer
-m.placer={}
----@type FishingNetVisualizer
-m.fishingnetvisualizer={}
----@type GroundShadowHandler
-m.groundshadowhandler={}
----@type butterflyspawner
-m.butterflyspawner={}
----@type WorldSettingsTimer
-m.worldsettingstimer={}
----@type Moisture
-m.moisture={}
----@type SpDamageUtil
-m.spdamageutil={}
----@type FormationLeader
-m.formationleader={}
----@type shard_sinkholes
-m.shard_sinkholes={}
----@type InventoryItem
-m.inventoryitem={}
----@type EpicScare
-m.epicscare={}
----@type TargetTracker
-m.targettracker={}
----@type TemperatureOverrider
-m.temperatureoverrider={}
----@type ShadowLevel
-m.shadowlevel={}
----@type Teleporter
-m.teleporter={}
----@type IncrementalProducer
-m.incrementalproducer={}
----@type Rider
-m.rider={}
----@type Weighable
-m.weighable={}
----@type Aura
-m.aura={}
----@type KlausSackLoot
-m.klaussackloot={}
----@type RampingSpawner
-m.rampingspawner={}
----@type CarnivalDecor
-m.carnivaldecor={}
----@type WintersFeastTable
-m.wintersfeasttable={}
----@type worldstate
-m.worldstate={}
----@type flotsamgenerator
-m.flotsamgenerator={}
----@type Bloomness
-m.bloomness={}
----@type Rider
-m.rider={}
----@type Drawable
-m.drawable={}
----@type RecallMark
-m.recallmark={}
----@type Custombuildmanager
-m.custombuildmanager={}
----@type ContainerProxy
-m.containerproxy={}
----@type MoonAltarLink
-m.moonaltarlink={}
----@type KlausSackKey
-m.klaussackkey={}
----@type undertile
-m.undertile={}
----@type clock
-m.clock={}
----@type SquadMember
-m.squadmember={}
----@type WorldDeciduousTreeUpdater
-m.worlddeciduoustreeupdater={}
----@type dsp
-m.dsp={}
----@type shard_players
-m.shard_players={}
----@type SleepingBag
-m.sleepingbag={}
----@type Waxable
-m.waxable={}
----@type MapRecorder
-m.maprecorder={}
----@type DistanceTracker
-m.distancetracker={}
----@type SanityAura
-m.sanityaura={}
----@type Grower
-m.grower={}
----@type FarmPlantTendable
-m.farmplanttendable={}
----@type GroundPounder
-m.groundpounder={}
----@type ObjectSpawner
-m.objectspawner={}
----@type Cyclable
-m.cyclable={}
----@type ReplayProxy
-m.replayproxy={}
----@type lavaarenaeventstate
-m.lavaarenaeventstate={}
----@type PortableStructure
-m.portablestructure={}
----@type SymbolSwapData
-m.symbolswapdata={}
----@type BalloonMaker
-m.balloonmaker={}
----@type Tributable
-m.tributable={}
----@type Hudindicatable
-m.hudindicatable={}
----@type shard_autosaver
-m.shard_autosaver={}
----@type CanopyLightrays
-m.canopylightrays={}
----@type TreeGrowthSolution
-m.treegrowthsolution={}
----@type TrophyScale
-m.trophyscale={}
----@type quagmire_hangriness
-m.quagmire_hangriness={}
----@type PlayerHearing
-m.playerhearing={}
----@type PlayerController
-m.playercontroller={}
----@type oceanicemanager
-m.oceanicemanager={}
----@type MoistureImmunity
-m.moistureimmunity={}
----@type WorkMultiplier
-m.workmultiplier={}
----@type FarmTiller
-m.farmtiller={}
----@type Occupier
-m.occupier={}
----@type forestresourcespawner
-m.forestresourcespawner={}
----@type FiniteUses
-m.finiteuses={}
----@type CompostingBin
-m.compostingbin={}
----@type Bedazzler
+---@type kitcoon
+m.kitcoon={}
+---@type birdspawner
+m.birdspawner={}
+---@type playbill_lecturn
+m.playbill_lecturn={}
+---@type bedazzler
 m.bedazzler={}
----@type CraftingStation
-m.craftingstation={}
----@type Hull
-m.hull={}
----@type chessunlocks
-m.chessunlocks={}
----@type sharkboimanager
-m.sharkboimanager={}
----@type Anchor
-m.anchor={}
----@type OceanFishable
-m.oceanfishable={}
----@type Brushable
-m.brushable={}
----@type CarnivalGameItem
-m.carnivalgameitem={}
----@type ElectricAttacks
-m.electricattacks={}
----@type FishingNet
-m.fishingnet={}
----@type SpawnFader
-m.spawnfader={}
----@type GhostlyElixir
-m.ghostlyelixir={}
----@type CatToy
-m.cattoy={}
----@type Grue
-m.grue={}
----@type Sanity
-m.sanity={}
----@type Inspectable
-m.inspectable={}
----@type LordFruitFlyTrigger
-m.lordfruitflytrigger={}
----@type UpdateLooper
-m.updatelooper={}
----@type HomeSeeker
-m.homeseeker={}
----@type Prototyper
-m.prototyper={}
----@type WorldOverseer
-m.worldoverseer={}
----@type FishingRod
-m.fishingrod={}
----@type HideAndSeekHider
-m.hideandseekhider={}
----@type FarmPlantStress
-m.farmplantstress={}
----@type Rechargeable
-m.rechargeable={}
----@type Instrument
-m.instrument={}
----@type Decay
-m.decay={}
----@type retrofitforestmap_anr
-m.retrofitforestmap_anr={}
----@type ItemWeigher
-m.itemweigher={}
----@type ExplosiveResist
-m.explosiveresist={}
----@type CrewMember
-m.crewmember={}
----@type SpellCaster
-m.spellcaster={}
----@type Wax
-m.wax={}
----@type Repairable
-m.repairable={}
----@type MapSpotRevealer
-m.mapspotrevealer={}
----@type SkillTreeUpdater
-m.skilltreeupdater={}
----@type Stunnable
-m.stunnable={}
----@type BoatRotator
-m.boatrotator={}
----@type UseableTargetedItem
-m.useabletargeteditem={}
----@type Wardrobe
-m.wardrobe={}
----@type playerspawner
-m.playerspawner={}
----@type WereBeast
-m.werebeast={}
----@type KnownLocations
-m.knownlocations={}
----@type AOETargeting
-m.aoetargeting={}
----@type CanopyShadows
-m.canopyshadows={}
----@type Disappears
-m.disappears={}
----@type Perishable
-m.perishable={}
----@type ForgeRepairable
-m.forgerepairable={}
----@type FarmPlantable
-m.farmplantable={}
----@type AOEWeapon_Lunge
-m.aoeweapon_lunge={}
----@type OceanThrowable
-m.oceanthrowable={}
----@type TeamLeader
-m.teamleader={}
----@type OceanFishingRod
-m.oceanfishingrod={}
----@type Diseaseable
-m.diseaseable={}
----@type MoonRelic
-m.moonrelic={}
----@type WaterPhysics
-m.waterphysics={}
----@type Hitcher
-m.hitcher={}
----@type Fillable
-m.fillable={}
----@type YOTC_RaceCompetitor
-m.yotc_racecompetitor={}
----@type Digester
-m.digester={}
----@type MapRevealer
-m.maprevealer={}
----@type Ocean
-m.ocean={}
----@type Singable
-m.singable={}
----@type MapRevealable
-m.maprevealable={}
----@type StageActor
-m.stageactor={}
----@type Attunable
-m.attunable={}
----@type Inkable
-m.inkable={}
----@type Dryable
-m.dryable={}
----@type Coach
-m.coach={}
----@type hounded
-m.hounded={}
----@type Terraformer
-m.terraformer={}
----@type schoolspawner
-m.schoolspawner={}
----@type sharklistener
-m.sharklistener={}
----@type AutoTerraformer
-m.autoterraformer={}
----@type BatteryUser
-m.batteryuser={}
----@type skeletonsweeper
-m.skeletonsweeper={}
----@type ColourTweener
-m.colourtweener={}
----@type SteeringWheelUser
-m.steeringwheeluser={}
----@type LavaArenaMobTracker
-m.lavaarenamobtracker={}
----@type BoatLeak
-m.boatleak={}
----@type LunarRiftMutationsManager
-m.lunarriftmutationsmanager={}
----@type Tradable
-m.tradable={}
----@type InventoryItemHolder
-m.inventoryitemholder={}
----@type ConstructionPlans
-m.constructionplans={}
----@type CarnivalGameShooter
-m.carnivalgameshooter={}
----@type SummoningItem
-m.summoningitem={}
----@type UpgradeModuleOwner
-m.upgrademoduleowner={}
----@type Emitter
-m.emitter={}
----@type Shelf
-m.shelf={}
----@type klaussackspawner
-m.klaussackspawner={}
----@type RecipeStockpile
-m.recipestockpile={}
----@type forestpetrification
-m.forestpetrification={}
+---@type cursable
+m.cursable={}
+---@type hallucinations
+m.hallucinations={}
+---@type areatrigger
+m.areatrigger={}
+---@type appraisable
+m.appraisable={}
+---@type leader
+m.leader={}
 ---@type retrofitcavemap_anr
 m.retrofitcavemap_anr={}
----@type Fader
-m.fader={}
----@type UpgradeModuleRemover
-m.upgrademoduleremover={}
----@type dockmanager
-m.dockmanager={}
----@type SingingShellTrigger
-m.singingshelltrigger={}
----@type WaterProofer
-m.waterproofer={}
----@type StaffSanity
-m.staffsanity={}
----@type Beard
-m.beard={}
----@type SlipperyFeet
-m.slipperyfeet={}
----@type Repairer
-m.repairer={}
----@type FurnitureDecorTaker
-m.furnituredecortaker={}
----@type shard_seasons
-m.shard_seasons={}
----@type Occupiable
-m.occupiable={}
+---@type weather
+m.weather={}
+---@type oceanthrowable
+m.oceanthrowable={}
+---@type blinkstaff
+m.blinkstaff={}
+---@type mood
+m.mood={}
+---@type rechargeable
+m.rechargeable={}
+---@type battery
+m.battery={}
+---@type tacklesketch
+m.tacklesketch={}
+---@type nis
+m.nis={}
+---@type placer
+m.placer={}
+---@type combat
+m.combat={}
+---@type maprevealable
+m.maprevealable={}
+---@type archivemanager
+m.archivemanager={}
+---@type wereness
+m.wereness={}
+---@type waxable
+m.waxable={}
 ---@type quagmire_music
 m.quagmire_music={}
----@type Cookable
-m.cookable={}
----@type AreaTrigger
-m.areatrigger={}
----@type PositionalWarp
-m.positionalwarp={}
----@type ComplexProjectile
-m.complexprojectile={}
----@type UIAnim
-m.uianim={}
----@type BoatTrail
-m.boattrail={}
----@type MinigameSpectator
-m.minigamespectator={}
----@type Boatcrew
-m.boatcrew={}
----@type ParryWeapon
-m.parryweapon={}
----@type SizeTweener
-m.sizetweener={}
----@type Tackler
-m.tackler={}
----@type lunarhailmanager
-m.lunarhailmanager={}
----@type ShatterFX
-m.shatterfx={}
----@type messagebottlemanager
-m.messagebottlemanager={}
----@type DamageTypeBonus
-m.damagetypebonus={}
----@type YOTC_RaceStats
-m.yotc_racestats={}
----@type FishingRod
+---@type herdmember
+m.herdmember={}
+---@type healthbar
+m.healthbar={}
+---@type planardefense
+m.planardefense={}
+---@type vase
+m.vase={}
+---@type aoetargeting
+m.aoetargeting={}
+---@type plantregrowth
+m.plantregrowth={}
+---@type singingshellmanager
+m.singingshellmanager={}
+---@type wagpunkmanager
+m.wagpunkmanager={}
+---@type shadowcreaturespawner
+m.shadowcreaturespawner={}
+---@type sentientaxe
+m.sentientaxe={}
+---@type upgrademodule
+m.upgrademodule={}
+---@type waterproofer
+m.waterproofer={}
+---@type repellent
+m.repellent={}
+---@type teleportedoverride
+m.teleportedoverride={}
+---@type fishingrod
 m.fishingrod={}
----@type Shaveable
-m.shaveable={}
----@type Shedder
-m.shedder={}
----@type FireFX
-m.firefx={}
----@type DeerHerding
-m.deerherding={}
----@type PlayerInspectable
-m.playerinspectable={}
----@type Herd
-m.herd={}
----@type Talker
-m.talker={}
----@type HalloweenMoonMutable
-m.halloweenmoonmutable={}
----@type MaxHealer
-m.maxhealer={}
----@type DataAnalyzer
-m.dataanalyzer={}
----@type Sanity
-m.sanity={}
----@type Attuner
-m.attuner={}
----@type Winter_TreeSeed
-m.winter_treeseed={}
----@type ambientlighting
-m.ambientlighting={}
----@type MaxwellTalker
-m.maxwelltalker={}
----@type UseableItem
-m.useableitem={}
----@type SpectatorCorpse
-m.spectatorcorpse={}
----@type Kitcoon
-m.kitcoon={}
----@type Age
-m.age={}
+---@type squadmember
+m.squadmember={}
+---@type grue
+m.grue={}
+---@type teamleader
+m.teamleader={}
+---@type hunter
+m.hunter={}
+---@type experiencecollector
+m.experiencecollector={}
+---@type stewer
+m.stewer={}
+---@type bait
+m.bait={}
+---@type skeletonsweeper
+m.skeletonsweeper={}
+---@type halloweenpotionmoon
+m.halloweenpotionmoon={}
+---@type discoverable
+m.discoverable={}
+---@type drownable
+m.drownable={}
+---@type tributable
+m.tributable={}
+---@type flotsamgenerator
+m.flotsamgenerator={}
+---@type possessedaxe
+m.possessedaxe={}
+---@type sanityaura
+m.sanityaura={}
+---@type fader
+m.fader={}
+---@type oceanfishinghook
+m.oceanfishinghook={}
+---@type despawnfader
+m.despawnfader={}
+---@type madsciencelab
+m.madsciencelab={}
+---@type burnable
+m.burnable={}
+---@type yotb_stager
+m.yotb_stager={}
+---@type shadowthrallmanager
+m.shadowthrallmanager={}
+---@type reader
+m.reader={}
+---@type hideout
+m.hideout={}
+---@type worldsettingstimer
+m.worldsettingstimer={}
+---@type undertile
+m.undertile={}
+---@type singable
+m.singable={}
+---@type crabkingspawner
+m.crabkingspawner={}
+---@type colourtweener
+m.colourtweener={}
+---@type disappears
+m.disappears={}
+---@type furnituredecortaker
+m.furnituredecortaker={}
+---@type digester
+m.digester={}
+---@type caveins
+m.caveins={}
+---@type simplemagicgrower
+m.simplemagicgrower={}
+---@type pollinator
+m.pollinator={}
+---@type bloomness
+m.bloomness={}
+---@type fueled
+m.fueled={}
+---@type ocean
+m.ocean={}
+---@type batteryuser
+m.batteryuser={}
+---@type wavemanager
+m.wavemanager={}
+---@type strongman
+m.strongman={}
+---@type aoeweapon_leap
+m.aoeweapon_leap={}
+---@type scenariorunner
+m.scenariorunner={}
+---@type rooted
+m.rooted={}
+---@type sleepingbaguser
+m.sleepingbaguser={}
+---@type boattrail
+m.boattrail={}
+---@type boatdrag
+m.boatdrag={}
+---@type sleeper
+m.sleeper={}
+---@type rampingspawner
+m.rampingspawner={}
+---@type yotc_racestart
+m.yotc_racestart={}
+---@type skinner_beefalo
+m.skinner_beefalo={}
+---@type gingerbreadhunter
+m.gingerbreadhunter={}
+---@type raindome
+m.raindome={}
+---@type dryer
+m.dryer={}
+---@type vanish_on_sleep
+m.vanish_on_sleep={}
+---@type walkableplatformmanager
+m.walkableplatformmanager={}
+---@type expertsailor
+m.expertsailor={}
+---@type pocketwatch
+m.pocketwatch={}
+---@type shard_worldreset
+m.shard_worldreset={}
+---@type book
+m.book={}
+---@type summoningitem
+m.summoningitem={}
+---@type shelf
+m.shelf={}
+---@type playerlightningtarget
+m.playerlightningtarget={}
+---@type boatcrew
+m.boatcrew={}
+---@type battleborn
+m.battleborn={}
+---@type stageactor
+m.stageactor={}
+---@type shard_players
+m.shard_players={}
+---@type temperature
+m.temperature={}
+---@type revivablecorpse
+m.revivablecorpse={}
+---@type toggleableitem
+m.toggleableitem={}
+---@type magician
+m.magician={}
+---@type slipperyfeet
+m.slipperyfeet={}
+---@type submersible
+m.submersible={}
+---@type farmplantable
+m.farmplantable={}
+---@type soul
+m.soul={}
+---@type plantresearchable
+m.plantresearchable={}
+---@type lock
+m.lock={}
+---@type saddler
+m.saddler={}
+---@type guardian
+m.guardian={}
+---@type grottowarmanager
+m.grottowarmanager={}
+---@type trader
+m.trader={}
+---@type bundlemaker
+m.bundlemaker={}
+---@type talkable
+m.talkable={}
+---@type skinner
+m.skinner={}
+---@type hudindicatablemanager
+m.hudindicatablemanager={}
+---@type carnivalhostsummon
+m.carnivalhostsummon={}
+---@type ghostlybond
+m.ghostlybond={}
+---@type quagmire_recipebook
+m.quagmire_recipebook={}
+---@type hideandseekhider
+m.hideandseekhider={}
+---@type moontrader
+m.moontrader={}
+---@type oceanfishingrod_replica
+r.oceanfishingrod_replica={}
+---@type sheltered_replica
+r.sheltered_replica={}
+---@type builder_replica
+r.builder_replica={}
+---@type hunger_replica
+r.hunger_replica={}
+---@type fishingrod_replica
+r.fishingrod_replica={}
+---@type health_replica
+r.health_replica={}
+---@type rider_replica
+r.rider_replica={}
+---@type moisture_replica
+r.moisture_replica={}
+---@type container_replica
+r.container_replica={}
+---@type follower_replica
+r.follower_replica={}
+---@type inventoryitem_replica
+r.inventoryitem_replica={}
+---@type named_replica
+r.named_replica={}
+---@type inventory_replica
+r.inventory_replica={}
+---@type writeable_replica
+r.writeable_replica={}
+---@type constructionsite_replica
+r.constructionsite_replica={}
+---@type combat_replica
+r.combat_replica={}
+---@type stackable_replica
+r.stackable_replica={}
+---@type equippable_replica
+r.equippable_replica={}
+---@type sanity_replica
+r.sanity_replica={}
 

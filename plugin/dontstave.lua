@@ -7,12 +7,12 @@ local function addTableInit(tableAst, valueAst)
     valueAst.parent = tableAst
 end
 
-local typename = 'EntityScript'
+local typename = 'entityscript'
 function OnTransformAst(uri, ast)
-    local ctors ={}
+    local ctors = {}
     local className
     ---add class
-    guide.eachSourceType(ast, "call", function (source)
+    guide.eachSourceType(ast, "call", function(source)
         local node = source.node
         if not guide.isGet(node) then
             return
@@ -33,18 +33,14 @@ function OnTransformAst(uri, ast)
         if not classnameNode then
             return
         end
-        local classname
-        if classnameNode.type == 'return' then
-            -- 文件名作为类名
-            classname = fs.path(uri):stem():string()
-            classnameNode = nil
-        else
-            classname = guide.getKeyName(classnameNode)
-        end
+        ---@type string
+        local filename = fs.path(uri):stem():string()
+        local classname = (classnameNode.type == 'return' or filename:lower():find("_replica")) and filename
+            or guide.getKeyName(classnameNode)
         if not classname then
             return
         end
-
+        classname = classname:lower()
         className = classname
 
         local arg1 = guide.getParam(source, 1)
@@ -63,7 +59,7 @@ function OnTransformAst(uri, ast)
         end
 
         if base then
-            classname = classname .. ":" .. guide.getKeyName(base)
+            classname = classname .. ":" .. guide.getKeyName(base):lower()
         end
 
         if ctor then
@@ -86,13 +82,13 @@ function OnTransformAst(uri, ast)
 
             ctors[ctor] = classname
         end
-        
+
         if classnameNode then
             helper.addClassDoc(ast, classnameNode, classname)
         end
     end)
     --- 给所有的本地函数的 self 参数挂类型
-    guide.eachSourceType(ast, "function", function (src)
+    guide.eachSourceType(ast, "function", function(src)
         if guide.getParentBlock(src).type ~= 'main' then
             return
         end
@@ -106,7 +102,7 @@ function OnTransformAst(uri, ast)
 
         for i, param in ipairs(params) do
             local name = guide.getKeyName(param)
-            if className and src.parent.type ~= 'setmethod' and name == 'self'  then
+            if className and src.parent.type ~= 'setmethod' and name == 'self' then
                 helper.addParamTypeDoc(ast, className, param)
             elseif name == 'inst' then
                 helper.addParamTypeDoc(ast, typename, param)

@@ -1,6 +1,6 @@
 ---@meta
 
----@class TheWorld:EntityScript
+---@class TheWorld:entityscript
 TheWorld = {}
 TheWorld.ismastersim = false
 TheWorld.ismastershard = false
