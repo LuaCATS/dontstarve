@@ -1,177 +1,118 @@
-local keyword = "Class"
-local var_regx = "%a[%w_]*"
-local class_context_regx = ("()%%s*(%s)%%s*=%%s*Class%%s*(%%b())()"):format(var_regx)
+local helper = require 'plugins.astHelper'
+local guide = require 'parser.guide'
+local fs = require 'bee.filesystem'
 
-local function create_class_define(islocal, class, base, param, body, props)
-    -- classname[:base]
-    --- field is_a function(self, klass):boolean
-    --- field is_class function(self):boolean
-    --- field is_instance function(obj):boolean
-    --- field _ctor function(...):T
-    local header = ("---@class %s"):format(class)
-
-    return (
-        [[
-
-%s%s
-%s=function%s
-%s
-%s
-%s
-end
-]]):format(header, base and (":%s"):format(base) or "",
-        islocal and ("local %s"):format(class) or class, param,
-        header,
-        props ~= nil and ("local self = %s\n"):format(props) or "local self = {}\n",
-        body)
+local function addTableInit(tableAst, valueAst)
+    tableAst.value = valueAst
+    valueAst.parent = tableAst
 end
 
-local function isInvaildLine(context)
-    return context:find("\n*%s*%-%-") ~= nil
-end
-
-local space_b1 = string.byte('\t')
-local space_b2 = string.byte(' ')
-local space_b3 = string.byte('\n')
-local space_b4 = string.byte(')')
-
-local function isSpace(b)
-    return b == space_b1 or b == space_b2 or b == space_b3
-end
-
----@param context string
-local function handle_single_class(context)
-    local base_regex = ("^%%s*(%s)%%s*,%%s*()"):format(var_regx)
-    local base, pos = context:match(base_regex)
-    if base then
-        context = context:sub(pos)
-    end
-    local function_regx = "^%s*function%s*(%b())(.*)end()"
-    local param, body, pos = context:match(function_regx)
-    if not param then
-        return
-    end
-    local endbyte = string.byte(context, pos - 4)
-    local endbyte1 = string.byte(context, pos)
-    if not (isSpace(endbyte) or endbyte == space_b4 and endbyte1 == nil or isSpace(endbyte1)) then
-        return
-    end
-    context = context:sub(pos)
-    if isInvaildLine(context:sub(-100)) then
-        return
-    end
-    -- remove self,
-    param = param:gsub("self%s*,*", "", 1)
-
-    local props_regx = "%s*,%s*(%b{})%s*$"
-    local props = context:match(props_regx)
-
-    return base, param, body, props
-end
---无法处理在注释里的不匹配
-local blacklists = {
-    ["="] = true,
-    [")"] = true,
-    ["("] = true,
-    ["{"] = true,
-    ["}"] = true,
-}
-local function create_class(text)
-    local pos = text:find(keyword, 0, true)
-    if not pos then
-        return
-    end
-    ---@type diff[]
-    local diffs = {}
-    for startpos, classname, context, endpos in text:gmatch(class_context_regx) do
-        context = context:sub(2, #context - 1)
-        if blacklists[context:sub(#context)] then
-            goto continue
+local typename = 'EntityScript'
+function OnTransformAst(uri, ast)
+    local ctors ={}
+    local className
+    ---add class
+    guide.eachSourceType(ast, "call", function (source)
+        local node = source.node
+        if not guide.isGet(node) then
+            return
         end
-        local base, param, body, props = handle_single_class(context)
-        if param then
-            local localpos = text:find(("local%%s*%s"):format(classname))
-            local islocal = localpos and startpos - localpos <= 32 or false
-            if islocal then
-                startpos = localpos
-            end
-            local new_context = create_class_define(islocal, classname, base, param, body, props)
-            diffs[#diffs + 1] = {
-                start = tonumber(startpos),
-                finish = tonumber(endpos),
-                text = new_context .. ([[
----@return boolean
-function %s:is_a(klass) return true end
----@return boolean
-function %s:is_class() return true end
----@return boolean
-function %s.is_instance(obj) return true end
-%s._ctor = %s
-]]
-                ):format(classname, classname, classname, classname, classname)
-            }
+        if not guide.isGlobal(node) then
+            return
         end
-        ::continue::
-    end
-    if #diffs == 0 then
-        return
-    end
-    return diffs
-end
+        if guide.getKeyName(node) ~= 'Class' then
+            return
+        end
+        local wants = {
+            ['local'] = true,
+            ['setglobal'] = true,
+            ['return'] = true
+        }
+        --可能没有变量 直接返回的
+        local classnameNode = guide.getParentTypes(source, wants)
+        if not classnameNode then
+            return
+        end
+        local classname
+        if classnameNode.type == 'return' then
+            -- 文件名作为类名
+            classname = fs.path(uri):stem():string()
+            classnameNode = nil
+        else
+            classname = guide.getKeyName(classnameNode)
+        end
+        if not classname then
+            return
+        end
 
----@param text string
-local function create_function_param_inst(diffs, text)
-    if not string.find(text, "inst", 1, true) then
-        return diffs
-    end
-    for startpos, fn_def, endpos in text:gmatch("()function%s*(%b())()") do
-        startpos = tonumber(startpos)
-        endpos = tonumber(endpos)
-        local skip = false
-        if diffs then
-            for i, v in ipairs(diffs) do
-                if v.start <= endpos and v.finish >= endpos then
-                    skip = true
-                    break
+        className = classname
+
+        local arg1 = guide.getParam(source, 1)
+        if not arg1 then
+            return
+        end
+
+        local base
+        local ctor
+        local initTable = guide.getParam(source, 3)
+        if arg1.type == 'function' then
+            ctor = arg1
+        elseif guide.isGlobal(arg1) or arg1.type == 'getlocal' then
+            base = arg1
+            ctor = guide.getParam(source, 2)
+        end
+
+        if base then
+            classname = classname .. ":" .. guide.getKeyName(base)
+        end
+
+        if ctor then
+            if #guide.getParams(ctor) == 2 then
+                local inst_param = guide.getParam(ctor, 2)
+                if inst_param and guide.getKeyName(inst_param) == 'inst' then
+                    helper.addParamTypeDoc(ast, typename, inst_param)
                 end
             end
+
+            local self_param = guide.getParam(ctor, 1)
+            if self_param and guide.getKeyName(self_param) == 'self' then
+                helper.addClassDocAtParam(ast, classname, ctor, 1)
+                if initTable then
+                    addTableInit(self_param, initTable)
+                    helper.removeArg(source, 3)
+                end
+            end
+
+            ctors[ctor] = classname
         end
-        if isInvaildLine(text:sub(math.max(0,startpos-100),startpos)) then
-            return diffs
+        
+        if classnameNode then
+            helper.addClassDoc(ast, classnameNode, classname)
+        end
+    end)
+    --- 给所有的本地函数的 self 参数挂类型
+    guide.eachSourceType(ast, "function", function (src)
+        if guide.getParentBlock(src).type ~= 'main' then
+            return
+        end
+        if ctors[src] then
+            return
+        end
+        local params = guide.getParams(src)
+        if not params then
+            return
         end
 
-        if not skip and fn_def:find("[%s,%()]inst[%s,%)]") then
-            diffs = diffs or {}
-            diffs[#diffs + 1] = {
-                start = endpos,
-                finish = endpos,
-                text = " ---@param inst EntityScript\n" .. text:sub(endpos, endpos)
-            }
+        for i, param in ipairs(params) do
+            local name = guide.getKeyName(param)
+            if className and src.parent.type ~= 'setmethod' and name == 'self'  then
+                helper.addParamTypeDoc(ast, className, param)
+            elseif name == 'inst' then
+                helper.addParamTypeDoc(ast, typename, param)
+            end
         end
-    end
-    return diffs
+    end)
+    return ast
 end
----@class diff
----@field start  integer # The number of bytes at the beginning of the replacement
----@field finish integer # The number of bytes at the end of the replacement
----@field text   string  # What to replace
 
----@param  uri  string # The uri of file
----@param  text string # The content of file
----@return nil|diff[]
-function OnSetText(uri, text)
-    if text:find("---@meta", 1, true) then
-        return
-    end
-    local diffs = create_class(text)
-
-    return create_function_param_inst(diffs, text)
-end
-
-return {
-    handle_single_class = handle_single_class,
-    create_class_define = create_class_define,
-    create_class = create_class,
-    create_function_param_inst = create_function_param_inst,
-    isInvaildLine = isInvaildLine
-}
+return OnTransformAst
