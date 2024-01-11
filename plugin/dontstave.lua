@@ -78,8 +78,9 @@ function OnTransformAst(uri, ast)
             if self_param and guide.getKeyName(self_param) == 'self' then
                 helper.addClassDocAtParam(ast, classname, ctor, 1)
                 if initTable then
-                    addTableInit(self_param, initTable)
-                    helper.removeArg(source, 3)
+                    -- 无视这个比较好
+                    --addTableInit(self_param, initTable)
+                    --helper.removeArg(source, 3)
                 end
             end
 
