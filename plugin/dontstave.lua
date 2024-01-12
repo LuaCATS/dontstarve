@@ -84,6 +84,14 @@ function OnTransformAst(uri, ast)
         end
 
         if classnameNode then
+            if ctor then
+                local args = {}
+                for i, arg in ipairs(ctor.args) do
+                    args[#args+1] = guide.getKeyName(arg)
+                end
+                local func = ("fun(%s):%s"):format(table.concat(args, ","), className)
+                helper.InsertDoc(ast, helper.buildComment("overload", func, classnameNode.start))
+            end
             helper.addClassDoc(ast, classnameNode, classname)
         end
     end)
