@@ -44,15 +44,11 @@ def getClassName(filename):
             matched = match_return.match(line)
             if matched:
                 ret = matched[1]
-                if isReplica:
-                    ret += _replica
                 print(filename, ":", ret)
                 return ret, isReplica
             elif line.strip() != "":
                 if isReturnClass(lines):
                     ret = name
-                    if isReplica:
-                        ret += _replica
                     print(filename, "[return Class]: ", ret)
                     return ret, isReplica
                 else:
@@ -74,7 +70,7 @@ head = f"""{args.meta and "---@meta" or ""}
 
 ---@class EntityScriptComponents
 local m = {{}}
----@class EntityScriptComponentReplicas
+---@class replica
 local r = {{}}
 """
 body = head
@@ -85,7 +81,7 @@ for className in classNames:
     body = body + f"---@type {className}\nm.{ className }={{}}\n"
 for className in classReplicas:
     className = className.lower()
-    body = body + f"---@type {className}\nr.{ className }={{}}\n"
+    body = body + f"---@type {className}_replica\nr.{ className }={{}}\n"
 body += "\n"
 
 with open(args.output, "w+") as f:

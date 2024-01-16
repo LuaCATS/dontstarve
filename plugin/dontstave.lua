@@ -7,7 +7,10 @@ local function addTableInit(tableAst, valueAst)
     valueAst.parent = tableAst
 end
 
-local typename = 'entityscript'
+local typenames = {
+    inst = 'entityscript',
+    act = 'bufferedaction'
+}
 function OnTransformAst(uri, ast)
     local ctors = {}
     local className
@@ -66,7 +69,7 @@ function OnTransformAst(uri, ast)
             if #guide.getParams(ctor) == 2 then
                 local inst_param = guide.getParam(ctor, 2)
                 if inst_param and guide.getKeyName(inst_param) == 'inst' then
-                    helper.addParamTypeDoc(ast, typename, inst_param)
+                    helper.addParamTypeDoc(ast, typenames.inst, inst_param)
                 end
             end
 
@@ -87,7 +90,11 @@ function OnTransformAst(uri, ast)
             if ctor then
                 local args = {}
                 for i, arg in ipairs(ctor.args) do
-                    args[#args+1] = guide.getKeyName(arg)
+                    local paramName = guide.getKeyName(arg)
+                    if typenames[paramName] then
+                        paramName = paramName..":"..typenames[paramName]
+                    end
+                    args[#args+1] = paramName
                 end
                 local func = ("fun(%s):%s"):format(table.concat(args, ","), className)
                 helper.InsertDoc(ast, helper.buildComment("overload", func, classnameNode.start))
@@ -110,10 +117,10 @@ function OnTransformAst(uri, ast)
 
         for i, param in ipairs(params) do
             local name = guide.getKeyName(param)
-            if className and src.parent.type ~= 'setmethod' and name == 'self' then
+            if className and name == 'self' and src.parent.type ~= 'setmethod' and src.parent.type ~= 'setfield' then
                 helper.addParamTypeDoc(ast, className, param)
-            elseif name == 'inst' then
-                helper.addParamTypeDoc(ast, typename, param)
+            elseif typenames[name] then
+                helper.addParamTypeDoc(ast, typenames[name], param)
             end
         end
     end)

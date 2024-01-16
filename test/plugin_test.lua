@@ -1,3 +1,4 @@
+
 local parser = require 'parser'
 local guide  = require 'parser.guide'
 local helper = require 'plugins.astHelper'
@@ -8,13 +9,13 @@ local scope  = require 'workspace.scope'
 local function TestPlugin(script, plugin, checker)
     files.open(TESTURI)
     files.setText(TESTURI, script, true)
-    scope.getScope(TESTURI):set('pluginInterface', {OnTransformAst = plugin})
+    scope.getScope(TESTURI):set('pluginInterface', { OnTransformAst = plugin })
     local state = files.getState(TESTURI)
     checker(state)
     files.remove(TESTURI)
 end
 
-local myplugin = require 'plugin.dontstave'
+local myplugin = require 'plugins.ast.plugin'
 
 local function AssertDocClass(doc, name)
     name = name or 'm'
@@ -52,18 +53,9 @@ local function f(self)end
 end)
 
 TestPlugin([[
-    ---@param inst string
-    ---@param a string
-local function f(inst,a)end
-]], function ()
-end, function (state)
-
-end)
-
-TestPlugin([[
 local function f(inst)end
 ]], myplugin, function (state)
-    AssertParamTypeEntityScript(state.ast[1].value.args[1].bindDocs)
+    AssertParamTypeEntityScript(state.ast[1].value.args[1].bindDocs[1])
 end)
 
 TestPlugin([[
@@ -124,6 +116,12 @@ end)
 TestPlugin([[
 local m = Class(function()end)
 local function f(self)end
+]], myplugin, function (state)
+    AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
+end)
+
+TestPlugin([[
+    local A = Class(function(self,a)end)
 ]], myplugin, function (state)
     AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
 end)

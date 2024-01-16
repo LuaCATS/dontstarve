@@ -85,7 +85,7 @@ EntityScript.entity = {}
 ---@type EntityScriptComponents
 EntityScript.components = {}
 
----@type EntityScriptComponentReplicas
+---@type replica
 EntityScript.replica = {}
 
 ---@generic T
