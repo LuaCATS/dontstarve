@@ -1,4 +1,4 @@
----@meta 
+---@meta
 
 ---@class bufferedaction
 local bufferedaction = {}

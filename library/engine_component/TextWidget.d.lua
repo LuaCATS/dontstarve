@@ -3,7 +3,6 @@
 ---@class TextWidget
 local TextWidget = {}
 
-
 function TextWidget:SetHAnchor() end
 
 function TextWidget:SetVAnchor() end

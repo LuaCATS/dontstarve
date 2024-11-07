@@ -3,7 +3,6 @@
 ---@class Label
 local Label = {}
 
-
 function Label:SetFontSize() end
 
 function Label:SetUIOffset() end

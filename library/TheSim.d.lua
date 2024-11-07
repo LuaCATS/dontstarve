@@ -16,13 +16,11 @@ function TheSim:HideAnimOnEntitiesWithTag() end
 function TheSim:ReskinEntity() end
 function TheSim:ShowAnimOnEntitiesWithTag() end
 
-
 function TheSim:SpawnPrefab() end
 function TheSim:GetLightAtPoint() end
 function TheSim:WorldPointInPoly(x, z, poly) end
 function TheSim:SetActiveAreaCenterpoint() end
 function TheSim:HasPlayerSkeletons() end
-
 
 function TheSim:GetIsSplitScreen() end
 function TheSim:GetScreenSize() end
@@ -33,18 +31,15 @@ function TheSim:SetCameraPos() end
 function TheSim:SetCameraUp() end
 function TheSim:SetUIRoot() end
 
-
 function TheSim:GetMouseButtonState() end
 function TheSim:GetAnalogControl() end
 function TheSim:GetDigitalControl() end
-
 
 -- Mouse
 function TheSim:IsKeyDown() end
 function TheSim:GetPosition() end
 -- gets mouse position
 function TheSim:GetScreenPos() end
-
 
 function TheSim:GetUsersName() end
 function TheSim:GetClipboardData() end
@@ -73,7 +68,6 @@ function TheSim:SetTimeScale() end
 function TheSim:TogglePause() end
 -- it is present as a commented string once in a code. I'm not sure if it can be used in practice and how it will interact with
 
-
 function TheSim:AtlasContains() end
 
 function TheSim:SetVisualAmbientColour() end
@@ -85,12 +79,10 @@ function TheSim:SetRenderPassDefaultEffect() end
 function TheSim:SetErosionTexture() end
 -- these are called only once
 
-
 function TheSim:LoadFont() end
 function TheSim:UnloadFont() end
 function TheSim:AdjustFontAdvance() end
 function TheSim:SetupFontFallbacks() end
-
 
 function TheSim:ClearDSP() end
 function TheSim:GetSoundVolume() end
@@ -102,7 +94,6 @@ function TheSim:SetLowPassFilter() end
 function TheSim:SetHighPassFilter() end
 -- I'm not a musician, I have no idea what it does. But it sounds music related.
 
-
 function TheSim:LoadPrefabs() end
 function TheSim:UnloadPrefabs() end
 function TheSim:RegisterPrefab() end
@@ -113,13 +104,11 @@ function TheSim:UnloadAllPrefabs() end
 
 -- P.S. `TheSim:SpawnPrefab` is listed in above
 
-
 function TheSim:ForceAbort() end
 -- Used to shut down the game in case of errors from mods.
 
 function TheSim:Quit() end
 function TheSim:Reset() end
-
 
 function TheSim:GetBuildDate() end
 function TheSim:GetDebugPhysicsRenderEnabled() end
@@ -153,7 +142,6 @@ function TheSim:FileBugReport() end
 function TheSim:LogBulkMetric() end
 function TheSim:LuaPrint() end
 
-
 function TheSim:ShouldPlayIntroMovie() end
 function TheSim:CanReadConfigurationDirectory() end
 function TheSim:CanWriteConfigurationDirectory() end
@@ -167,10 +155,8 @@ function TheSim:GetSetting() end
 function TheSim:SetDataCollectionSetting() end
 function TheSim:SetSetting() end
 
-
 function TheSim:ReportAction() end
 function TheSim:SendCommandToInstance() end
-
 
 function TheSim:Profile() end
 function TheSim:SendProfileStats() end
@@ -181,13 +167,12 @@ function TheSim:GetStashedPlayInstance() end
 function TheSim:StashPlayInstance() end
 -- something about saving the game/sending stats to Klei? Not sure. Used in
 
-
 function TheSim:OnAssetPathResolve() end
 function TheSim:GetFileModificationTime() end
 function TheSim:AddBatchVerifyFileExists() end
 function TheSim:ClearFileSystemAliases() end
 function TheSim:RenderOneFrame() end
--- used in keepAlive function. Looks like it is used to avoid the operating system thinking that the game is dead and render a frame from time to time 
+-- used in keepAlive function. Looks like it is used to avoid the operating system thinking that the game is dead and render a frame from time to time
 function TheSim:LoadKlumpFile() end
 function TheSim:LoadKlumpString() end
 -- not sure what klump file is, but there is klump.lua for these
@@ -197,7 +182,6 @@ function TheSim:StartFileExistsAsync() end
 function TheSim:VerifyFileExistsAsync() end
 function TheSim:PurgeLuaFileCache() end
 
-
 function TheSim:DownloadMOTDImage() end
 function TheSim:DownloadMOTDImages() end
 function TheSim:GetMOTDImage() end
@@ -205,7 +189,6 @@ function TheSim:GetMOTDQueryURL() end
 function TheSim:HasMOTDImage() end
 function TheSim:LoadMOTDImage() end
 function TheSim:SetMOTDTarget() end
-
 
 function TheSim:CheckPersistentStringExists() end
 function TheSim:ErasePersistentString() end
@@ -234,15 +217,14 @@ function TheSim:VerifyModVersions() end
 function TheSim:RAILGetModDetailPage() end
 -- some function specific to Windows ("WIN32_RAIL" is any windows?) platform used to load mod info pages
 
-
 function TheSim:IsLoggedOn() end
-  
+
 function TheSim:IsDocumentsWritable() end
 function TheSim:IsAppDataWritable() end
-function TheSim:GetNumLaunches() end    
+function TheSim:GetNumLaunches() end
 function TheSim:SendGameStat() end
 function TheSim:SendHardwareStats() end
--- game stats gathering functions   
+-- game stats gathering functions
 
 function TheSim:SendJSMessage() end
 -- used on browser NACL platform to redirect users
@@ -250,7 +232,7 @@ function TheSim:SendJSMessage() end
 function TheSim:SetDLCEnabled() end
 function TheSim:IsDLCEnabled() end
 function TheSim:IsDLCInstalled() end
-   
+
 -- Game demo things
 function TheSim:SendUITrigger() end
 function TheSim:IsDemoExpired() end
@@ -318,4 +300,3 @@ function TheSim:UpdateRenderExtents() end
 function TheSim:UserChooseDirectory() end
 function TheSim:ValidateHeap() end
 function TheSim:ZipAndEncodeString() end
-

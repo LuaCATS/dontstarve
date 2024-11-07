@@ -31,7 +31,6 @@ client_only_mod = false
 ---@type boolean
 all_clients_require_mod = true
 
-
 ---@type string
 icon = ""
 ---@type string

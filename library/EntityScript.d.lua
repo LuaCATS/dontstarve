@@ -91,5 +91,4 @@ EntityScript.replica = {}
 ---@generic T
 ---@param name `T`
 ---@return T
-function EntityScript:AddComponent(name)
-end
+function EntityScript:AddComponent(name) end

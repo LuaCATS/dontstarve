@@ -5,7 +5,6 @@
 ---@class MapGenSim
 local MapGenSim = {}
 
-
 function MapGenSim:CreateWorld() end
 
 function MapGenSim:CreateCircle() end

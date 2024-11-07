@@ -5,5 +5,4 @@ local action = {}
 
 ---@param act bufferedaction
 ---@return boolean
-function action.fn(act)
-end
+function action.fn(act) end

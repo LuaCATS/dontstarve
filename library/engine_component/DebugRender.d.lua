@@ -3,7 +3,6 @@
 ---@class DebugRender
 local DebugRender = {}
 
-
 function DebugRender:SetRenderLoop() end
 
 function DebugRender:Box() end

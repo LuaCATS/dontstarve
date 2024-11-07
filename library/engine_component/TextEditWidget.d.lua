@@ -3,7 +3,6 @@
 ---@class TextEditWidget
 local TextEditWidget = {}
 
-
 function TextEditWidget:OnTextInput() end
 
 function TextEditWidget:SetPassword() end

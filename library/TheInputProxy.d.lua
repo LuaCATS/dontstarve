@@ -3,7 +3,6 @@
 ---@class TheInputProxy
 TheInputProxy = {}
 
-
 function TheInputProxy:GetInputDeviceCount() end
 
 function TheInputProxy:GetInputDeviceName() end

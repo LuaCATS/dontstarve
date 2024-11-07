@@ -3,7 +3,6 @@
 ---@class TwitchOptions
 local TwitchOptions = {}
 
-
 function TwitchOptions:IsStreaming() end
 
 function TwitchOptions:ToggleStreaming() end

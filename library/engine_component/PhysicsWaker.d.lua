@@ -3,8 +3,6 @@
 ---@class PhysicsWaker
 PhysicsWaker = {}
 
-
-
 function PhysicsWaker:StopWakeTests() end
 
 function PhysicsWaker:StartWakeTests() end

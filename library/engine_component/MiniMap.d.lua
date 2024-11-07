@@ -3,7 +3,6 @@
 ---@class MiniMap
 local MiniMap = {}
 
-
 function MiniMap:SetEffects() end
 
 function MiniMap:ResetOffset() end

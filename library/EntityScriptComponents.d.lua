@@ -5,1319 +5,1318 @@ EntityScriptComponents = {}
 ---@class replica
 EntityScriptComponentReplicas = {}
 ---@type anchor
-EntityScriptComponents.anchor={}
+EntityScriptComponents.anchor = {}
 ---@type mermcandidate
-EntityScriptComponents.mermcandidate={}
+EntityScriptComponents.mermcandidate = {}
 ---@type pinnable
-EntityScriptComponents.pinnable={}
+EntityScriptComponents.pinnable = {}
 ---@type efficientuser
-EntityScriptComponents.efficientuser={}
+EntityScriptComponents.efficientuser = {}
 ---@type perishable
-EntityScriptComponents.perishable={}
+EntityScriptComponents.perishable = {}
 ---@type skinner
-EntityScriptComponents.skinner={}
+EntityScriptComponents.skinner = {}
 ---@type tackler
-EntityScriptComponents.tackler={}
+EntityScriptComponents.tackler = {}
 ---@type worldmigrator
-EntityScriptComponents.worldmigrator={}
+EntityScriptComponents.worldmigrator = {}
 ---@type heavyobstacleusetarget
-EntityScriptComponents.heavyobstacleusetarget={}
+EntityScriptComponents.heavyobstacleusetarget = {}
 ---@type plantresearchable
-EntityScriptComponents.plantresearchable={}
+EntityScriptComponents.plantresearchable = {}
 ---@type upgrademodule
-EntityScriptComponents.upgrademodule={}
+EntityScriptComponents.upgrademodule = {}
 ---@type friendlevels
-EntityScriptComponents.friendlevels={}
+EntityScriptComponents.friendlevels = {}
 ---@type sandstormwatcher
-EntityScriptComponents.sandstormwatcher={}
+EntityScriptComponents.sandstormwatcher = {}
 ---@type spawnfader
-EntityScriptComponents.spawnfader={}
+EntityScriptComponents.spawnfader = {}
 ---@type teacher
-EntityScriptComponents.teacher={}
+EntityScriptComponents.teacher = {}
 ---@type carnivaldecorranker
-EntityScriptComponents.carnivaldecorranker={}
+EntityScriptComponents.carnivaldecorranker = {}
 ---@type fishschool
-EntityScriptComponents.fishschool={}
+EntityScriptComponents.fishschool = {}
 ---@type murderable
-EntityScriptComponents.murderable={}
+EntityScriptComponents.murderable = {}
 ---@type maprevealable
-EntityScriptComponents.maprevealable={}
+EntityScriptComponents.maprevealable = {}
 ---@type fader
-EntityScriptComponents.fader={}
+EntityScriptComponents.fader = {}
 ---@type inkable
-EntityScriptComponents.inkable={}
+EntityScriptComponents.inkable = {}
 ---@type channelcaster
-EntityScriptComponents.channelcaster={}
+EntityScriptComponents.channelcaster = {}
 ---@type amorphous
-EntityScriptComponents.amorphous={}
+EntityScriptComponents.amorphous = {}
 ---@type hideandseekhider
-EntityScriptComponents.hideandseekhider={}
+EntityScriptComponents.hideandseekhider = {}
 ---@type maxwelltalker
-EntityScriptComponents.maxwelltalker={}
+EntityScriptComponents.maxwelltalker = {}
 ---@type hatchable
-EntityScriptComponents.hatchable={}
+EntityScriptComponents.hatchable = {}
 ---@type wateryprotection
-EntityScriptComponents.wateryprotection={}
+EntityScriptComponents.wateryprotection = {}
 ---@type desolationspawner
-EntityScriptComponents.desolationspawner={}
+EntityScriptComponents.desolationspawner = {}
 ---@type bundler
-EntityScriptComponents.bundler={}
+EntityScriptComponents.bundler = {}
 ---@type boatcannonuser
-EntityScriptComponents.boatcannonuser={}
+EntityScriptComponents.boatcannonuser = {}
 ---@type areaunlock
-EntityScriptComponents.areaunlock={}
+EntityScriptComponents.areaunlock = {}
 ---@type kitcoon
-EntityScriptComponents.kitcoon={}
+EntityScriptComponents.kitcoon = {}
 ---@type bedazzlement
-EntityScriptComponents.bedazzlement={}
+EntityScriptComponents.bedazzlement = {}
 ---@type reticule
-EntityScriptComponents.reticule={}
+EntityScriptComponents.reticule = {}
 ---@type playervoter
-EntityScriptComponents.playervoter={}
+EntityScriptComponents.playervoter = {}
 ---@type digester
-EntityScriptComponents.digester={}
+EntityScriptComponents.digester = {}
 ---@type hudindicatorwatcher
-EntityScriptComponents.hudindicatorwatcher={}
+EntityScriptComponents.hudindicatorwatcher = {}
 ---@type aoespell
-EntityScriptComponents.aoespell={}
+EntityScriptComponents.aoespell = {}
 ---@type aoetargeting
-EntityScriptComponents.aoetargeting={}
+EntityScriptComponents.aoetargeting = {}
 ---@type deerclopsspawner
-EntityScriptComponents.deerclopsspawner={}
+EntityScriptComponents.deerclopsspawner = {}
 ---@type pollinator
-EntityScriptComponents.pollinator={}
+EntityScriptComponents.pollinator = {}
 ---@type rechargeable
-EntityScriptComponents.rechargeable={}
+EntityScriptComponents.rechargeable = {}
 ---@type singingshelltrigger
-EntityScriptComponents.singingshelltrigger={}
+EntityScriptComponents.singingshelltrigger = {}
 ---@type shadowhandspawner
-EntityScriptComponents.shadowhandspawner={}
+EntityScriptComponents.shadowhandspawner = {}
 ---@type book
-EntityScriptComponents.book={}
+EntityScriptComponents.book = {}
 ---@type saltlicker
-EntityScriptComponents.saltlicker={}
+EntityScriptComponents.saltlicker = {}
 ---@type incrementalproducer
-EntityScriptComponents.incrementalproducer={}
+EntityScriptComponents.incrementalproducer = {}
 ---@type teleportedoverride
-EntityScriptComponents.teleportedoverride={}
+EntityScriptComponents.teleportedoverride = {}
 ---@type autoterraformer
-EntityScriptComponents.autoterraformer={}
+EntityScriptComponents.autoterraformer = {}
 ---@type rideable
-EntityScriptComponents.rideable={}
+EntityScriptComponents.rideable = {}
 ---@type regrowthmanager
-EntityScriptComponents.regrowthmanager={}
+EntityScriptComponents.regrowthmanager = {}
 ---@type wintersfeasttable
-EntityScriptComponents.wintersfeasttable={}
+EntityScriptComponents.wintersfeasttable = {}
 ---@type boatdrifter
-EntityScriptComponents.boatdrifter={}
+EntityScriptComponents.boatdrifter = {}
 ---@type leader
-EntityScriptComponents.leader={}
+EntityScriptComponents.leader = {}
 ---@type storyteller
-EntityScriptComponents.storyteller={}
+EntityScriptComponents.storyteller = {}
 ---@type furnituredecortaker
-EntityScriptComponents.furnituredecortaker={}
+EntityScriptComponents.furnituredecortaker = {}
 ---@type fencerotator
-EntityScriptComponents.fencerotator={}
+EntityScriptComponents.fencerotator = {}
 ---@type hudindicatable
-EntityScriptComponents.hudindicatable={}
+EntityScriptComponents.hudindicatable = {}
 ---@type weapon
-EntityScriptComponents.weapon={}
+EntityScriptComponents.weapon = {}
 ---@type knownlocations
-EntityScriptComponents.knownlocations={}
+EntityScriptComponents.knownlocations = {}
 ---@type boatcrew
-EntityScriptComponents.boatcrew={}
+EntityScriptComponents.boatcrew = {}
 ---@type skinner_beefalo
-EntityScriptComponents.skinner_beefalo={}
+EntityScriptComponents.skinner_beefalo = {}
 ---@type playbill
-EntityScriptComponents.playbill={}
+EntityScriptComponents.playbill = {}
 ---@type inspectable
-EntityScriptComponents.inspectable={}
+EntityScriptComponents.inspectable = {}
 ---@type sharkboimanagerhelper
-EntityScriptComponents.sharkboimanagerhelper={}
+EntityScriptComponents.sharkboimanagerhelper = {}
 ---@type worldtemperature
-EntityScriptComponents.worldtemperature={}
+EntityScriptComponents.worldtemperature = {}
 ---@type frograin
-EntityScriptComponents.frograin={}
+EntityScriptComponents.frograin = {}
 ---@type smotherer
-EntityScriptComponents.smotherer={}
+EntityScriptComponents.smotherer = {}
 ---@type lootdropper
-EntityScriptComponents.lootdropper={}
+EntityScriptComponents.lootdropper = {}
 ---@type boatpatch
-EntityScriptComponents.boatpatch={}
+EntityScriptComponents.boatpatch = {}
 ---@type propagator
-EntityScriptComponents.propagator={}
+EntityScriptComponents.propagator = {}
 ---@type symbolswapdata
-EntityScriptComponents.symbolswapdata={}
+EntityScriptComponents.symbolswapdata = {}
 ---@type occupier
-EntityScriptComponents.occupier={}
+EntityScriptComponents.occupier = {}
 ---@type cooldown
-EntityScriptComponents.cooldown={}
+EntityScriptComponents.cooldown = {}
 ---@type walkableplatformplayer
-EntityScriptComponents.walkableplatformplayer={}
+EntityScriptComponents.walkableplatformplayer = {}
 ---@type boatcannon
-EntityScriptComponents.boatcannon={}
+EntityScriptComponents.boatcannon = {}
 ---@type stageactor
-EntityScriptComponents.stageactor={}
+EntityScriptComponents.stageactor = {}
 ---@type shard_players
-EntityScriptComponents.shard_players={}
+EntityScriptComponents.shard_players = {}
 ---@type attackdodger
-EntityScriptComponents.attackdodger={}
+EntityScriptComponents.attackdodger = {}
 ---@type dataanalyzer
-EntityScriptComponents.dataanalyzer={}
+EntityScriptComponents.dataanalyzer = {}
 ---@type firebug
-EntityScriptComponents.firebug={}
+EntityScriptComponents.firebug = {}
 ---@type complexprojectile
-EntityScriptComponents.complexprojectile={}
+EntityScriptComponents.complexprojectile = {}
 ---@type singable
-EntityScriptComponents.singable={}
+EntityScriptComponents.singable = {}
 ---@type oceanfishingrod
-EntityScriptComponents.oceanfishingrod={}
+EntityScriptComponents.oceanfishingrod = {}
 ---@type shedder
-EntityScriptComponents.shedder={}
+EntityScriptComponents.shedder = {}
 ---@type waxable
-EntityScriptComponents.waxable={}
+EntityScriptComponents.waxable = {}
 ---@type soul
-EntityScriptComponents.soul={}
+EntityScriptComponents.soul = {}
 ---@type diseaseable
-EntityScriptComponents.diseaseable={}
+EntityScriptComponents.diseaseable = {}
 ---@type submersible
-EntityScriptComponents.submersible={}
+EntityScriptComponents.submersible = {}
 ---@type planarentity
-EntityScriptComponents.planarentity={}
+EntityScriptComponents.planarentity = {}
 ---@type erasablepaper
-EntityScriptComponents.erasablepaper={}
+EntityScriptComponents.erasablepaper = {}
 ---@type lightningblocker
-EntityScriptComponents.lightningblocker={}
+EntityScriptComponents.lightningblocker = {}
 ---@type decay
-EntityScriptComponents.decay={}
+EntityScriptComponents.decay = {}
 ---@type healer
-EntityScriptComponents.healer={}
+EntityScriptComponents.healer = {}
 ---@type mightiness
-EntityScriptComponents.mightiness={}
+EntityScriptComponents.mightiness = {}
 ---@type foodaffinity
-EntityScriptComponents.foodaffinity={}
+EntityScriptComponents.foodaffinity = {}
 ---@type burnable
-EntityScriptComponents.burnable={}
+EntityScriptComponents.burnable = {}
 ---@type beard
-EntityScriptComponents.beard={}
+EntityScriptComponents.beard = {}
 ---@type birdattractor
-EntityScriptComponents.birdattractor={}
+EntityScriptComponents.birdattractor = {}
 ---@type fan
-EntityScriptComponents.fan={}
+EntityScriptComponents.fan = {}
 ---@type bait
-EntityScriptComponents.bait={}
+EntityScriptComponents.bait = {}
 ---@type squadmember
-EntityScriptComponents.squadmember={}
+EntityScriptComponents.squadmember = {}
 ---@type repellent
-EntityScriptComponents.repellent={}
+EntityScriptComponents.repellent = {}
 ---@type balloonmaker
-EntityScriptComponents.balloonmaker={}
+EntityScriptComponents.balloonmaker = {}
 ---@type channelcastable
-EntityScriptComponents.channelcastable={}
+EntityScriptComponents.channelcastable = {}
 ---@type playerprox
-EntityScriptComponents.playerprox={}
+EntityScriptComponents.playerprox = {}
 ---@type gingerbreadhunter
-EntityScriptComponents.gingerbreadhunter={}
+EntityScriptComponents.gingerbreadhunter = {}
 ---@type oceanfishable
-EntityScriptComponents.oceanfishable={}
+EntityScriptComponents.oceanfishable = {}
 ---@type fueled
-EntityScriptComponents.fueled={}
+EntityScriptComponents.fueled = {}
 ---@type planardefense
-EntityScriptComponents.planardefense={}
+EntityScriptComponents.planardefense = {}
 ---@type playerhearing
-EntityScriptComponents.playerhearing={}
+EntityScriptComponents.playerhearing = {}
 ---@type petrifiable
-EntityScriptComponents.petrifiable={}
+EntityScriptComponents.petrifiable = {}
 ---@type cattoy
-EntityScriptComponents.cattoy={}
+EntityScriptComponents.cattoy = {}
 ---@type tributable
-EntityScriptComponents.tributable={}
+EntityScriptComponents.tributable = {}
 ---@type moonstorms
-EntityScriptComponents.moonstorms={}
+EntityScriptComponents.moonstorms = {}
 ---@type workable
-EntityScriptComponents.workable={}
+EntityScriptComponents.workable = {}
 ---@type wagpunkmanager
-EntityScriptComponents.wagpunkmanager={}
+EntityScriptComponents.wagpunkmanager = {}
 ---@type witherable
-EntityScriptComponents.witherable={}
+EntityScriptComponents.witherable = {}
 ---@type playertargetindicator
-EntityScriptComponents.playertargetindicator={}
+EntityScriptComponents.playertargetindicator = {}
 ---@type stewer
-EntityScriptComponents.stewer={}
+EntityScriptComponents.stewer = {}
 ---@type carnivalevent
-EntityScriptComponents.carnivalevent={}
+EntityScriptComponents.carnivalevent = {}
 ---@type uniqueid
-EntityScriptComponents.uniqueid={}
+EntityScriptComponents.uniqueid = {}
 ---@type waterphysics
-EntityScriptComponents.waterphysics={}
+EntityScriptComponents.waterphysics = {}
 ---@type toggleableitem
-EntityScriptComponents.toggleableitem={}
+EntityScriptComponents.toggleableitem = {}
 ---@type inventoryitemmoisture
-EntityScriptComponents.inventoryitemmoisture={}
+EntityScriptComponents.inventoryitemmoisture = {}
 ---@type souleater
-EntityScriptComponents.souleater={}
+EntityScriptComponents.souleater = {}
 ---@type stormwatcher
-EntityScriptComponents.stormwatcher={}
+EntityScriptComponents.stormwatcher = {}
 ---@type winch
-EntityScriptComponents.winch={}
+EntityScriptComponents.winch = {}
 ---@type boatmagnet
-EntityScriptComponents.boatmagnet={}
+EntityScriptComponents.boatmagnet = {}
 ---@type butterflyspawner
-EntityScriptComponents.butterflyspawner={}
+EntityScriptComponents.butterflyspawner = {}
 ---@type circuitnode
-EntityScriptComponents.circuitnode={}
+EntityScriptComponents.circuitnode = {}
 ---@type rider
-EntityScriptComponents.rider={}
+EntityScriptComponents.rider = {}
 ---@type grottowaterfallsoundcontroller
-EntityScriptComponents.grottowaterfallsoundcontroller={}
+EntityScriptComponents.grottowaterfallsoundcontroller = {}
 ---@type worldoverseer
-EntityScriptComponents.worldoverseer={}
+EntityScriptComponents.worldoverseer = {}
 ---@type townportalregistry
-EntityScriptComponents.townportalregistry={}
+EntityScriptComponents.townportalregistry = {}
 ---@type crewmember
-EntityScriptComponents.crewmember={}
+EntityScriptComponents.crewmember = {}
 ---@type heater
-EntityScriptComponents.heater={}
+EntityScriptComponents.heater = {}
 ---@type spellcaster
-EntityScriptComponents.spellcaster={}
+EntityScriptComponents.spellcaster = {}
 ---@type worldreset
-EntityScriptComponents.worldreset={}
+EntityScriptComponents.worldreset = {}
 ---@type fishingnet
-EntityScriptComponents.fishingnet={}
+EntityScriptComponents.fishingnet = {}
 ---@type wavemanager
-EntityScriptComponents.wavemanager={}
+EntityScriptComponents.wavemanager = {}
 ---@type upgrademoduleowner
-EntityScriptComponents.upgrademoduleowner={}
+EntityScriptComponents.upgrademoduleowner = {}
 ---@type fishable
-EntityScriptComponents.fishable={}
+EntityScriptComponents.fishable = {}
 ---@type drawingtool
-EntityScriptComponents.drawingtool={}
+EntityScriptComponents.drawingtool = {}
 ---@type maprevealer
-EntityScriptComponents.maprevealer={}
+EntityScriptComponents.maprevealer = {}
 ---@type spooked
-EntityScriptComponents.spooked={}
+EntityScriptComponents.spooked = {}
 ---@type pethealthbar
-EntityScriptComponents.pethealthbar={}
+EntityScriptComponents.pethealthbar = {}
 ---@type objectspawner
-EntityScriptComponents.objectspawner={}
+EntityScriptComponents.objectspawner = {}
 ---@type carnivalgameitem
-EntityScriptComponents.carnivalgameitem={}
+EntityScriptComponents.carnivalgameitem = {}
 ---@type colouradder
-EntityScriptComponents.colouradder={}
+EntityScriptComponents.colouradder = {}
 ---@type boatringdata
-EntityScriptComponents.boatringdata={}
+EntityScriptComponents.boatringdata = {}
 ---@type shard_worldvoter
-EntityScriptComponents.shard_worldvoter={}
+EntityScriptComponents.shard_worldvoter = {}
 ---@type boatphysics
-EntityScriptComponents.boatphysics={}
+EntityScriptComponents.boatphysics = {}
 ---@type trophyscale
-EntityScriptComponents.trophyscale={}
+EntityScriptComponents.trophyscale = {}
 ---@type hounded
-EntityScriptComponents.hounded={}
+EntityScriptComponents.hounded = {}
 ---@type yotb_stagemanager
-EntityScriptComponents.yotb_stagemanager={}
+EntityScriptComponents.yotb_stagemanager = {}
 ---@type hunter
-EntityScriptComponents.hunter={}
+EntityScriptComponents.hunter = {}
 ---@type cookbookupdater
-EntityScriptComponents.cookbookupdater={}
+EntityScriptComponents.cookbookupdater = {}
 ---@type epicscare
-EntityScriptComponents.epicscare={}
+EntityScriptComponents.epicscare = {}
 ---@type hitcher
-EntityScriptComponents.hitcher={}
+EntityScriptComponents.hitcher = {}
 ---@type miasmawatcher
-EntityScriptComponents.miasmawatcher={}
+EntityScriptComponents.miasmawatcher = {}
 ---@type inventory
-EntityScriptComponents.inventory={}
+EntityScriptComponents.inventory = {}
 ---@type wereeater
-EntityScriptComponents.wereeater={}
+EntityScriptComponents.wereeater = {}
 ---@type rooted
-EntityScriptComponents.rooted={}
+EntityScriptComponents.rooted = {}
 ---@type workmultiplier
-EntityScriptComponents.workmultiplier={}
+EntityScriptComponents.workmultiplier = {}
 ---@type markable_proxy
-EntityScriptComponents.markable_proxy={}
+EntityScriptComponents.markable_proxy = {}
 ---@type hideandseekhidingspot
-EntityScriptComponents.hideandseekhidingspot={}
+EntityScriptComponents.hideandseekhidingspot = {}
 ---@type lureplantspawner
-EntityScriptComponents.lureplantspawner={}
+EntityScriptComponents.lureplantspawner = {}
 ---@type ambientsound
-EntityScriptComponents.ambientsound={}
+EntityScriptComponents.ambientsound = {}
 ---@type acidlevel
-EntityScriptComponents.acidlevel={}
+EntityScriptComponents.acidlevel = {}
 ---@type sharkboimanager
-EntityScriptComponents.sharkboimanager={}
+EntityScriptComponents.sharkboimanager = {}
 ---@type repairer
-EntityScriptComponents.repairer={}
+EntityScriptComponents.repairer = {}
 ---@type dumbbelllifter
-EntityScriptComponents.dumbbelllifter={}
+EntityScriptComponents.dumbbelllifter = {}
 ---@type equippable
-EntityScriptComponents.equippable={}
+EntityScriptComponents.equippable = {}
 ---@type expertsailor
-EntityScriptComponents.expertsailor={}
+EntityScriptComponents.expertsailor = {}
 ---@type colourtweener
-EntityScriptComponents.colourtweener={}
+EntityScriptComponents.colourtweener = {}
 ---@type savedrotation
-EntityScriptComponents.savedrotation={}
+EntityScriptComponents.savedrotation = {}
 ---@type moonstormwatcher
-EntityScriptComponents.moonstormwatcher={}
+EntityScriptComponents.moonstormwatcher = {}
 ---@type placer
-EntityScriptComponents.placer={}
+EntityScriptComponents.placer = {}
 ---@type playercontroller
-EntityScriptComponents.playercontroller={}
+EntityScriptComponents.playercontroller = {}
 ---@type discoverable
-EntityScriptComponents.discoverable={}
+EntityScriptComponents.discoverable = {}
 ---@type klaussackspawner
-EntityScriptComponents.klaussackspawner={}
+EntityScriptComponents.klaussackspawner = {}
 ---@type groundpounder
-EntityScriptComponents.groundpounder={}
+EntityScriptComponents.groundpounder = {}
 ---@type sanityaura
-EntityScriptComponents.sanityaura={}
+EntityScriptComponents.sanityaura = {}
 ---@type repairable
-EntityScriptComponents.repairable={}
+EntityScriptComponents.repairable = {}
 ---@type revivablecorpse
-EntityScriptComponents.revivablecorpse={}
+EntityScriptComponents.revivablecorpse = {}
 ---@type moonbeastspawner
-EntityScriptComponents.moonbeastspawner={}
+EntityScriptComponents.moonbeastspawner = {}
 ---@type battleborn
-EntityScriptComponents.battleborn={}
+EntityScriptComponents.battleborn = {}
 ---@type forcecompostable
-EntityScriptComponents.forcecompostable={}
+EntityScriptComponents.forcecompostable = {}
 ---@type aoeweapon_lunge
-EntityScriptComponents.aoeweapon_lunge={}
+EntityScriptComponents.aoeweapon_lunge = {}
 ---@type boatring
-EntityScriptComponents.boatring={}
+EntityScriptComponents.boatring = {}
 ---@type itemweigher
-EntityScriptComponents.itemweigher={}
+EntityScriptComponents.itemweigher = {}
 ---@type uianim
-EntityScriptComponents.uianim={}
+EntityScriptComponents.uianim = {}
 ---@type forestresourcespawner
-EntityScriptComponents.forestresourcespawner={}
+EntityScriptComponents.forestresourcespawner = {}
 ---@type minigamespectator
-EntityScriptComponents.minigamespectator={}
+EntityScriptComponents.minigamespectator = {}
 ---@type targettracker
-EntityScriptComponents.targettracker={}
+EntityScriptComponents.targettracker = {}
 ---@type shard_sinkholes
-EntityScriptComponents.shard_sinkholes={}
+EntityScriptComponents.shard_sinkholes = {}
 ---@type boatmagnetbeacon
-EntityScriptComponents.boatmagnetbeacon={}
+EntityScriptComponents.boatmagnetbeacon = {}
 ---@type useableitem
-EntityScriptComponents.useableitem={}
+EntityScriptComponents.useableitem = {}
 ---@type combat
-EntityScriptComponents.combat={}
+EntityScriptComponents.combat = {}
 ---@type distancefade
-EntityScriptComponents.distancefade={}
+EntityScriptComponents.distancefade = {}
 ---@type tradable
-EntityScriptComponents.tradable={}
+EntityScriptComponents.tradable = {}
 ---@type containerproxy
-EntityScriptComponents.containerproxy={}
+EntityScriptComponents.containerproxy = {}
 ---@type prototyper
-EntityScriptComponents.prototyper={}
+EntityScriptComponents.prototyper = {}
 ---@type distancetracker
-EntityScriptComponents.distancetracker={}
+EntityScriptComponents.distancetracker = {}
 ---@type treasuremarked
-EntityScriptComponents.treasuremarked={}
+EntityScriptComponents.treasuremarked = {}
 ---@type fertilizable
-EntityScriptComponents.fertilizable={}
+EntityScriptComponents.fertilizable = {}
 ---@type bathbomb
-EntityScriptComponents.bathbomb={}
+EntityScriptComponents.bathbomb = {}
 ---@type drownable
-EntityScriptComponents.drownable={}
+EntityScriptComponents.drownable = {}
 ---@type teleporter
-EntityScriptComponents.teleporter={}
+EntityScriptComponents.teleporter = {}
 ---@type quagmire_recipeprices
-EntityScriptComponents.quagmire_recipeprices={}
+EntityScriptComponents.quagmire_recipeprices = {}
 ---@type periodicspawner
-EntityScriptComponents.periodicspawner={}
+EntityScriptComponents.periodicspawner = {}
 ---@type resistance
-EntityScriptComponents.resistance={}
+EntityScriptComponents.resistance = {}
 ---@type sisturnregistry
-EntityScriptComponents.sisturnregistry={}
+EntityScriptComponents.sisturnregistry = {}
 ---@type wildfires
-EntityScriptComponents.wildfires={}
+EntityScriptComponents.wildfires = {}
 ---@type scenariorunner
-EntityScriptComponents.scenariorunner={}
+EntityScriptComponents.scenariorunner = {}
 ---@type sanity
-EntityScriptComponents.sanity={}
+EntityScriptComponents.sanity = {}
 ---@type magician
-EntityScriptComponents.magician={}
+EntityScriptComponents.magician = {}
 ---@type thief
-EntityScriptComponents.thief={}
+EntityScriptComponents.thief = {}
 ---@type skeletonsweeper
-EntityScriptComponents.skeletonsweeper={}
+EntityScriptComponents.skeletonsweeper = {}
 ---@type amphibiouscreature
-EntityScriptComponents.amphibiouscreature={}
+EntityScriptComponents.amphibiouscreature = {}
 ---@type shadowcreaturespawner
-EntityScriptComponents.shadowcreaturespawner={}
+EntityScriptComponents.shadowcreaturespawner = {}
 ---@type lavaarenamobtracker
-EntityScriptComponents.lavaarenamobtracker={}
+EntityScriptComponents.lavaarenamobtracker = {}
 ---@type simplebook
-EntityScriptComponents.simplebook={}
+EntityScriptComponents.simplebook = {}
 ---@type shadowlevel
-EntityScriptComponents.shadowlevel={}
+EntityScriptComponents.shadowlevel = {}
 ---@type childspawner
-EntityScriptComponents.childspawner={}
+EntityScriptComponents.childspawner = {}
 ---@type lunarhailmanager
-EntityScriptComponents.lunarhailmanager={}
+EntityScriptComponents.lunarhailmanager = {}
 ---@type riftspawner
-EntityScriptComponents.riftspawner={}
+EntityScriptComponents.riftspawner = {}
 ---@type retrofitforestmap_anr
-EntityScriptComponents.retrofitforestmap_anr={}
+EntityScriptComponents.retrofitforestmap_anr = {}
 ---@type furnituredecor
-EntityScriptComponents.furnituredecor={}
+EntityScriptComponents.furnituredecor = {}
 ---@type houndedtarget
-EntityScriptComponents.houndedtarget={}
+EntityScriptComponents.houndedtarget = {}
 ---@type sentientaxe
-EntityScriptComponents.sentientaxe={}
+EntityScriptComponents.sentientaxe = {}
 ---@type caveins
-EntityScriptComponents.caveins={}
+EntityScriptComponents.caveins = {}
 ---@type carnivalgameshooter
-EntityScriptComponents.carnivalgameshooter={}
+EntityScriptComponents.carnivalgameshooter = {}
 ---@type vasedecoration
-EntityScriptComponents.vasedecoration={}
+EntityScriptComponents.vasedecoration = {}
 ---@type fertilizer
-EntityScriptComponents.fertilizer={}
+EntityScriptComponents.fertilizer = {}
 ---@type moisture
-EntityScriptComponents.moisture={}
+EntityScriptComponents.moisture = {}
 ---@type farmtiller
-EntityScriptComponents.farmtiller={}
+EntityScriptComponents.farmtiller = {}
 ---@type autosaver
-EntityScriptComponents.autosaver={}
+EntityScriptComponents.autosaver = {}
 ---@type deerherdspawner
-EntityScriptComponents.deerherdspawner={}
+EntityScriptComponents.deerherdspawner = {}
 ---@type carnivalhostsummon
-EntityScriptComponents.carnivalhostsummon={}
+EntityScriptComponents.carnivalhostsummon = {}
 ---@type oceancolor
-EntityScriptComponents.oceancolor={}
+EntityScriptComponents.oceancolor = {}
 ---@type shaveable
-EntityScriptComponents.shaveable={}
+EntityScriptComponents.shaveable = {}
 ---@type prophider
-EntityScriptComponents.prophider={}
+EntityScriptComponents.prophider = {}
 ---@type researchpointconverter
-EntityScriptComponents.researchpointconverter={}
+EntityScriptComponents.researchpointconverter = {}
 ---@type questowner
-EntityScriptComponents.questowner={}
+EntityScriptComponents.questowner = {}
 ---@type healthsyncer
-EntityScriptComponents.healthsyncer={}
+EntityScriptComponents.healthsyncer = {}
 ---@type raindomewatcher
-EntityScriptComponents.raindomewatcher={}
+EntityScriptComponents.raindomewatcher = {}
 ---@type transparentonsanity
-EntityScriptComponents.transparentonsanity={}
+EntityScriptComponents.transparentonsanity = {}
 ---@type highlightchild
-EntityScriptComponents.highlightchild={}
+EntityScriptComponents.highlightchild = {}
 ---@type craftingstation
-EntityScriptComponents.craftingstation={}
+EntityScriptComponents.craftingstation = {}
 ---@type playbill_lecturn
-EntityScriptComponents.playbill_lecturn={}
+EntityScriptComponents.playbill_lecturn = {}
 ---@type channelable
-EntityScriptComponents.channelable={}
+EntityScriptComponents.channelable = {}
 ---@type kramped
-EntityScriptComponents.kramped={}
+EntityScriptComponents.kramped = {}
 ---@type charliecutscene
-EntityScriptComponents.charliecutscene={}
+EntityScriptComponents.charliecutscene = {}
 ---@type spellbook
-EntityScriptComponents.spellbook={}
+EntityScriptComponents.spellbook = {}
 ---@type archivemanager
-EntityScriptComponents.archivemanager={}
+EntityScriptComponents.archivemanager = {}
 ---@type curseditem
-EntityScriptComponents.curseditem={}
+EntityScriptComponents.curseditem = {}
 ---@type dsp
-EntityScriptComponents.dsp={}
+EntityScriptComponents.dsp = {}
 ---@type dryer
-EntityScriptComponents.dryer={}
+EntityScriptComponents.dryer = {}
 ---@type ocean
-EntityScriptComponents.ocean={}
+EntityScriptComponents.ocean = {}
 ---@type aoeweapon_leap
-EntityScriptComponents.aoeweapon_leap={}
+EntityScriptComponents.aoeweapon_leap = {}
 ---@type klaussackkey
-EntityScriptComponents.klaussackkey={}
+EntityScriptComponents.klaussackkey = {}
 ---@type wintertreegiftable
-EntityScriptComponents.wintertreegiftable={}
+EntityScriptComponents.wintertreegiftable = {}
 ---@type trader
-EntityScriptComponents.trader={}
+EntityScriptComponents.trader = {}
 ---@type meteorshower
-EntityScriptComponents.meteorshower={}
+EntityScriptComponents.meteorshower = {}
 ---@type minionspawner
-EntityScriptComponents.minionspawner={}
+EntityScriptComponents.minionspawner = {}
 ---@type feasts
-EntityScriptComponents.feasts={}
+EntityScriptComponents.feasts = {}
 ---@type worldmeteorshower
-EntityScriptComponents.worldmeteorshower={}
+EntityScriptComponents.worldmeteorshower = {}
 ---@type armor
-EntityScriptComponents.armor={}
+EntityScriptComponents.armor = {}
 ---@type guardian
-EntityScriptComponents.guardian={}
+EntityScriptComponents.guardian = {}
 ---@type hunger
-EntityScriptComponents.hunger={}
+EntityScriptComponents.hunger = {}
 ---@type moonrelic
-EntityScriptComponents.moonrelic={}
+EntityScriptComponents.moonrelic = {}
 ---@type ghostlyelixirable
-EntityScriptComponents.ghostlyelixirable={}
+EntityScriptComponents.ghostlyelixirable = {}
 ---@type stuckdetection
-EntityScriptComponents.stuckdetection={}
+EntityScriptComponents.stuckdetection = {}
 ---@type followerherder
-EntityScriptComponents.followerherder={}
+EntityScriptComponents.followerherder = {}
 ---@type bloomer
-EntityScriptComponents.bloomer={}
+EntityScriptComponents.bloomer = {}
 ---@type daywalkerspawner
-EntityScriptComponents.daywalkerspawner={}
+EntityScriptComponents.daywalkerspawner = {}
 ---@type debuffable
-EntityScriptComponents.debuffable={}
+EntityScriptComponents.debuffable = {}
 ---@type oceantrawler
-EntityScriptComponents.oceantrawler={}
+EntityScriptComponents.oceantrawler = {}
 ---@type scrapbookable
-EntityScriptComponents.scrapbookable={}
+EntityScriptComponents.scrapbookable = {}
 ---@type locomotor
-EntityScriptComponents.locomotor={}
+EntityScriptComponents.locomotor = {}
 ---@type klaussacklock
-EntityScriptComponents.klaussacklock={}
+EntityScriptComponents.klaussacklock = {}
 ---@type hull
-EntityScriptComponents.hull={}
+EntityScriptComponents.hull = {}
 ---@type singingshellmanager
-EntityScriptComponents.singingshellmanager={}
+EntityScriptComponents.singingshellmanager = {}
 ---@type shadowdominance
-EntityScriptComponents.shadowdominance={}
+EntityScriptComponents.shadowdominance = {}
 ---@type fuel
-EntityScriptComponents.fuel={}
+EntityScriptComponents.fuel = {}
 ---@type writeable
-EntityScriptComponents.writeable={}
+EntityScriptComponents.writeable = {}
 ---@type beargerspawner
-EntityScriptComponents.beargerspawner={}
+EntityScriptComponents.beargerspawner = {}
 ---@type cyclable
-EntityScriptComponents.cyclable={}
+EntityScriptComponents.cyclable = {}
 ---@type freezable
-EntityScriptComponents.freezable={}
+EntityScriptComponents.freezable = {}
 ---@type focalpoint
-EntityScriptComponents.focalpoint={}
+EntityScriptComponents.focalpoint = {}
 ---@type upgradeable
-EntityScriptComponents.upgradeable={}
+EntityScriptComponents.upgradeable = {}
 ---@type minigame
-EntityScriptComponents.minigame={}
+EntityScriptComponents.minigame = {}
 ---@type circler
-EntityScriptComponents.circler={}
+EntityScriptComponents.circler = {}
 ---@type seasons
-EntityScriptComponents.seasons={}
+EntityScriptComponents.seasons = {}
 ---@type steeringwheel
-EntityScriptComponents.steeringwheel={}
+EntityScriptComponents.steeringwheel = {}
 ---@type grower
-EntityScriptComponents.grower={}
+EntityScriptComponents.grower = {}
 ---@type singinginspiration
-EntityScriptComponents.singinginspiration={}
+EntityScriptComponents.singinginspiration = {}
 ---@type savedscale
-EntityScriptComponents.savedscale={}
+EntityScriptComponents.savedscale = {}
 ---@type crabkingspawner
-EntityScriptComponents.crabkingspawner={}
+EntityScriptComponents.crabkingspawner = {}
 ---@type messagebottlemanager
-EntityScriptComponents.messagebottlemanager={}
+EntityScriptComponents.messagebottlemanager = {}
 ---@type builder
-EntityScriptComponents.builder={}
+EntityScriptComponents.builder = {}
 ---@type raindome
-EntityScriptComponents.raindome={}
+EntityScriptComponents.raindome = {}
 ---@type brushable
-EntityScriptComponents.brushable={}
+EntityScriptComponents.brushable = {}
 ---@type ambientlighting
-EntityScriptComponents.ambientlighting={}
+EntityScriptComponents.ambientlighting = {}
 ---@type entitytracker
-EntityScriptComponents.entitytracker={}
+EntityScriptComponents.entitytracker = {}
 ---@type domesticatable
-EntityScriptComponents.domesticatable={}
+EntityScriptComponents.domesticatable = {}
 ---@type boatai
-EntityScriptComponents.boatai={}
+EntityScriptComponents.boatai = {}
 ---@type named
-EntityScriptComponents.named={}
+EntityScriptComponents.named = {}
 ---@type lock
-EntityScriptComponents.lock={}
+EntityScriptComponents.lock = {}
 ---@type nightmareclock
-EntityScriptComponents.nightmareclock={}
+EntityScriptComponents.nightmareclock = {}
 ---@type giftreceiver
-EntityScriptComponents.giftreceiver={}
+EntityScriptComponents.giftreceiver = {}
 ---@type unwrappable
-EntityScriptComponents.unwrappable={}
+EntityScriptComponents.unwrappable = {}
 ---@type dryable
-EntityScriptComponents.dryable={}
+EntityScriptComponents.dryable = {}
 ---@type steeringwheeluser
-EntityScriptComponents.steeringwheeluser={}
+EntityScriptComponents.steeringwheeluser = {}
 ---@type constructionbuilder
-EntityScriptComponents.constructionbuilder={}
+EntityScriptComponents.constructionbuilder = {}
 ---@type herd
-EntityScriptComponents.herd={}
+EntityScriptComponents.herd = {}
 ---@type carnivalgamefeedable
-EntityScriptComponents.carnivalgamefeedable={}
+EntityScriptComponents.carnivalgamefeedable = {}
 ---@type damagetyperesist
-EntityScriptComponents.damagetyperesist={}
+EntityScriptComponents.damagetyperesist = {}
 ---@type grogginess
-EntityScriptComponents.grogginess={}
+EntityScriptComponents.grogginess = {}
 ---@type blinkstaff
-EntityScriptComponents.blinkstaff={}
+EntityScriptComponents.blinkstaff = {}
 ---@type nis
-EntityScriptComponents.nis={}
+EntityScriptComponents.nis = {}
 ---@type moonaltarlink
-EntityScriptComponents.moonaltarlink={}
+EntityScriptComponents.moonaltarlink = {}
 ---@type recallmark
-EntityScriptComponents.recallmark={}
+EntityScriptComponents.recallmark = {}
 ---@type lavaarenaeventstate
-EntityScriptComponents.lavaarenaeventstate={}
+EntityScriptComponents.lavaarenaeventstate = {}
 ---@type walkingplankuser
-EntityScriptComponents.walkingplankuser={}
+EntityScriptComponents.walkingplankuser = {}
 ---@type moontrader
-EntityScriptComponents.moontrader={}
+EntityScriptComponents.moontrader = {}
 ---@type inventoryitem
-EntityScriptComponents.inventoryitem={}
+EntityScriptComponents.inventoryitem = {}
 ---@type shelf
-EntityScriptComponents.shelf={}
+EntityScriptComponents.shelf = {}
 ---@type growable
-EntityScriptComponents.growable={}
+EntityScriptComponents.growable = {}
 ---@type farmplantable
-EntityScriptComponents.farmplantable={}
+EntityScriptComponents.farmplantable = {}
 ---@type emitter
-EntityScriptComponents.emitter={}
+EntityScriptComponents.emitter = {}
 ---@type tacklesketch
-EntityScriptComponents.tacklesketch={}
+EntityScriptComponents.tacklesketch = {}
 ---@type mightygym
-EntityScriptComponents.mightygym={}
+EntityScriptComponents.mightygym = {}
 ---@type eater
-EntityScriptComponents.eater={}
+EntityScriptComponents.eater = {}
 ---@type age
-EntityScriptComponents.age={}
+EntityScriptComponents.age = {}
 ---@type shard_clock
-EntityScriptComponents.shard_clock={}
+EntityScriptComponents.shard_clock = {}
 ---@type weather
-EntityScriptComponents.weather={}
+EntityScriptComponents.weather = {}
 ---@type spectatorcorpse
-EntityScriptComponents.spectatorcorpse={}
+EntityScriptComponents.spectatorcorpse = {}
 ---@type trap
-EntityScriptComponents.trap={}
+EntityScriptComponents.trap = {}
 ---@type formationleader
-EntityScriptComponents.formationleader={}
+EntityScriptComponents.formationleader = {}
 ---@type temperature
-EntityScriptComponents.temperature={}
+EntityScriptComponents.temperature = {}
 ---@type despawnfader
-EntityScriptComponents.despawnfader={}
+EntityScriptComponents.despawnfader = {}
 ---@type malbatrossspawner
-EntityScriptComponents.malbatrossspawner={}
+EntityScriptComponents.malbatrossspawner = {}
 ---@type winchtarget
-EntityScriptComponents.winchtarget={}
+EntityScriptComponents.winchtarget = {}
 ---@type canopyshadows
-EntityScriptComponents.canopyshadows={}
+EntityScriptComponents.canopyshadows = {}
 ---@type rainimmunity
-EntityScriptComponents.rainimmunity={}
+EntityScriptComponents.rainimmunity = {}
 ---@type talker
-EntityScriptComponents.talker={}
+EntityScriptComponents.talker = {}
 ---@type worlddeciduoustreeupdater
-EntityScriptComponents.worlddeciduoustreeupdater={}
+EntityScriptComponents.worlddeciduoustreeupdater = {}
 ---@type npc_talker
-EntityScriptComponents.npc_talker={}
+EntityScriptComponents.npc_talker = {}
 ---@type lighter
-EntityScriptComponents.lighter={}
+EntityScriptComponents.lighter = {}
 ---@type watersource
-EntityScriptComponents.watersource={}
+EntityScriptComponents.watersource = {}
 ---@type oasis
-EntityScriptComponents.oasis={}
+EntityScriptComponents.oasis = {}
 ---@type boattrailmover
-EntityScriptComponents.boattrailmover={}
+EntityScriptComponents.boattrailmover = {}
 ---@type chessunlocks
-EntityScriptComponents.chessunlocks={}
+EntityScriptComponents.chessunlocks = {}
 ---@type magiciantool
-EntityScriptComponents.magiciantool={}
+EntityScriptComponents.magiciantool = {}
 ---@type damagetypebonus
-EntityScriptComponents.damagetypebonus={}
+EntityScriptComponents.damagetypebonus = {}
 ---@type yotc_racestats
-EntityScriptComponents.yotc_racestats={}
+EntityScriptComponents.yotc_racestats = {}
 ---@type brush
-EntityScriptComponents.brush={}
+EntityScriptComponents.brush = {}
 ---@type shatterfx
-EntityScriptComponents.shatterfx={}
+EntityScriptComponents.shatterfx = {}
 ---@type quagmire_hangriness
-EntityScriptComponents.quagmire_hangriness={}
+EntityScriptComponents.quagmire_hangriness = {}
 ---@type deployhelper
-EntityScriptComponents.deployhelper={}
+EntityScriptComponents.deployhelper = {}
 ---@type bedazzler
-EntityScriptComponents.bedazzler={}
+EntityScriptComponents.bedazzler = {}
 ---@type selfstacker
-EntityScriptComponents.selfstacker={}
+EntityScriptComponents.selfstacker = {}
 ---@type penguinspawner
-EntityScriptComponents.penguinspawner={}
+EntityScriptComponents.penguinspawner = {}
 ---@type hudindicatablemanager
-EntityScriptComponents.hudindicatablemanager={}
+EntityScriptComponents.hudindicatablemanager = {}
 ---@type explosiveresist
-EntityScriptComponents.explosiveresist={}
+EntityScriptComponents.explosiveresist = {}
 ---@type grouptargeter
-EntityScriptComponents.grouptargeter={}
+EntityScriptComponents.grouptargeter = {}
 ---@type klaussackloot
-EntityScriptComponents.klaussackloot={}
+EntityScriptComponents.klaussackloot = {}
 ---@type worldsettingstimer
-EntityScriptComponents.worldsettingstimer={}
+EntityScriptComponents.worldsettingstimer = {}
 ---@type markable
-EntityScriptComponents.markable={}
+EntityScriptComponents.markable = {}
 ---@type transformer
-EntityScriptComponents.transformer={}
+EntityScriptComponents.transformer = {}
 ---@type staffsanity
-EntityScriptComponents.staffsanity={}
+EntityScriptComponents.staffsanity = {}
 ---@type upgrader
-EntityScriptComponents.upgrader={}
+EntityScriptComponents.upgrader = {}
 ---@type vase
-EntityScriptComponents.vase={}
+EntityScriptComponents.vase = {}
 ---@type lunarplant_tentacle_weapon
-EntityScriptComponents.lunarplant_tentacle_weapon={}
+EntityScriptComponents.lunarplant_tentacle_weapon = {}
 ---@type farmplanttendable
-EntityScriptComponents.farmplanttendable={}
+EntityScriptComponents.farmplanttendable = {}
 ---@type wisecracker
-EntityScriptComponents.wisecracker={}
+EntityScriptComponents.wisecracker = {}
 ---@type simplemagicgrower
-EntityScriptComponents.simplemagicgrower={}
+EntityScriptComponents.simplemagicgrower = {}
 ---@type healthbar
-EntityScriptComponents.healthbar={}
+EntityScriptComponents.healthbar = {}
 ---@type damagereflect
-EntityScriptComponents.damagereflect={}
+EntityScriptComponents.damagereflect = {}
 ---@type boattrail
-EntityScriptComponents.boattrail={}
+EntityScriptComponents.boattrail = {}
 ---@type attuner
-EntityScriptComponents.attuner={}
+EntityScriptComponents.attuner = {}
 ---@type useabletargeteditem
-EntityScriptComponents.useabletargeteditem={}
+EntityScriptComponents.useabletargeteditem = {}
 ---@type forestpetrification
-EntityScriptComponents.forestpetrification={}
+EntityScriptComponents.forestpetrification = {}
 ---@type reloaditem
-EntityScriptComponents.reloaditem={}
+EntityScriptComponents.reloaditem = {}
 ---@type machine
-EntityScriptComponents.machine={}
+EntityScriptComponents.machine = {}
 ---@type blowinwind
-EntityScriptComponents.blowinwind={}
+EntityScriptComponents.blowinwind = {}
 ---@type experiencecollector
-EntityScriptComponents.experiencecollector={}
+EntityScriptComponents.experiencecollector = {}
 ---@type hideandseekgame
-EntityScriptComponents.hideandseekgame={}
+EntityScriptComponents.hideandseekgame = {}
 ---@type wax
-EntityScriptComponents.wax={}
+EntityScriptComponents.wax = {}
 ---@type oceanicemanager
-EntityScriptComponents.oceanicemanager={}
+EntityScriptComponents.oceanicemanager = {}
 ---@type playerinspectable
-EntityScriptComponents.playerinspectable={}
+EntityScriptComponents.playerinspectable = {}
 ---@type flotationdevice
-EntityScriptComponents.flotationdevice={}
+EntityScriptComponents.flotationdevice = {}
 ---@type birdspawner
-EntityScriptComponents.birdspawner={}
+EntityScriptComponents.birdspawner = {}
 ---@type piratespawner
-EntityScriptComponents.piratespawner={}
+EntityScriptComponents.piratespawner = {}
 ---@type moonstormlightningmanager
-EntityScriptComponents.moonstormlightningmanager={}
+EntityScriptComponents.moonstormlightningmanager = {}
 ---@type foodmemory
-EntityScriptComponents.foodmemory={}
+EntityScriptComponents.foodmemory = {}
 ---@type cookiecutterdrill
-EntityScriptComponents.cookiecutterdrill={}
+EntityScriptComponents.cookiecutterdrill = {}
 ---@type drawable
-EntityScriptComponents.drawable={}
+EntityScriptComponents.drawable = {}
 ---@type forgerepairable
-EntityScriptComponents.forgerepairable={}
+EntityScriptComponents.forgerepairable = {}
 ---@type activatable
-EntityScriptComponents.activatable={}
+EntityScriptComponents.activatable = {}
 ---@type spawner
-EntityScriptComponents.spawner={}
+EntityScriptComponents.spawner = {}
 ---@type boatrotator
-EntityScriptComponents.boatrotator={}
+EntityScriptComponents.boatrotator = {}
 ---@type terraformer
-EntityScriptComponents.terraformer={}
+EntityScriptComponents.terraformer = {}
 ---@type shard_seasons
-EntityScriptComponents.shard_seasons={}
+EntityScriptComponents.shard_seasons = {}
 ---@type minigameparticipator
-EntityScriptComponents.minigameparticipator={}
+EntityScriptComponents.minigameparticipator = {}
 ---@type carnivaldecor
-EntityScriptComponents.carnivaldecor={}
+EntityScriptComponents.carnivaldecor = {}
 ---@type floater
-EntityScriptComponents.floater={}
+EntityScriptComponents.floater = {}
 ---@type heavyobstaclephysics
-EntityScriptComponents.heavyobstaclephysics={}
+EntityScriptComponents.heavyobstaclephysics = {}
 ---@type sheltered
-EntityScriptComponents.sheltered={}
+EntityScriptComponents.sheltered = {}
 ---@type hideout
-EntityScriptComponents.hideout={}
+EntityScriptComponents.hideout = {}
 ---@type maxhealer
-EntityScriptComponents.maxhealer={}
+EntityScriptComponents.maxhealer = {}
 ---@type stretcher
-EntityScriptComponents.stretcher={}
+EntityScriptComponents.stretcher = {}
 ---@type spell
-EntityScriptComponents.spell={}
+EntityScriptComponents.spell = {}
 ---@type constructionplans
-EntityScriptComponents.constructionplans={}
+EntityScriptComponents.constructionplans = {}
 ---@type undertile
-EntityScriptComponents.undertile={}
+EntityScriptComponents.undertile = {}
 ---@type retrofitcavemap_anr
-EntityScriptComponents.retrofitcavemap_anr={}
+EntityScriptComponents.retrofitcavemap_anr = {}
 ---@type bundlemaker
-EntityScriptComponents.bundlemaker={}
+EntityScriptComponents.bundlemaker = {}
 ---@type fishingnetvisualizer
-EntityScriptComponents.fishingnetvisualizer={}
+EntityScriptComponents.fishingnetvisualizer = {}
 ---@type formationfollower
-EntityScriptComponents.formationfollower={}
+EntityScriptComponents.formationfollower = {}
 ---@type embarker
-EntityScriptComponents.embarker={}
+EntityScriptComponents.embarker = {}
 ---@type mapspotrevealer
-EntityScriptComponents.mapspotrevealer={}
+EntityScriptComponents.mapspotrevealer = {}
 ---@type quagmire_music
-EntityScriptComponents.quagmire_music={}
+EntityScriptComponents.quagmire_music = {}
 ---@type areatrigger
-EntityScriptComponents.areatrigger={}
+EntityScriptComponents.areatrigger = {}
 ---@type slipperyfeet
-EntityScriptComponents.slipperyfeet={}
+EntityScriptComponents.slipperyfeet = {}
 ---@type disappears
-EntityScriptComponents.disappears={}
+EntityScriptComponents.disappears = {}
 ---@type fillable
-EntityScriptComponents.fillable={}
+EntityScriptComponents.fillable = {}
 ---@type yotc_racecompetitor
-EntityScriptComponents.yotc_racecompetitor={}
+EntityScriptComponents.yotc_racecompetitor = {}
 ---@type deployable
-EntityScriptComponents.deployable={}
+EntityScriptComponents.deployable = {}
 ---@type boatleak
-EntityScriptComponents.boatleak={}
+EntityScriptComponents.boatleak = {}
 ---@type hitchable
-EntityScriptComponents.hitchable={}
+EntityScriptComponents.hitchable = {}
 ---@type hauntable
-EntityScriptComponents.hauntable={}
+EntityScriptComponents.hauntable = {}
 ---@type fishingrod
-EntityScriptComponents.fishingrod={}
+EntityScriptComponents.fishingrod = {}
 ---@type summoningitem
-EntityScriptComponents.summoningitem={}
+EntityScriptComponents.summoningitem = {}
 ---@type yotc_raceprizemanager
-EntityScriptComponents.yotc_raceprizemanager={}
+EntityScriptComponents.yotc_raceprizemanager = {}
 ---@type herdmember
-EntityScriptComponents.herdmember={}
+EntityScriptComponents.herdmember = {}
 ---@type debuff
-EntityScriptComponents.debuff={}
+EntityScriptComponents.debuff = {}
 ---@type playerlightningtarget
-EntityScriptComponents.playerlightningtarget={}
+EntityScriptComponents.playerlightningtarget = {}
 ---@type schoolspawner
-EntityScriptComponents.schoolspawner={}
+EntityScriptComponents.schoolspawner = {}
 ---@type mermkingmanager
-EntityScriptComponents.mermkingmanager={}
+EntityScriptComponents.mermkingmanager = {}
 ---@type hullhealth
-EntityScriptComponents.hullhealth={}
+EntityScriptComponents.hullhealth = {}
 ---@type sharklistener
-EntityScriptComponents.sharklistener={}
+EntityScriptComponents.sharklistener = {}
 ---@type recipestockpile
-EntityScriptComponents.recipestockpile={}
+EntityScriptComponents.recipestockpile = {}
 ---@type shard_worldreset
-EntityScriptComponents.shard_worldreset={}
+EntityScriptComponents.shard_worldreset = {}
 ---@type scaler
-EntityScriptComponents.scaler={}
+EntityScriptComponents.scaler = {}
 ---@type quaker
-EntityScriptComponents.quaker={}
+EntityScriptComponents.quaker = {}
 ---@type quagmire_recipebook
-EntityScriptComponents.quagmire_recipebook={}
+EntityScriptComponents.quagmire_recipebook = {}
 ---@type coach
-EntityScriptComponents.coach={}
+EntityScriptComponents.coach = {}
 ---@type sizetweener
-EntityScriptComponents.sizetweener={}
+EntityScriptComponents.sizetweener = {}
 ---@type beaverness
-EntityScriptComponents.beaverness={}
+EntityScriptComponents.beaverness = {}
 ---@type bathbombable
-EntityScriptComponents.bathbombable={}
+EntityScriptComponents.bathbombable = {}
 ---@type strongman
-EntityScriptComponents.strongman={}
+EntityScriptComponents.strongman = {}
 ---@type storytellingprop
-EntityScriptComponents.storytellingprop={}
+EntityScriptComponents.storytellingprop = {}
 ---@type dynamicmusic
-EntityScriptComponents.dynamicmusic={}
+EntityScriptComponents.dynamicmusic = {}
 ---@type firefx
-EntityScriptComponents.firefx={}
+EntityScriptComponents.firefx = {}
 ---@type maxlightspawner
-EntityScriptComponents.maxlightspawner={}
+EntityScriptComponents.maxlightspawner = {}
 ---@type explosive
-EntityScriptComponents.explosive={}
+EntityScriptComponents.explosive = {}
 ---@type constructionbuilderuidata
-EntityScriptComponents.constructionbuilderuidata={}
+EntityScriptComponents.constructionbuilderuidata = {}
 ---@type papereraser
-EntityScriptComponents.papereraser={}
+EntityScriptComponents.papereraser = {}
 ---@type spidermutator
-EntityScriptComponents.spidermutator={}
+EntityScriptComponents.spidermutator = {}
 ---@type fertilizerresearchable
-EntityScriptComponents.fertilizerresearchable={}
+EntityScriptComponents.fertilizerresearchable = {}
 ---@type edible
-EntityScriptComponents.edible={}
+EntityScriptComponents.edible = {}
 ---@type saddler
-EntityScriptComponents.saddler={}
+EntityScriptComponents.saddler = {}
 ---@type gym
-EntityScriptComponents.gym={}
+EntityScriptComponents.gym = {}
 ---@type dockmanager
-EntityScriptComponents.dockmanager={}
+EntityScriptComponents.dockmanager = {}
 ---@type healthtrigger
-EntityScriptComponents.healthtrigger={}
+EntityScriptComponents.healthtrigger = {}
 ---@type migrationpetowner
-EntityScriptComponents.migrationpetowner={}
+EntityScriptComponents.migrationpetowner = {}
 ---@type timer
-EntityScriptComponents.timer={}
+EntityScriptComponents.timer = {}
 ---@type colourcube
-EntityScriptComponents.colourcube={}
+EntityScriptComponents.colourcube = {}
 ---@type pocketwatch_dismantler
-EntityScriptComponents.pocketwatch_dismantler={}
+EntityScriptComponents.pocketwatch_dismantler = {}
 ---@type sleepingbaguser
-EntityScriptComponents.sleepingbaguser={}
+EntityScriptComponents.sleepingbaguser = {}
 ---@type aura
-EntityScriptComponents.aura={}
+EntityScriptComponents.aura = {}
 ---@type farming_manager
-EntityScriptComponents.farming_manager={}
+EntityScriptComponents.farming_manager = {}
 ---@type mood
-EntityScriptComponents.mood={}
+EntityScriptComponents.mood = {}
 ---@type yotb_skinunlocker
-EntityScriptComponents.yotb_skinunlocker={}
+EntityScriptComponents.yotb_skinunlocker = {}
 ---@type upgrademoduleremover
-EntityScriptComponents.upgrademoduleremover={}
+EntityScriptComponents.upgrademoduleremover = {}
 ---@type ghostlybond
-EntityScriptComponents.ghostlybond={}
+EntityScriptComponents.ghostlybond = {}
 ---@type pickable
-EntityScriptComponents.pickable={}
+EntityScriptComponents.pickable = {}
 ---@type worldsettings
-EntityScriptComponents.worldsettings={}
+EntityScriptComponents.worldsettings = {}
 ---@type flotsamgenerator
-EntityScriptComponents.flotsamgenerator={}
+EntityScriptComponents.flotsamgenerator = {}
 ---@type lavaarenamusic
-EntityScriptComponents.lavaarenamusic={}
+EntityScriptComponents.lavaarenamusic = {}
 ---@type waterproofer
-EntityScriptComponents.waterproofer={}
+EntityScriptComponents.waterproofer = {}
 ---@type poppable
-EntityScriptComponents.poppable={}
+EntityScriptComponents.poppable = {}
 ---@type replayproxy
-EntityScriptComponents.replayproxy={}
+EntityScriptComponents.replayproxy = {}
 ---@type shaver
-EntityScriptComponents.shaver={}
+EntityScriptComponents.shaver = {}
 ---@type petleash
-EntityScriptComponents.petleash={}
+EntityScriptComponents.petleash = {}
 ---@type walkableplatform
-EntityScriptComponents.walkableplatform={}
+EntityScriptComponents.walkableplatform = {}
 ---@type teamleader
-EntityScriptComponents.teamleader={}
+EntityScriptComponents.teamleader = {}
 ---@type worldstate
-EntityScriptComponents.worldstate={}
+EntityScriptComponents.worldstate = {}
 ---@type lunarthrall_plantspawner
-EntityScriptComponents.lunarthrall_plantspawner={}
+EntityScriptComponents.lunarthrall_plantspawner = {}
 ---@type crop
-EntityScriptComponents.crop={}
+EntityScriptComponents.crop = {}
 ---@type possessedaxe
-EntityScriptComponents.possessedaxe={}
+EntityScriptComponents.possessedaxe = {}
 ---@type winter_treeseed
-EntityScriptComponents.winter_treeseed={}
+EntityScriptComponents.winter_treeseed = {}
 ---@type parryweapon
-EntityScriptComponents.parryweapon={}
+EntityScriptComponents.parryweapon = {}
 ---@type specialeventsetup
-EntityScriptComponents.specialeventsetup={}
+EntityScriptComponents.specialeventsetup = {}
 ---@type yotc_racestart
-EntityScriptComponents.yotc_racestart={}
+EntityScriptComponents.yotc_racestart = {}
 ---@type yotb_sewer
-EntityScriptComponents.yotb_sewer={}
+EntityScriptComponents.yotb_sewer = {}
 ---@type portablestructure
-EntityScriptComponents.portablestructure={}
+EntityScriptComponents.portablestructure = {}
 ---@type groomer
-EntityScriptComponents.groomer={}
+EntityScriptComponents.groomer = {}
 ---@type lighttweener
-EntityScriptComponents.lighttweener={}
+EntityScriptComponents.lighttweener = {}
 ---@type finiteuses
-EntityScriptComponents.finiteuses={}
+EntityScriptComponents.finiteuses = {}
 ---@type stackable
-EntityScriptComponents.stackable={}
+EntityScriptComponents.stackable = {}
 ---@type mast
-EntityScriptComponents.mast={}
+EntityScriptComponents.mast = {}
 ---@type reader
-EntityScriptComponents.reader={}
+EntityScriptComponents.reader = {}
 ---@type forgerepair
-EntityScriptComponents.forgerepair={}
+EntityScriptComponents.forgerepair = {}
 ---@type batteryuser
-EntityScriptComponents.batteryuser={}
+EntityScriptComponents.batteryuser = {}
 ---@type halloweenmoonmutable
-EntityScriptComponents.halloweenmoonmutable={}
+EntityScriptComponents.halloweenmoonmutable = {}
 ---@type boatdrag
-EntityScriptComponents.boatdrag={}
+EntityScriptComponents.boatdrag = {}
 ---@type appraisable
-EntityScriptComponents.appraisable={}
+EntityScriptComponents.appraisable = {}
 ---@type oceanfishingtackle
-EntityScriptComponents.oceanfishingtackle={}
+EntityScriptComponents.oceanfishingtackle = {}
 ---@type health
-EntityScriptComponents.health={}
+EntityScriptComponents.health = {}
 ---@type moonaltarlinktarget
-EntityScriptComponents.moonaltarlinktarget={}
+EntityScriptComponents.moonaltarlinktarget = {}
 ---@type weighable
-EntityScriptComponents.weighable={}
+EntityScriptComponents.weighable = {}
 ---@type cooker
-EntityScriptComponents.cooker={}
+EntityScriptComponents.cooker = {}
 ---@type pocketwatch
-EntityScriptComponents.pocketwatch={}
+EntityScriptComponents.pocketwatch = {}
 ---@type cookable
-EntityScriptComponents.cookable={}
+EntityScriptComponents.cookable = {}
 ---@type hideandseeker
-EntityScriptComponents.hideandseeker={}
+EntityScriptComponents.hideandseeker = {}
 ---@type walkableplatformmanager
-EntityScriptComponents.walkableplatformmanager={}
+EntityScriptComponents.walkableplatformmanager = {}
 ---@type sinkholespawner
-EntityScriptComponents.sinkholespawner={}
+EntityScriptComponents.sinkholespawner = {}
 ---@type sewing
-EntityScriptComponents.sewing={}
+EntityScriptComponents.sewing = {}
 ---@type playeravatardata
-EntityScriptComponents.playeravatardata={}
+EntityScriptComponents.playeravatardata = {}
 ---@type setbonus
-EntityScriptComponents.setbonus={}
+EntityScriptComponents.setbonus = {}
 ---@type homeseeker
-EntityScriptComponents.homeseeker={}
+EntityScriptComponents.homeseeker = {}
 ---@type oldager
-EntityScriptComponents.oldager={}
+EntityScriptComponents.oldager = {}
 ---@type deciduoustreeupdater
-EntityScriptComponents.deciduoustreeupdater={}
+EntityScriptComponents.deciduoustreeupdater = {}
 ---@type insulator
-EntityScriptComponents.insulator={}
+EntityScriptComponents.insulator = {}
 ---@type lunarriftmutationsmanager
-EntityScriptComponents.lunarriftmutationsmanager={}
+EntityScriptComponents.lunarriftmutationsmanager = {}
 ---@type madsciencelab
-EntityScriptComponents.madsciencelab={}
+EntityScriptComponents.madsciencelab = {}
 ---@type planardamage
-EntityScriptComponents.planardamage={}
+EntityScriptComponents.planardamage = {}
 ---@type sittable
-EntityScriptComponents.sittable={}
+EntityScriptComponents.sittable = {}
 ---@type shardstate
-EntityScriptComponents.shardstate={}
+EntityScriptComponents.shardstate = {}
 ---@type temperatureoverrider
-EntityScriptComponents.temperatureoverrider={}
+EntityScriptComponents.temperatureoverrider = {}
 ---@type seamlessplayerswapper
-EntityScriptComponents.seamlessplayerswapper={}
+EntityScriptComponents.seamlessplayerswapper = {}
 ---@type container
-EntityScriptComponents.container={}
+EntityScriptComponents.container = {}
 ---@type plantregistryupdater
-EntityScriptComponents.plantregistryupdater={}
+EntityScriptComponents.plantregistryupdater = {}
 ---@type ghostlyelixir
-EntityScriptComponents.ghostlyelixir={}
+EntityScriptComponents.ghostlyelixir = {}
 ---@type battery
-EntityScriptComponents.battery={}
+EntityScriptComponents.battery = {}
 ---@type fueler
-EntityScriptComponents.fueler={}
+EntityScriptComponents.fueler = {}
 ---@type constructionsite
-EntityScriptComponents.constructionsite={}
+EntityScriptComponents.constructionsite = {}
 ---@type unevenground
-EntityScriptComponents.unevenground={}
+EntityScriptComponents.unevenground = {}
 ---@type firedetector
-EntityScriptComponents.firedetector={}
+EntityScriptComponents.firedetector = {}
 ---@type damagetracker
-EntityScriptComponents.damagetracker={}
+EntityScriptComponents.damagetracker = {}
 ---@type sleepingbag
-EntityScriptComponents.sleepingbag={}
+EntityScriptComponents.sleepingbag = {}
 ---@type oceanthrowable
-EntityScriptComponents.oceanthrowable={}
+EntityScriptComponents.oceanthrowable = {}
 ---@type hallucinations
-EntityScriptComponents.hallucinations={}
+EntityScriptComponents.hallucinations = {}
 ---@type preserver
-EntityScriptComponents.preserver={}
+EntityScriptComponents.preserver = {}
 ---@type tool
-EntityScriptComponents.tool={}
+EntityScriptComponents.tool = {}
 ---@type playermetrics
-EntityScriptComponents.playermetrics={}
+EntityScriptComponents.playermetrics = {}
 ---@type highlight
-EntityScriptComponents.highlight={}
+EntityScriptComponents.highlight = {}
 ---@type worldcharacterselectlobby
-EntityScriptComponents.worldcharacterselectlobby={}
+EntityScriptComponents.worldcharacterselectlobby = {}
 ---@type positionalwarp
-EntityScriptComponents.positionalwarp={}
+EntityScriptComponents.positionalwarp = {}
 ---@type moonstormmanager
-EntityScriptComponents.moonstormmanager={}
+EntityScriptComponents.moonstormmanager = {}
 ---@type skilltreeupdater
-EntityScriptComponents.skilltreeupdater={}
+EntityScriptComponents.skilltreeupdater = {}
 ---@type cursable
-EntityScriptComponents.cursable={}
+EntityScriptComponents.cursable = {}
 ---@type lordfruitflytrigger
-EntityScriptComponents.lordfruitflytrigger={}
+EntityScriptComponents.lordfruitflytrigger = {}
 ---@type areaaware
-EntityScriptComponents.areaaware={}
+EntityScriptComponents.areaaware = {}
 ---@type walkingplank
-EntityScriptComponents.walkingplank={}
+EntityScriptComponents.walkingplank = {}
 ---@type stageactingprop
-EntityScriptComponents.stageactingprop={}
+EntityScriptComponents.stageactingprop = {}
 ---@type compostingbin
-EntityScriptComponents.compostingbin={}
+EntityScriptComponents.compostingbin = {}
 ---@type playeractionpicker
-EntityScriptComponents.playeractionpicker={}
+EntityScriptComponents.playeractionpicker = {}
 ---@type uniqueprefabids
-EntityScriptComponents.uniqueprefabids={}
+EntityScriptComponents.uniqueprefabids = {}
 ---@type miasmamanager
-EntityScriptComponents.miasmamanager={}
+EntityScriptComponents.miasmamanager = {}
 ---@type projectile
-EntityScriptComponents.projectile={}
+EntityScriptComponents.projectile = {}
 ---@type plantable
-EntityScriptComponents.plantable={}
+EntityScriptComponents.plantable = {}
 ---@type harvestable
-EntityScriptComponents.harvestable={}
+EntityScriptComponents.harvestable = {}
 ---@type key
-EntityScriptComponents.key={}
+EntityScriptComponents.key = {}
 ---@type colouraddersync
-EntityScriptComponents.colouraddersync={}
+EntityScriptComponents.colouraddersync = {}
 ---@type farmsoildrinker
-EntityScriptComponents.farmsoildrinker={}
+EntityScriptComponents.farmsoildrinker = {}
 ---@type preservative
-EntityScriptComponents.preservative={}
+EntityScriptComponents.preservative = {}
 ---@type ruinsshadelingspawner
-EntityScriptComponents.ruinsshadelingspawner={}
+EntityScriptComponents.ruinsshadelingspawner = {}
 ---@type oceanfishinghook
-EntityScriptComponents.oceanfishinghook={}
+EntityScriptComponents.oceanfishinghook = {}
 ---@type touchstonetracker
-EntityScriptComponents.touchstonetracker={}
+EntityScriptComponents.touchstonetracker = {}
 ---@type sandstorms
-EntityScriptComponents.sandstorms={}
+EntityScriptComponents.sandstorms = {}
 ---@type playerspawner
-EntityScriptComponents.playerspawner={}
+EntityScriptComponents.playerspawner = {}
 ---@type wardrobe
-EntityScriptComponents.wardrobe={}
+EntityScriptComponents.wardrobe = {}
 ---@type fuelmaster
-EntityScriptComponents.fuelmaster={}
+EntityScriptComponents.fuelmaster = {}
 ---@type shard_autosaver
-EntityScriptComponents.shard_autosaver={}
+EntityScriptComponents.shard_autosaver = {}
 ---@type vanish_on_sleep
-EntityScriptComponents.vanish_on_sleep={}
+EntityScriptComponents.vanish_on_sleep = {}
 ---@type mine
-EntityScriptComponents.mine={}
+EntityScriptComponents.mine = {}
 ---@type debugger
-EntityScriptComponents.debugger={}
+EntityScriptComponents.debugger = {}
 ---@type treegrowthsolution
-EntityScriptComponents.treegrowthsolution={}
+EntityScriptComponents.treegrowthsolution = {}
 ---@type squidspawner
-EntityScriptComponents.squidspawner={}
+EntityScriptComponents.squidspawner = {}
 ---@type beefalometrics
-EntityScriptComponents.beefalometrics={}
+EntityScriptComponents.beefalometrics = {}
 ---@type pointofinterest
-EntityScriptComponents.pointofinterest={}
+EntityScriptComponents.pointofinterest = {}
 ---@type instrument
-EntityScriptComponents.instrument={}
+EntityScriptComponents.instrument = {}
 ---@type brightmarespawner
-EntityScriptComponents.brightmarespawner={}
+EntityScriptComponents.brightmarespawner = {}
 ---@type mightydumbbell
-EntityScriptComponents.mightydumbbell={}
+EntityScriptComponents.mightydumbbell = {}
 ---@type crittertraits
-EntityScriptComponents.crittertraits={}
+EntityScriptComponents.crittertraits = {}
 ---@type shadowthrallmanager
-EntityScriptComponents.shadowthrallmanager={}
+EntityScriptComponents.shadowthrallmanager = {}
 ---@type wereness
-EntityScriptComponents.wereness={}
+EntityScriptComponents.wereness = {}
 ---@type frostybreather
-EntityScriptComponents.frostybreather={}
+EntityScriptComponents.frostybreather = {}
 ---@type farmplantstress
-EntityScriptComponents.farmplantstress={}
+EntityScriptComponents.farmplantstress = {}
 ---@type canopylightrays
-EntityScriptComponents.canopylightrays={}
+EntityScriptComponents.canopylightrays = {}
 ---@type catcher
-EntityScriptComponents.catcher={}
+EntityScriptComponents.catcher = {}
 ---@type nutrients_visual_manager
-EntityScriptComponents.nutrients_visual_manager={}
+EntityScriptComponents.nutrients_visual_manager = {}
 ---@type follower
-EntityScriptComponents.follower={}
+EntityScriptComponents.follower = {}
 ---@type custombuildmanager
-EntityScriptComponents.custombuildmanager={}
+EntityScriptComponents.custombuildmanager = {}
 ---@type oar
-EntityScriptComponents.oar={}
+EntityScriptComponents.oar = {}
 ---@type worldwind
-EntityScriptComponents.worldwind={}
+EntityScriptComponents.worldwind = {}
 ---@type updatelooper
-EntityScriptComponents.updatelooper={}
+EntityScriptComponents.updatelooper = {}
 ---@type moistureimmunity
-EntityScriptComponents.moistureimmunity={}
+EntityScriptComponents.moistureimmunity = {}
 ---@type aoeweapon_base
-EntityScriptComponents.aoeweapon_base={}
+EntityScriptComponents.aoeweapon_base = {}
 ---@type yotb_stager
-EntityScriptComponents.yotb_stager={}
+EntityScriptComponents.yotb_stager = {}
 ---@type talkable
-EntityScriptComponents.talkable={}
+EntityScriptComponents.talkable = {}
 ---@type deerherding
-EntityScriptComponents.deerherding={}
+EntityScriptComponents.deerherding = {}
 ---@type plantregrowth
-EntityScriptComponents.plantregrowth={}
+EntityScriptComponents.plantregrowth = {}
 ---@type stunnable
-EntityScriptComponents.stunnable={}
+EntityScriptComponents.stunnable = {}
 ---@type werebeast
-EntityScriptComponents.werebeast={}
+EntityScriptComponents.werebeast = {}
 ---@type toadstoolspawner
-EntityScriptComponents.toadstoolspawner={}
+EntityScriptComponents.toadstoolspawner = {}
 ---@type attunable
-EntityScriptComponents.attunable={}
+EntityScriptComponents.attunable = {}
 ---@type shadowsubmissive
-EntityScriptComponents.shadowsubmissive={}
+EntityScriptComponents.shadowsubmissive = {}
 ---@type shop
-EntityScriptComponents.shop={}
+EntityScriptComponents.shop = {}
 ---@type grottowarmanager
-EntityScriptComponents.grottowarmanager={}
+EntityScriptComponents.grottowarmanager = {}
 ---@type bloomness
-EntityScriptComponents.bloomness={}
+EntityScriptComponents.bloomness = {}
 ---@type grue
-EntityScriptComponents.grue={}
+EntityScriptComponents.grue = {}
 ---@type worldvoter
-EntityScriptComponents.worldvoter={}
+EntityScriptComponents.worldvoter = {}
 ---@type sleeper
-EntityScriptComponents.sleeper={}
+EntityScriptComponents.sleeper = {}
 ---@type carefulwalker
-EntityScriptComponents.carefulwalker={}
+EntityScriptComponents.carefulwalker = {}
 ---@type itemaffinity
-EntityScriptComponents.itemaffinity={}
+EntityScriptComponents.itemaffinity = {}
 ---@type rampingspawner
-EntityScriptComponents.rampingspawner={}
+EntityScriptComponents.rampingspawner = {}
 ---@type worker
-EntityScriptComponents.worker={}
+EntityScriptComponents.worker = {}
 ---@type clock
-EntityScriptComponents.clock={}
+EntityScriptComponents.clock = {}
 ---@type spellbookcooldowns
-EntityScriptComponents.spellbookcooldowns={}
+EntityScriptComponents.spellbookcooldowns = {}
 ---@type moosespawner
-EntityScriptComponents.moosespawner={}
+EntityScriptComponents.moosespawner = {}
 ---@type kitcoonden
-EntityScriptComponents.kitcoonden={}
+EntityScriptComponents.kitcoonden = {}
 ---@type teamattacker
-EntityScriptComponents.teamattacker={}
+EntityScriptComponents.teamattacker = {}
 ---@type maprecorder
-EntityScriptComponents.maprecorder={}
+EntityScriptComponents.maprecorder = {}
 ---@type caveweather
-EntityScriptComponents.caveweather={}
+EntityScriptComponents.caveweather = {}
 ---@type inventoryitemholder
-EntityScriptComponents.inventoryitemholder={}
+EntityScriptComponents.inventoryitemholder = {}
 ---@type occupiable
-EntityScriptComponents.occupiable={}
+EntityScriptComponents.occupiable = {}
 ---@type unsaddler
-EntityScriptComponents.unsaddler={}
+EntityScriptComponents.unsaddler = {}
 ---@type groundshadowhandler
-EntityScriptComponents.groundshadowhandler={}
+EntityScriptComponents.groundshadowhandler = {}
 ---@type electricattacks
-EntityScriptComponents.electricattacks={}
+EntityScriptComponents.electricattacks = {}
 ---@type commander
-EntityScriptComponents.commander={}
+EntityScriptComponents.commander = {}
 ---@type groundcreep
-EntityScriptComponents.groundcreep={}
+EntityScriptComponents.groundcreep = {}
 ---@type playervision
-EntityScriptComponents.playervision={}
+EntityScriptComponents.playervision = {}
 ---@type halloweenpotionmoon
-EntityScriptComponents.halloweenpotionmoon={}
+EntityScriptComponents.halloweenpotionmoon = {}
 ---@type fishingrod_replica
-EntityScriptComponentReplicas.fishingrod={}
+EntityScriptComponentReplicas.fishingrod = {}
 ---@type follower_replica
-EntityScriptComponentReplicas.follower={}
+EntityScriptComponentReplicas.follower = {}
 ---@type moisture_replica
-EntityScriptComponentReplicas.moisture={}
+EntityScriptComponentReplicas.moisture = {}
 ---@type writeable_replica
-EntityScriptComponentReplicas.writeable={}
+EntityScriptComponentReplicas.writeable = {}
 ---@type health_replica
-EntityScriptComponentReplicas.health={}
+EntityScriptComponentReplicas.health = {}
 ---@type sheltered_replica
-EntityScriptComponentReplicas.sheltered={}
+EntityScriptComponentReplicas.sheltered = {}
 ---@type inventoryitem_replica
-EntityScriptComponentReplicas.inventoryitem={}
+EntityScriptComponentReplicas.inventoryitem = {}
 ---@type inventory_replica
-EntityScriptComponentReplicas.inventory={}
+EntityScriptComponentReplicas.inventory = {}
 ---@type combat_replica
-EntityScriptComponentReplicas.combat={}
+EntityScriptComponentReplicas.combat = {}
 ---@type oceanfishingrod_replica
-EntityScriptComponentReplicas.oceanfishingrod={}
+EntityScriptComponentReplicas.oceanfishingrod = {}
 ---@type builder_replica
-EntityScriptComponentReplicas.builder={}
+EntityScriptComponentReplicas.builder = {}
 ---@type equippable_replica
-EntityScriptComponentReplicas.equippable={}
+EntityScriptComponentReplicas.equippable = {}
 ---@type rider_replica
-EntityScriptComponentReplicas.rider={}
+EntityScriptComponentReplicas.rider = {}
 ---@type container_replica
-EntityScriptComponentReplicas.container={}
+EntityScriptComponentReplicas.container = {}
 ---@type named_replica
-EntityScriptComponentReplicas.named={}
+EntityScriptComponentReplicas.named = {}
 ---@type hunger_replica
-EntityScriptComponentReplicas.hunger={}
+EntityScriptComponentReplicas.hunger = {}
 ---@type constructionsite_replica
-EntityScriptComponentReplicas.constructionsite={}
+EntityScriptComponentReplicas.constructionsite = {}
 ---@type sanity_replica
-EntityScriptComponentReplicas.sanity={}
+EntityScriptComponentReplicas.sanity = {}
 ---@type stackable_replica
-EntityScriptComponentReplicas.stackable={}
-
+EntityScriptComponentReplicas.stackable = {}

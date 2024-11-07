@@ -3,8 +3,6 @@
 ---@class UITransform
 local UITransform = {}
 
-
-
 function UITransform:SetHAnchor() end
 
 function UITransform:SetScissor() end
