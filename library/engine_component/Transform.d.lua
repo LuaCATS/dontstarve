@@ -7,7 +7,7 @@ function Transform:SetNoFaced() end
 
 function Transform:GetRotation() end
 
-function Transform:SetPosition() end
+function Transform:SetPosition(x, y, z) end
 
 function Transform:SetRotation() end
 
