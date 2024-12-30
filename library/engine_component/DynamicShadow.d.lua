@@ -3,6 +3,7 @@
 ---@class DynamicShadow
 local DynamicShadow = {}
 
-function DynamicShadow:Enable() end
+---@param b boolean
+function DynamicShadow:Enable(b) end
 
 function DynamicShadow:SetSize() end

@@ -2,6 +2,8 @@
 ---@class entityscript
 local EntityScript = {}
 
+---@type AccountManager
+EntityScript.AccountManager = {}
 ---@type AnimState
 EntityScript.AnimState = {}
 ---@type DebugRender

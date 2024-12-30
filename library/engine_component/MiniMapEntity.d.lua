@@ -3,7 +3,8 @@
 ---@class MiniMapEntity
 local MiniMapEntity = {}
 
-function MiniMapEntity:SetEnabled() end
+---@param b boolean
+function MiniMapEntity:SetEnabled(b) end
 
 function MiniMapEntity:SetIsProxy() end
 

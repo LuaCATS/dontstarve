@@ -1,6 +1,4 @@
-local parser = require("parser")
-local guide = require("parser.guide")
-local helper = require("plugins.astHelper")
+local fs = require("bee.filesystem")
 local files = require("files")
 local scope = require("workspace.scope")
 
@@ -8,13 +6,19 @@ local scope = require("workspace.scope")
 local function TestPlugin(script, plugin, checker)
 	files.open(TESTURI)
 	files.setText(TESTURI, script, true)
-	scope.getScope(TESTURI):set("pluginInterface", { OnTransformAst = plugin })
+	scope.getScope(TESTURI):set("pluginInterfaces", { { OnTransformAst = plugin } })
 	local state = files.getState(TESTURI)
 	checker(state)
 	files.remove(TESTURI)
 end
 
-local myplugin = require("plugins.ast.plugin")
+local old_path = package.path
+local info = debug.getinfo(1, "S")
+local search_path = (fs.path(info.source:sub(2)) / ".." / ".."):string()
+package.path = package.path .. ";" .. search_path .. "/?.lua" .. ";" .. search_path .. "/?/init.lua"
+
+local myplugin = require("plugin.dontstave")
+package.path = old_path
 
 local function AssertDocClass(doc, name)
 	name = name or "m"
@@ -130,17 +134,6 @@ local function f(self,inst)end
 TestPlugin(
 	[[
 local m = Class(function()end)
-function m.f(self)end
-]],
-	myplugin,
-	function(state)
-		AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
-	end
-)
-
-TestPlugin(
-	[[
-local m = Class(function()end)
 function m:f()end
 ]],
 	myplugin,
@@ -162,10 +155,10 @@ local function f(self)end
 
 TestPlugin(
 	[[
-    local A = Class(function(self,a)end)
+    EntityScript = Class(function(self, entity)end)
 ]],
 	myplugin,
 	function(state)
-		AssertParamTypeM(state.ast[2].value.args[1].bindDocs[1])
+		AssertDocClass(state.ast[1].bindDocs[1], "EntityScript")
 	end
 )

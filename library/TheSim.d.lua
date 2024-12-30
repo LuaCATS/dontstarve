@@ -6,7 +6,8 @@ function TheSim:CountEntities() end
 ---@return Entity
 function TheSim:CreateEntity() end
 
-function TheSim:FindEntities() end
+---@return entityscript[]
+function TheSim:FindEntities(x, y, z, radius, must_have_tags, cant_have_tags, must_have_one_of_tags) end
 function TheSim:FindEntities_Registered() end
 function TheSim:FindFirstEntityWithTag() end
 function TheSim:GetEntitiesAtScreenPoint() end

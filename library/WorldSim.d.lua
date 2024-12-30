@@ -1,125 +1,129 @@
 ---@meta
 
----@class WorldSim
-WorldSim = {}
-function WorldSim:SetResolveNoiseFunction() end
+---@class WorldSimActual
+local WorldSimActual = {}
 
-function WorldSim:SetValidateGroundTileFunction() end
+function WorldSimActual:SetResolveNoiseFunction() end
 
-function WorldSim:SetPointsBarrenOrReservedTile() end
+function WorldSimActual:SetValidateGroundTileFunction() end
 
-function WorldSim:ResetAll() end
+function WorldSimActual:SetPointsBarrenOrReservedTile() end
 
-function WorldSim:AddExternalLink() end
+function WorldSimActual:ResetAll() end
 
-function WorldSim:AddLink() end
+function WorldSimActual:AddExternalLink() end
 
-function WorldSim:AddChild() end
+function WorldSimActual:AddLink() end
 
-function WorldSim:AddEdgePoints() end
+function WorldSimActual:AddChild() end
 
-function WorldSim:SetSiteFlags() end
+function WorldSimActual:AddEdgePoints() end
 
-function WorldSim:RemoveLink() end
+function WorldSimActual:SetSiteFlags() end
 
-function WorldSim:ClearNodeLinks() end
+function WorldSimActual:RemoveLink() end
 
-function WorldSim:SetNodeType() end
+function WorldSimActual:ClearNodeLinks() end
 
-function WorldSim:ForceDisconectedCells() end
+function WorldSimActual:SetNodeType() end
 
-function WorldSim:SetWorldSize() end
+function WorldSimActual:ForceDisconectedCells() end
 
-function WorldSim:GetWorldSize() end
+function WorldSimActual:SetWorldSize() end
 
-function WorldSim:GenerateVoronoiMap() end
+function WorldSimActual:GetWorldSize() end
 
-function WorldSim:WorldGen_AddNewPositions() end
+function WorldSimActual:GenerateVoronoiMap() end
 
-function WorldSim:WorldGen_InitializeNodePoints() end
+function WorldSimActual:WorldGen_AddNewPositions() end
 
-function WorldSim:WorldGen_VoronoiPass() end
+function WorldSimActual:WorldGen_InitializeNodePoints() end
 
-function WorldSim:WorldGen_Commit() end
+function WorldSimActual:WorldGen_VoronoiPass() end
 
-function WorldSim:SetImpassibleTileType() end
+function WorldSimActual:WorldGen_Commit() end
 
-function WorldSim:ConvertToTileMap() end
+function WorldSimActual:SetImpassibleTileType() end
 
-function WorldSim:SeparateIslands() end
+function WorldSimActual:ConvertToTileMap() end
 
-function WorldSim:ForceConnectivity() end
+function WorldSimActual:SeparateIslands() end
 
-function WorldSim:DrawRoads() end
+function WorldSimActual:ForceConnectivity() end
 
-function WorldSim:SetRoadParameters() end
+function WorldSimActual:DrawRoads() end
 
-function WorldSim:CreateNodeIdTileMap() end
+function WorldSimActual:SetRoadParameters() end
 
-function WorldSim:SetTileNodeId() end
+function WorldSimActual:CreateNodeIdTileMap() end
 
-function WorldSim:GenerateBlendedMap() end
+function WorldSimActual:SetTileNodeId() end
 
-function WorldSim:RunCA() end
+function WorldSimActual:GenerateBlendedMap() end
 
-function WorldSim:RunMaze() end
+function WorldSimActual:RunCA() end
 
-function WorldSim:GetPointsForMetaMaze() end
+function WorldSimActual:RunMaze() end
 
-function WorldSim:GetEncodedMap() end
+function WorldSimActual:GetPointsForMetaMaze() end
 
-function WorldSim:ReplaceSingleNonLandTiles() end
+function WorldSimActual:GetEncodedMap() end
 
-function WorldSim:GetPointsForSite() end
+function WorldSimActual:ReplaceSingleNonLandTiles() end
 
-function WorldSim:GetRandomPointsForSite() end
+function WorldSimActual:GetPointsForSite() end
 
-function WorldSim:GetSiteCentroid() end
+function WorldSimActual:GetRandomPointsForSite() end
 
-function WorldSim:GetSitePolygon() end
+function WorldSimActual:GetSiteCentroid() end
 
-function WorldSim:PointInSite() end
+function WorldSimActual:GetSitePolygon() end
 
-function WorldSim:GetSiteArea() end
+function WorldSimActual:PointInSite() end
 
-function WorldSim:GetSite() end
+function WorldSimActual:GetSiteArea() end
 
-function WorldSim:GetChildrenForSite() end
+function WorldSimActual:GetSite() end
 
-function WorldSim:GetVisualTileAtPosition() end
+function WorldSimActual:GetChildrenForSite() end
 
-function WorldSim:GetRoad() end
+function WorldSimActual:GetVisualTileAtPosition() end
 
-function WorldSim:GetWormholes() end
+function WorldSimActual:GetRoad() end
 
-function WorldSim:GetWormholesExtra() end
+function WorldSimActual:GetWormholes() end
 
-function WorldSim:ReserveSpace() end
+function WorldSimActual:GetWormholesExtra() end
 
-function WorldSim:ReserveTile() end
+function WorldSimActual:ReserveSpace() end
 
-function WorldSim:IsTileReserved() end
+function WorldSimActual:ReserveTile() end
 
-function WorldSim:SetTile() end
+function WorldSimActual:IsTileReserved() end
 
-function WorldSim:GetTile() end
+function WorldSimActual:SetTile() end
 
-function WorldSim:DrawCellLine() end
+function WorldSimActual:GetTile() end
 
-function WorldSim:DrawGroundLine() end
+function WorldSimActual:DrawCellLine() end
 
-function WorldSim:LuaPrint() end
+function WorldSimActual:DrawGroundLine() end
 
-function WorldSim:DetectDisconnect() end
+function WorldSimActual:LuaPrint() end
 
-function WorldSim:GenerateSessionIdentifier() end
+function WorldSimActual:DetectDisconnect() end
 
-function WorldSim:InitSaveString() end
+function WorldSimActual:GenerateSessionIdentifier() end
 
-function WorldSim:AppendSaveString() end
+function WorldSimActual:InitSaveString() end
 
-function WorldSim:RemoveLastCommaSaveString() end
+function WorldSimActual:AppendSaveString() end
 
-function WorldSim:GetSaveString() end
+function WorldSimActual:RemoveLastCommaSaveString() end
 
-function WorldSim:FinalizeSaveString() end
+function WorldSimActual:GetSaveString() end
+
+function WorldSimActual:FinalizeSaveString() end
+
+WorldSim = WorldSimActual
+return WorldSimActual

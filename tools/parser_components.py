@@ -18,12 +18,12 @@ print(args.output)
 print(args.meta)
 components_dir = root / "components"
 
-match_return = re.compile("^\s*return\s+([a-zA-z_]\w*)\s*")
+match_return = re.compile(r"^\s*return\s+([a-zA-z_]\w*)\s*")
 
 classNames: set[str] = set()
 classReplicas: set[str] = set()
 
-match_return_func = re.compile("^\s*return\s+Class\s*\(\s*function\(\s*")
+match_return_func = re.compile(r"^\s*return\s+Class\s*\(\s*function\(\s*")
 
 
 def isReturnClass(lines):

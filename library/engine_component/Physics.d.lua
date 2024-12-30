@@ -85,6 +85,7 @@ function Physics:GetHeight() end
 
 function Physics:GetRadius() end
 
-function Physics:SetActive() end
+---@param b boolean
+function Physics:SetActive(b) end
 
 function Physics:SetSphere() end

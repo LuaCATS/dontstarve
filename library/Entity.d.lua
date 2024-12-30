@@ -45,13 +45,16 @@ function Entity:SetPlatform() end
 
 function Entity:GetPlatform() end
 
-function Entity:Show() end
+---@param b boolean?
+function Entity:Show(b) end
 
-function Entity:Hide() end
+---@param b boolean?
+function Entity:Hide(b) end
 
 function Entity:IsVisible() end
 
-function Entity:SetInLimbo() end
+---@param b boolean
+function Entity:SetInLimbo(b) end
 
 function Entity:FrustumCheck() end
 
@@ -85,6 +88,7 @@ function Entity:GetHistoryData() end
 
 function Entity:GetAnimStateData() end
 
+---@return AccountManager
 function Entity:AddAccountManager() end
 
 ---@return AnimState

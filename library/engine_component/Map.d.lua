@@ -61,7 +61,7 @@ function Map:GenerateBlendedMap() end
 
 function Map:GetNavStringEncode() end
 
-function Map:GetTileCenterPoint() end
+function Map:GetTileCenterPoint(x, y, z) end
 
 function Map:AddTileCollisionSet() end
 
@@ -75,7 +75,7 @@ function Map:GetTileCoordsAtPoint() end
 
 function Map:SetMapDataFromString() end
 
-function Map:IsVisualGroundAtPoint() end
+function Map:IsVisualGroundAtPoint(x, y, z) end
 
 function Map:GetRandomPointsForSite() end
 

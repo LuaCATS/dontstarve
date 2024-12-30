@@ -5,12 +5,14 @@ local Network = {}
 
 function Network:IsBorrowed() end
 
-function Network:AddUserFlag() end
+---@param flag integer
+function Network:AddUserFlag(flag) end
 
 function Network:GetNetworkID() end
 
 function Network:GetPlayerAge() end
 
+---@return integer
 function Network:GetUserFlags() end
 
 function Network:SetPlayerAge() end
@@ -21,7 +23,8 @@ function Network:IsServerAdmin() end
 
 function Network:SetPlayerSkin() end
 
-function Network:RemoveUserFlag() end
+---@param flag integer
+function Network:RemoveUserFlag(flag) end
 
 function Network:SetPlayerEquip() end
 

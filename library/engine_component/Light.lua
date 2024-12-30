@@ -19,7 +19,8 @@ function Light:GetDisableOnSceneRemoval() end
 
 function Light:SetDisableOnSceneRemoval() end
 
-function Light:Enable() end
+---@param b boolean
+function Light:Enable(b) end
 
 function Light:GetColour() end
 
