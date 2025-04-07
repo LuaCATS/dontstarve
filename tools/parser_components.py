@@ -69,18 +69,16 @@ for dirpath, dirnames, filenames in os.walk(components_dir):
 head = f"""{args.meta and "---@meta" or ""}
 
 ---@class EntityScriptComponents
-EntityScriptComponents = {{}}
----@class replica
-EntityScriptComponentReplicas = {{}}
+local EntityScriptComponents = {{}}
+---@class EntityScriptReplica
+local EntityScriptComponentReplicas = {{}}
 """
 body = head
 for className in classNames:
     if className == 'SpDamageUtil':
         continue
-    className = className.lower()
     body = body + f"---@type {className}\nEntityScriptComponents.{ className }={{}}\n"
 for className in classReplicas:
-    className = className.lower()
     body = body + f"---@type {className}_replica\nEntityScriptComponentReplicas.{ className }={{}}\n"
 body += "\n"
 

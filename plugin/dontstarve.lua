@@ -8,8 +8,8 @@ local function addTableInit(tableAst, valueAst)
 end
 
 local typenames = {
-	inst = "entityscript",
-	act = "bufferedaction",
+	inst = "EntityScript",
+	act = "BufferedAction",
 }
 function OnTransformAst(uri, ast)
 	local ctors = {}
@@ -38,12 +38,12 @@ function OnTransformAst(uri, ast)
 		end
 		---@type string
 		local filename = fs.path(uri):stem():string()
-		local classname = (classnameNode.type == "return" or filename:lower():find("_replica")) and filename
+		local classname = (classnameNode.type == "return" or filename:find("_replica")) and filename
 			or guide.getKeyName(classnameNode)
 		if not classname then
 			return
 		end
-		classname = classname:lower()
+		classname = classname
 		className = classname
 
 		local arg1 = guide.getParam(source, 1)
@@ -62,7 +62,7 @@ function OnTransformAst(uri, ast)
 		end
 
 		if base then
-			classname = classname .. ":" .. guide.getKeyName(base):lower()
+			classname = classname .. ":" .. guide.getKeyName(base)
 		end
 
 		if ctor then

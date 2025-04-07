@@ -1,5 +1,5 @@
 ---@meta
----@class entityscript
+---@class EntityScript
 local EntityScript = {}
 
 ---@type AccountManager
@@ -87,7 +87,7 @@ EntityScript.entity = {}
 ---@type EntityScriptComponents
 EntityScript.components = {}
 
----@type replica
+---@type EntityScriptReplica
 EntityScript.replica = {}
 
 ---@generic T

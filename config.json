@@ -1,7 +1,7 @@
 {
-    "name": "dontstave",
+    "name": "dontstarve",
     "settings": {
-        "Lua.runtime.plugin": "${addons}/dontstave/module/plugin/dontstave.lua",
+        "Lua.runtime.plugin": "${addons}/dontstarve/module/plugin/dontstarve.lua",
         "Lua.runtime.version": "Lua 5.1",
         "Lua.runtime.builtin": {
             "bit": "enable"

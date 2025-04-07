@@ -1,9 +1,9 @@
 ---@meta
 
----@class worldstate
+---@class WorldState
 local worldstate = {}
 
----@class worldstate.data
+---@class WorldState.data
 worldstate.data = {}
 
 return worldstate
