@@ -1,18 +1,11 @@
 {
     "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
     "runtime": {
-        "version": "Lua 5.1",
-        "path": [
-            "script/?.lua",
-            "script/?/init.lua",
-            "scripts/?.lua",
-            "scripts/?/init.lua"
-        ],
-        "pathStrict": true
+        "version": "Lua 5.4",
     },
     "workspace": {
         "library": [
-            "C:\\Users\\fesil\\lua-language-server",
+            "/opt/lua-language-server/script",
             "${addons}/bee/module/library"
         ],
         "ignoreDir": [

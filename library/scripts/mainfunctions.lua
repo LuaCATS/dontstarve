@@ -3,7 +3,9 @@
 ---@return entityscript
 function CreateEntity(name) end
 
----@return entityscript
+---@generic T
+---@param name `T`
+---@return `T`|entityscript
 function SpawnPrefab(name, skin, skin_id, creator) end
 
 ---@return entityscript

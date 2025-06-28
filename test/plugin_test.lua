@@ -1,6 +1,7 @@
 local fs = require("bee.filesystem")
 local files = require("files")
 local scope = require("workspace.scope")
+local guide = require("parser.guide")
 
 ---@diagnostic disable: await-in-sync
 local function TestPlugin(script, plugin, checker)
@@ -17,14 +18,21 @@ local info = debug.getinfo(1, "S")
 local search_path = (fs.path(info.source:sub(2)) / ".." / ".."):string()
 package.path = package.path .. ";" .. search_path .. "/?.lua" .. ";" .. search_path .. "/?/init.lua"
 
-local myplugin = require("plugin.dontstave")
+local myplugin = require("plugin.dontstarve")
 package.path = old_path
 
 local function AssertDocClass(doc, name)
 	name = name or "m"
-	assert(doc.class[1] == name)
-	assert(doc.type == "doc.class")
+	if doc.type == 'local' then
+		assert(doc.bindDocs[1].class[1] == name)
+	else
+		assert(guide.eachSourceType(doc, "doc.class", function(d)
+			assert(d.class[1] == name)
+			return true
+		end))
+	end
 end
+
 local function AssertDocClassExtend(doc, extend)
 	assert(doc.extends[1][1] == extend)
 	assert(doc.extends[1].type == "doc.extends.name")
@@ -35,7 +43,7 @@ local function AssertParamType(doc, t)
 	assert(extends.types[1][1] == t)
 end
 local function AssertParamTypeEntityScript(doc)
-	AssertParamType(doc, "EntityScript")
+	AssertParamType(doc, "entityscript")
 end
 local function AssertParamTypeM(doc)
 	AssertParamType(doc, "m")
@@ -100,7 +108,7 @@ m = Class(Base,function()end)
 	myplugin,
 	function(state)
 		AssertDocClass(state.ast[1].bindDocs[1])
-		AssertDocClassExtend(state.ast[1].bindDocs[1], "Base")
+		AssertDocClassExtend(state.ast[1].bindDocs[1], "base")
 	end
 )
 
@@ -111,11 +119,9 @@ m = Class(Base,function(self)end, {a = 1})
 	myplugin,
 	function(state)
 		AssertDocClass(state.ast[1].bindDocs[1])
-		AssertDocClassExtend(state.ast[1].bindDocs[1], "Base")
+		AssertDocClassExtend(state.ast[1].bindDocs[1], "base")
 		local doc = state.ast[1].value.vararg.args[2].locals[1]
 		AssertDocClass(doc.bindDocs[1])
-		assert(doc.value)
-		assert(doc.value.type == "table")
 	end
 )
 
@@ -159,6 +165,60 @@ TestPlugin(
 ]],
 	myplugin,
 	function(state)
-		AssertDocClass(state.ast[1].bindDocs[1], "EntityScript")
+		AssertDocClass(state.ast[1].bindDocs[1], "entityscript")
+	end
+)
+
+
+TestPlugin(
+	[[
+	local d = Prefab("fuck", function ()
+		local inst = CreateEntity()
+		return inst
+	end)
+]],
+	myplugin,
+	function(state)
+		guide.eachSourceType(state.ast[1].value, "local", function(source)
+			assert(guide.getKeyName(source) == "inst")
+			AssertDocClass(source, 'fuck')
+			AssertDocClassExtend(source.bindDocs[1], 'entityscript')
+		end)
+	end
+)
+
+TestPlugin(
+[[
+	return Prefab("fuck", function ()
+		local inst = CreateEntity()
+		return inst
+	end)
+]],
+	myplugin,
+	function(state)
+		guide.eachSourceType(state.ast[1][1], "local", function(source)
+			assert(guide.getKeyName(source) == "inst")
+			AssertDocClass(source, 'fuck')
+			AssertDocClassExtend(source.bindDocs[1], 'entityscript')
+		end)
+	end
+)
+
+TestPlugin(
+[[
+	local function fn ()
+		local inst = CreateEntity()
+		return inst
+	end
+	return Prefab("fuck", fn)
+]],
+	myplugin,
+	function(state)
+		local fn_node = state.ast.locals[2]
+		guide.eachSourceType(fn_node.value, "local", function(source)
+			assert(guide.getKeyName(source) == "inst")
+			AssertDocClass(source, 'fuck')
+			AssertDocClassExtend(source.bindDocs[1], 'entityscript')
+		end)
 	end
 )

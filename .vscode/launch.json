@@ -1,0 +1,32 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+			"name": "🍺test",
+			"type": "lua",
+			"request": "launch",
+			"stopOnEntry": true,
+			"program": "${env:LUALS_ROOT}/test.lua",
+			"luaexe": "${env:LUALS_ROOT}/bin/lua-language-server",
+			"luaVersion": "lua54",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "openOnSessionStart",
+			"outputCapture": [
+				"print",
+				"stderr",
+			],
+            "arg": ["-n=plugins.test"],
+			"arg0": ["-e","dofile([[${workspaceFolder}/test/hook_test.lua]])"],
+            "cwd": "${env:LUALS_ROOT}",
+			"windows": {
+				"luaexe": "${env:LUALS_ROOT}/bin/lua-language-server.exe"
+			},
+			"env": {
+				"PLUGIN_ROOT": "${workspaceFolder}"
+			}
+		},
+    ]
+}

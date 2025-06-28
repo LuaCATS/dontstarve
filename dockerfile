@@ -12,3 +12,4 @@ RUN sh -c ./make.sh
 
 ENV PATH=/opt/lua-language-server/bin:$PATH
 ENV LUALS_ROOT=/opt/lua-language-server
+

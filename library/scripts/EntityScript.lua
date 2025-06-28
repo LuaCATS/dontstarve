@@ -1,5 +1,5 @@
 ---@meta
----@class EntityScript
+---@class entityscript
 local EntityScript = {}
 
 ---@type AccountManager

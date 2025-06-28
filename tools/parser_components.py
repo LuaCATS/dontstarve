@@ -61,6 +61,7 @@ for dirpath, dirnames, filenames in os.walk(components_dir):
     for filename in filenames:
         className, isReplica = getClassName(filename)
         if className:
+            className = className.lower()
             if isReplica:
                 classReplicas.add(className)
             else:
